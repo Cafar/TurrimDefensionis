@@ -352,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410974148}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.74, y: 0.45, z: 3.05}
+  m_LocalPosition: {x: -0.74, y: 0.45, z: 7.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 5313545029164837458, guid: 471410b53bbc23a41a990eaf1ab4985e, type: 3}
+  enemyData: {fileID: 11400000, guid: 6cdffd2f3845506438c4744085c9447f, type: 2}
 --- !u!212 &410974151
 SpriteRenderer:
   m_ObjectHideFlags: 0

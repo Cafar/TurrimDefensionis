@@ -6,6 +6,7 @@ public class SpawnEnemy : MonoBehaviour
 {
 
     public GameObject enemyToSpawn;
+    public EnemyData enemyData;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class SpawnEnemy : MonoBehaviour
             GameObject spawnedEnemy = Instantiate(enemyToSpawn, gameObject.transform);
             spawnedEnemy.transform.position = transform.position;
             spawnedEnemy.transform.rotation = transform.rotation;
+            spawnedEnemy.GetComponent<Enemy>().data = enemyData;
         }
     }
 }
