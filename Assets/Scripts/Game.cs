@@ -65,7 +65,7 @@ public class Game : MonoBehaviour
     private char keyToPush;
     private int indexNum;
     private int indexCharPos;
-    private bool isPerfect;
+    //private bool isPerfect;
 
 
 
@@ -144,7 +144,7 @@ public class Game : MonoBehaviour
             });
 
 
-            isPerfect = false;
+            //isPerfect = false;
         }
     }
 
@@ -188,7 +188,7 @@ public class Game : MonoBehaviour
             + currentWord.Substring(0, 1) + "</voffset></color>" + currentWord[1..];
 
         mainText.color = currentGameModeColors.NormalColorText;
-        isPerfect = true;
+        //isPerfect = true;
         SetNextKeyToPush();
     }
 
