@@ -18,7 +18,7 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   attackEffect: {fileID: 0}
   targettingStrategy: 1
-  attackRange: 4
+  attackRange: 14
   attackDamage: 45
   attackRate: 1
   attackAOE: 0
