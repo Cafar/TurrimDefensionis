@@ -8,16 +8,12 @@ public class Tower : MonoBehaviour
 
     // Implement autonomy time when activated
     public bool isActive = false;
+    public bool showGizmos = true;
     private List<Enemy> enemiesInattackRange = new List<Enemy>();
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void Update()
     {
@@ -167,20 +163,23 @@ public class Tower : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        if (data.towerType != TowerType.Trap)
+        if (showGizmos)
         {
-            Gizmos.DrawWireSphere(transform.position, data.attackRange);
-            if (data.towerType == TowerType.AOE || data.attackAOE > 0)
+            Gizmos.color = Color.red;
+            if (data.towerType != TowerType.Trap)
             {
-                Gizmos.color = Color.yellow;
-                Gizmos.DrawWireSphere(transform.position, data.attackAOE);
+                Gizmos.DrawWireSphere(transform.position, data.attackRange);
+                if (data.towerType == TowerType.AOE || data.attackAOE > 0)
+                {
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawWireSphere(transform.position, data.attackAOE);
+                }
             }
-        }
-        else
-        {
-            Gizmos.DrawLine(transform.position, 
-                transform.position + transform.right * data.attackRange);
+            else
+            {
+                Gizmos.DrawLine(transform.position, 
+                    transform.position + transform.right * data.attackRange);
+            }
         }
     }
 }
