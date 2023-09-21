@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3c896336258ed45b26c1d7feaf9a11, type: 3}
   m_Name: BallestaDeEstacas
   m_EditorClassIdentifier: 
-  towerName: Ballesta de estacas
-  description: "Est\xE1 casi, va ya est\xE1."
-  shopImage: {fileID: 0}
-  possibleLocations: 
-  cost: 0
-  mapImage: {fileID: 0}
   towerType: 0
-  targettingStrategy: 1
+  resistance: 0
+  autonomyTime: 0
+  mapImage: {fileID: 0}
   attackEffect: {fileID: 0}
-  range: 2
+  targettingStrategy: 1
+  attackRange: 4
   attackDamage: 45
   attackRate: 1
   attackAOE: 0
-  resistance: 0
-  autonomyTime: 0
+  towerName: Ballesta de estacas
+  description: "Est\xE1 casi, va ya est\xE1."
+  shopImage: {fileID: 0}
+  cost: 0
+  possibleLocations: 

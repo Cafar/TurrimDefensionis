@@ -32,7 +32,6 @@ public class Tower : MonoBehaviour
         if (Time.time - lastAttackTime < data.attackRate)
             return;
         // Check for enemies to change target
-        Debug.Log("Pasa");
         if (currentTarget == null
             || data.targettingStrategy != TargettingStrategy.ClosestUntilDeath)
         {
@@ -64,9 +63,9 @@ public class Tower : MonoBehaviour
         enemiesInattackRange.Clear();
 
         // Find all colliders in the detection radius
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, data.attackRange);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, data.attackRange);
 
-        foreach (Collider2D collider in colliders)
+        foreach (Collider collider in colliders)
         {
             Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
@@ -129,9 +128,9 @@ public class Tower : MonoBehaviour
     private void DamageArea(int damage)
     {
         // Find all colliders in the detection radius
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(currentTarget.gameObject.gameObject.transform.position, data.attackAOE);
+        Collider[] colliders = Physics.OverlapSphere(currentTarget.gameObject.gameObject.transform.position, data.attackAOE);
 
-        foreach (Collider2D collider in colliders)
+        foreach (Collider collider in colliders)
         {
             Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
@@ -142,15 +141,15 @@ public class Tower : MonoBehaviour
     private void DamageEnemiesInLineOnce(int damage)
     {
         // Define the starting and ending points of the line
-        Vector2 start = transform.position;
-        Vector2 end = transform.position + transform.up * data.attackRange;
+        Vector3 start = transform.position;
+        Vector3 direction = transform.right;
 
         // Perform a linecast and get all colliders along the line
-        RaycastHit2D[] hits = Physics2D.LinecastAll(start, end);
+        RaycastHit[] hits = Physics.RaycastAll(start, direction, data.attackRange);
 
         if (hits.Length > 0)
         {
-            foreach (RaycastHit2D hit in hits)
+            foreach (RaycastHit hit in hits)
             {
                 // Check if the hit collider belongs to an enemy
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
@@ -181,7 +180,7 @@ public class Tower : MonoBehaviour
         else
         {
             Gizmos.DrawLine(transform.position, 
-                transform.position + transform.up * data.attackRange);
+                transform.position + transform.right * data.attackRange);
         }
     }
 }

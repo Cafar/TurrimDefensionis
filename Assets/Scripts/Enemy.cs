@@ -8,14 +8,14 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
 
     [SerializeField] private int health;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private SpriteRenderer sp;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * data.moveSpeed;
+        rb = gameObject.GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * data.moveSpeed;
 
         health = data.maxHealth;
 
