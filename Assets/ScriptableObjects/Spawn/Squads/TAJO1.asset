@@ -23,4 +23,4 @@ MonoBehaviour:
   botRow:
   - {fileID: 11400000, guid: 7c72ed177fdeb404db7dd2cb34874f7a, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 6cdffd2f3845506438c4744085c9447f, type: 2}
+  - {fileID: 11400000, guid: 6c811d8b6dcd3894285668f06428efec, type: 2}

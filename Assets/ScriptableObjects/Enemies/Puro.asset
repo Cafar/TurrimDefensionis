@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8320ed4222abc4db80e285c12a28ac, type: 3}
   m_Name: Puro
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 1
   moveSpeed: 3
   attackDamage: 0
   loot: 0

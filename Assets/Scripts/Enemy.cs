@@ -19,8 +19,11 @@ public class Enemy : MonoBehaviour
 
         health = data.maxHealth;
 
-        //sp = gameObject.GetComponent<SpriteRenderer>();
-        //sp.sprite = data.mapImage;
+        if (data.mapImage != null)
+        {
+            sp = gameObject.GetComponent<SpriteRenderer>();
+            sp.sprite = data.mapImage;
+        }
     }
 
     // Update is called once per frame
