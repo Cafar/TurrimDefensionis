@@ -11,7 +11,12 @@ public class Enemy : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer sp;
 
-    // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        GameManager.onStartDay += Die;
+    }
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -26,10 +31,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        ChurchHealth church = other.gameObject.GetComponent<ChurchHealth>();
+        if (church != null)
+        {
+            church.TakeDamage(data.attackDamage);
+            Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(int damage)
