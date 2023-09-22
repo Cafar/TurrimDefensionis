@@ -25,7 +25,6 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-
         if (!isActive)
             return;
         if (data.towerType == TowerType.Trap)
