@@ -18,7 +18,10 @@ public class Tower : MonoBehaviour
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
 
-
+    private void Start()
+    {
+        isActive = false;
+    }
 
     private void Update()
     {
