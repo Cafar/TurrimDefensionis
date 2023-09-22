@@ -27,7 +27,7 @@ public class TypingTowerManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        GameManager.OnGameStart += GameManager_OnGameStart;
+        GameManager.OnStartNight += GameManager_OnGameStart;
     }
 
     private void GameManager_OnGameStart()
