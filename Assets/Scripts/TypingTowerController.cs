@@ -51,8 +51,8 @@ public class TypingTowerController : MonoBehaviour
     //[SerializeField]
     //private AudioSource switchSound;
 
-    private string keyPushedString;
     private string currentWord;
+    private string keyPushedString;
     private char keyPushedChar;
     private char keyToPush;
     private int indexCharPos;
@@ -65,7 +65,7 @@ public class TypingTowerController : MonoBehaviour
 
     private void Start()
     {
-        SetTowerUnready();
+        SetTowerPaused();
     }
 
     public void InitTower(string word)
@@ -89,7 +89,8 @@ public class TypingTowerController : MonoBehaviour
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
-                if (Input.GetMouseButtonDown(0)) return;
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace)) return;
+
                 if (Input.GetKeyDown(key))
                 {
                     //type.Play();
@@ -107,6 +108,9 @@ public class TypingTowerController : MonoBehaviour
         int auxIndexCharFinalPos = auxIndexCharPos + 1;
         int auxIndexCharPosForBig = indexCharPos + 1;
         string offsetChar = "voffset=0.2em";
+
+        
+
         if (keyToPush == keyPushedChar)
         {
             if (auxIndexCharPos == currentWord.Length) auxIndexCharFinalPos--;
@@ -118,13 +122,18 @@ public class TypingTowerController : MonoBehaviour
             SetNextKeyToPush();
 
             //Si es la primera letra que activo, desactivo las otras torretas para que puedan activarse
-            if(indexCharPos == 0)
+            if(indexCharPos == 1)
             {
                 OnFirstWordPushed?.Invoke();
             }
         }
         else
         {
+            //Si es la primera letra que pulso de la palabra, no comprobamos errores
+            if (indexCharPos == 0)
+            {
+                return;
+            }
             FeedbackError();
             if (currentWord.Length > 1)
             {
@@ -142,7 +151,7 @@ public class TypingTowerController : MonoBehaviour
             //failComplex.Play();
             failText.DOFade(0, 0);
             failText.rectTransform.DOAnchorPosY(0, 0);
-            failText.rectTransform.DOAnchorPosY(200, 0.5f);
+            failText.rectTransform.DOAnchorPosY(1, 0.5f);
             failText.DOFade(1, 0.5f).OnComplete(() =>
             {
                 failText.DOFade(0, 0.5f);
@@ -155,11 +164,11 @@ public class TypingTowerController : MonoBehaviour
 
     private void FeedbackError()
     {
-        Vector2 pos = mainText.rectTransform.position;
+        Vector2 pos = mainText.rectTransform.anchoredPosition;
         errorSeq = DOTween.Sequence();
-        errorSeq.Append(mainText.rectTransform.DOPunchAnchorPos(new Vector2(1, 1), 0.2f, 10, 50)).OnComplete(() =>
+        errorSeq.Append(mainText.rectTransform.DOPunchAnchorPos(new Vector2(0.15f, -0.15f), 0.2f, 10, 50)).OnComplete(() =>
         {
-            mainText.rectTransform.position = pos;
+            mainText.rectTransform.anchoredPosition = Vector3.zero;
         });
     }
 
@@ -197,10 +206,15 @@ public class TypingTowerController : MonoBehaviour
         //perfectWord.Play();
     }
 
-    public void SetTowerUnready()
+    public void SetTowerPaused()
     {
         isReady = false;
         backgroundText.SetActive(false);
+    }
+
+    public void ResumeTower()
+    {
+        InitTower(currentWord);
     }
 
     private void CleanKeyStringAndConvertToChar()

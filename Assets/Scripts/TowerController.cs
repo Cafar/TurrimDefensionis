@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
-
     [SerializeField]
     private Tower tower;
     public Tower Tower => tower;
@@ -21,7 +20,7 @@ public class TowerController : MonoBehaviour
 
     private void TypingTower_OnFirstWordPushed()
     {
-        
+        TowersManager.Instance.SetAllTowersUnreadyExcept(typingTower);
     }
 
     private void TypingTower_OnWordCompleted()

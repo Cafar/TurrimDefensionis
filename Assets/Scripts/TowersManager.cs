@@ -9,9 +9,9 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using System.Xml.Schema;
 
-public class TypingTowerManager : MonoBehaviour
+public class TowersManager : MonoBehaviour
 {
-    public static TypingTowerManager _instance;
+    public static TowersManager Instance;
     [SerializeField]
     private List<TowerController> towers;
 
@@ -26,8 +26,16 @@ public class TypingTowerManager : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
+        Instance = this;
         GameManager.OnStartNight += GameManager_OnGameStart;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            ResumeAllTowers();
+        }
     }
 
     private void GameManager_OnGameStart()
@@ -39,20 +47,29 @@ public class TypingTowerManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            if(item.TypingTower != tower)
+            if(item.TypingTower.GetInstanceID() != tower.GetInstanceID())
             {
-                item.TypingTower.SetTowerUnready();
+                item.TypingTower.SetTowerPaused();
             }
+        }
+    }
+
+    public void ResumeAllTowers()
+    {
+        foreach (var item in towers)
+        {
+            item.TypingTower.ResumeTower();
         }
     }
 
     public void SetAllTowersReady()
     {
+        int a = 0;
         foreach (var item in towers)
         {
             //TODO: guardar en una lista las palabras que ya están utilizadas por una torre
             //para comprobar que a otra torre no se le asigna una palabra que empiece por la misma letra
-            item.TypingTower.InitTower(posibleWords[0]);
+            item.TypingTower.InitTower(posibleWords[a++]);
         }
     }
 }

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asdasddasd
+  m_text: WRONG
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asdasddasd
+  m_text: PERFECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordsColors:
     NormalColorText: {r: 1, g: 1, b: 1, a: 1}
-    CurrentCharColorText: {r: 0.034784317, g: 0, b: 1, a: 1}
+    CurrentCharColorText: {r: 0.959038, g: 1, b: 0, a: 1}
     CorrectCharText: {r: 0.1010772, g: 1, b: 0, a: 1}
     IncorrectCharText: {r: 1, g: 0, b: 0, a: 1}
   backgroundText: {fileID: 3304692408530943766}
