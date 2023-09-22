@@ -14,11 +14,11 @@ public class SpawnEnemy : MonoBehaviour
     public int waveLevel = 0;
     public int squadIndex = 0;
 
-    private bool isWaveRunning = false;
+    //private bool isWaveRunning = false;
 
     public IEnumerator StartWave()
     {
-        isWaveRunning = true;
+        //isWaveRunning = true;
         while (squadIndex < laneWave[waveLevel].squadSpawnOrder.Length)
         {
             if (laneWave[waveLevel].squadSpawnOrder[squadIndex] != null)
@@ -26,7 +26,7 @@ public class SpawnEnemy : MonoBehaviour
             squadIndex++;
             yield return new WaitForSeconds(squadSpawnRate);
         }
-        isWaveRunning = false;
+        //isWaveRunning = false;
     }
 
     // Update is called once per frame
