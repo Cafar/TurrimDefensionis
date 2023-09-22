@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour
+public class TypeController : MonoBehaviour
 {
     [System.Serializable]
     public class GameModeColors
