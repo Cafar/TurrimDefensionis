@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29bca94806ee2144da0e296ceca32862, type: 3}
-  m_Name: TestSquad
+  m_Name: ROMBO1 1
   m_EditorClassIdentifier: 
   topRow:
   - {fileID: 0}
