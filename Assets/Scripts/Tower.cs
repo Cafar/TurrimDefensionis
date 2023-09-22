@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [Header("Configuration")]
     public TowerData data;
+    [Space(10)]
 
-    // Implement autonomy time when activated
+    [Header("Testing")]
     public bool isActive = false;
     public bool showGizmos = true;
+    public float autonomyTimer = 0f;
+
     private List<Enemy> enemiesInattackRange = new List<Enemy>();
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
 
 
+
     private void Update()
     {
+
         if (!isActive)
             return;
         if (data.towerType == TowerType.Trap)
@@ -49,9 +55,26 @@ public class Tower : MonoBehaviour
                 Shoot();
             else
                 currentTarget = null;
-
         }
     }
+
+    private IEnumerator StartTowerCooldown()
+    {
+        while (autonomyTimer <= data.autonomyTime)
+        {
+            autonomyTimer += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        isActive = false;
+        autonomyTimer = 0f;
+    }
+
+    public void ActivateTower()
+    {
+        isActive = true;
+        StartCoroutine(StartTowerCooldown());
+    }
+
 
     private void DetectEnemies()
     {
