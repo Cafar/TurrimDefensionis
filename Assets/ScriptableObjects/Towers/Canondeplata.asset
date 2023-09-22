@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed3c896336258ed45b26c1d7feaf9a11, type: 3}
-  m_Name: BallestaDeEstacas
+  m_Name: Canondeplata
   m_EditorClassIdentifier: 
   towerType: 0
   resistance: 0
@@ -18,11 +18,11 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   attackEffect: {fileID: 0}
   targettingStrategy: 1
-  attackRange: 12
-  attackDamage: 42
-  attackRate: 1
+  attackRange: 15
+  attackDamage: 95
+  attackRate: 1.4
   attackAOE: 0
-  towerName: Ballesta de estacas
+  towerName: canon de plata
   description: "Est\xE1 casi, va ya est\xE1."
   shopImage: {fileID: 0}
   cost: 0
