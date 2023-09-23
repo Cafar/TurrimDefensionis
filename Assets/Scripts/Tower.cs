@@ -17,6 +17,7 @@ public class Tower : MonoBehaviour
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
+    private SpriteRenderer sp;
 
     private void OnEnable()
     {
@@ -31,6 +32,9 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         isActive = false;
+        sp = gameObject.GetComponent<SpriteRenderer>();
+        if (data.mapImage != null)
+            sp.sprite = data.mapImage;
     }
 
     private void Update()
