@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         {
             sp = gameObject.GetComponent<SpriteRenderer>();
             sp.sprite = data.mapImage;
+            sp.transform.localScale = Vector3.one * data.imageScaling;
         }
     }
 

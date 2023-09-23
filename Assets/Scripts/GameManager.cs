@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int waveLevel = 0;
-    public float[] nightTime;
+    public int nightLevel = 0;
+    public float[] nightTimes;
 
     public static event Action onStartDay;
     public static event Action onStartNight;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartDay();
-        nightTime = new float[6];
+        nightTimes = new float[6];
     }
 
     // Desactiva y resetea las palabras de activación de torres
@@ -53,15 +53,15 @@ public class GameManager : MonoBehaviour
     // Calcular el favor divino conseguido en la noche
     public void EndNight()
     {
-        nightTime[waveLevel] = Time.time - nightStartTime;
-        waveLevel++;
+        nightTimes[nightLevel] = Time.time - nightStartTime;
         onEndNight?.Invoke();
+        nightLevel++;
     }
 
     // Mostrar pantalla de game over con el botón de volver al inicio o reiniciar
     public void GameOver()
     {
-        nightTime[waveLevel] = Time.time - nightStartTime;
+        nightTimes[nightLevel] = Time.time - nightStartTime;
         onGameOver?.Invoke();
     }
 
