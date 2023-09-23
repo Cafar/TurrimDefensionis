@@ -27,7 +27,7 @@ public class TowersManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        GameManager.OnStartNight += GameManager_OnGameStart;
+        GameManager.onStartNight += GameManager_OnGameStart;
     }
 
     private void Update()

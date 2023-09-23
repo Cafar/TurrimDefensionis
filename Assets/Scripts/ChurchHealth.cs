@@ -11,10 +11,10 @@ public class ChurchHealth : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.onStartDay += SetMaxHealth;
+        GameManager.onStartDay += GameManager_OnStartDay;
     }
 
-    private void SetMaxHealth()
+    private void GameManager_OnStartDay()
     {
         health = maxHealth;
     }

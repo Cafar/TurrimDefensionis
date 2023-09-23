@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
         nightTime = new float[6];
     }
 
+    // Desactiva y resetea las palabras de activación de torres
+    // Desactiva y resetea salmo
     // Desactiva todos los elementos de UI de noche
-    // Desactiva todas las torretas
-    // Desactiva los spawners de enemigos
-    // Destruye todos los enemigos en pantalla
+    // Desactiva todas las torretas (Done)
+    // Desactiva los spawners de enemigos (Done)
+    // Destruye todos los enemigos (Done)
     // Pone al máximo la vida de la iglesia (Done)
     // Activa todos los elementos de UI de día
     // Activa música de día
@@ -37,8 +39,8 @@ public class GameManager : MonoBehaviour
 
     // Desactiva todos los elementos de UI de día
     // Activa todos los elementos de UI de noche
-    // Activa los spawners de enemigos
-    // Inicializa palabras de activación de torres
+    // Activa los spawners de enemigos (Done)
+    // Inicializa palabras de activación de torres (Done)
     // Inicializa salmo
     // Activa música de noche
     // (Primera noche) Activa banner tutorial noche

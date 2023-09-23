@@ -14,7 +14,12 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.onStartDay += Die;
+        GameManager.onStartDay += GameManager_OnStartDay;
+    }
+
+    private void GameManager_OnStartDay()
+    {
+        Die();
     }
 
     void Start()

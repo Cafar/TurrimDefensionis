@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [Header("Basic configuration")]
     public GameObject squadFormation;
@@ -11,31 +11,49 @@ public class SpawnEnemy : MonoBehaviour
     [Space(10)]
 
     [Header("Testing")]
-    public int waveLevel = 0;
     public int squadIndex = 0;
 
-    //private bool isWaveRunning = false;
+    private GameManager gm;
+
+    private void OnEnable()
+    {
+        GameManager.onStartDay += GameManager_OnStartDay;
+        GameManager.onStartNight += GameManager_OnStartNight;
+    }
+
+    private void GameManager_OnStartDay()
+    {
+        StopAllCoroutines();
+    }
+
+    private void GameManager_OnStartNight()
+    {
+        StartCoroutine(StartWave());
+    }
+
+    private void Start()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     public IEnumerator StartWave()
     {
-        //isWaveRunning = true;
-        while (squadIndex < laneWave[waveLevel].squadSpawnOrder.Length)
+        while (squadIndex < laneWave[gm.waveLevel].squadSpawnOrder.Length)
         {
-            if (laneWave[waveLevel].squadSpawnOrder[squadIndex] != null)
-                SpawnSquad(laneWave[waveLevel].squadSpawnOrder[squadIndex]);
+            if (laneWave[gm.waveLevel].squadSpawnOrder[squadIndex] != null)
+                SpawnSquad(laneWave[gm.waveLevel].squadSpawnOrder[squadIndex]);
             squadIndex++;
             yield return new WaitForSeconds(squadSpawnRate);
         }
-        //isWaveRunning = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // FOR TESTING
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (laneWave[waveLevel].squadSpawnOrder[squadIndex] != null)
-                SpawnSquad(laneWave[waveLevel].squadSpawnOrder[squadIndex]);
+            if (laneWave[gm.waveLevel].squadSpawnOrder[squadIndex] != null)
+                SpawnSquad(laneWave[gm.waveLevel].squadSpawnOrder[squadIndex]);
             squadIndex++;
         }
         if (Input.GetKeyDown(KeyCode.X))

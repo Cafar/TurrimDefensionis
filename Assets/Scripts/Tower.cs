@@ -18,6 +18,16 @@ public class Tower : MonoBehaviour
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
 
+    private void OnEnable()
+    {
+        GameManager.onStartDay += GameManager_OnStartDay;
+    }
+
+    private void GameManager_OnStartDay()
+    {
+        isActive = false;
+    }
+
     private void Start()
     {
         isActive = false;
