@@ -18,9 +18,9 @@ MonoBehaviour:
   mapImage: {fileID: 21300000, guid: 7592099ea1d23254ea2d22061a657612, type: 3}
   attackEffect: {fileID: 0}
   targettingStrategy: 2
-  attackRange: 30.78
-  attackDamage: 150
-  attackRate: 3
+  attackRange: 30
+  attackDamage: 100
+  attackRate: 4
   attackAOE: 6.5
   towerName: Mortero bendito
   description: Te queda un alioli divino
