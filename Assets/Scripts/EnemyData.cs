@@ -11,7 +11,11 @@ public class EnemyData : ScriptableObject
     public float moveSpeed;
     public int attackDamage;
     public int loot;
+    [Space(10)]
+
+    [Header("Visuals")]
     public Sprite mapImage;
+    public float imageScaling = 1f;
     public GameObject attackEffect;
     public GameObject deathEffect;
 }
