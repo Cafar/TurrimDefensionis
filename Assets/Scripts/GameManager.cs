@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
     public void EndNight()
     {
         nightTime[waveLevel] = Time.time - nightStartTime;
-        waveLevel++;
         onEndNight?.Invoke();
+        waveLevel++;
     }
 
     // Mostrar pantalla de game over con el botón de volver al inicio o reiniciar

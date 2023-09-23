@@ -29,10 +29,8 @@ public class EconomyManager : MonoBehaviour
     {
         currentCoin = initialCoin;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-
     }
 
-    // public function to buy tower
     public bool SpendCoin(int coinToSpend)
     {
         if (coinToSpend > currentCoin)
@@ -41,13 +39,17 @@ public class EconomyManager : MonoBehaviour
         return true;
     }
 
-    // function to get money at end of night
     private void GainCoin(int coinToGain)
     {
         if (currentCoin + coinToGain > maxCoin)
             currentCoin = maxCoin;
         else
             currentCoin += coinToGain;
+    }
+
+    private void GetEndOfNightReward()
+    {
+
     }
 
 }
