@@ -26,6 +26,7 @@ public class TowerData : ScriptableObject
     public int resistance;
     public float autonomyTime;
     public Sprite mapImage;
+    public float imageScaling = 1f;
     public GameObject attackEffect;
     [Space(10)]
 

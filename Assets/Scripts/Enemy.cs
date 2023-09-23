@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
         if (data.mapImage != null)
         {
-            sp = gameObject.GetComponent<SpriteRenderer>();
+            sp = gameObject.GetComponentInChildren<SpriteRenderer>();
             sp.sprite = data.mapImage;
             sp.transform.localScale = Vector3.one * data.imageScaling;
         }
