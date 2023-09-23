@@ -16,6 +16,6 @@ MonoBehaviour:
   moveSpeed: 1.4
   attackDamage: 0
   loot: 0
-  mapImage: {fileID: 0}
+  mapImage: {fileID: 21300000, guid: b024be594cbab5e428a04885a6a3ebb0, type: 3}
   attackEffect: {fileID: 0}
   deathEffect: {fileID: 0}

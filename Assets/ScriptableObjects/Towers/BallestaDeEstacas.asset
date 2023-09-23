@@ -19,7 +19,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 1
   attackRange: 12
-  attackDamage: 42
+  attackDamage: 29
   attackRate: 1
   attackAOE: 0
   towerName: Ballesta de estacas
