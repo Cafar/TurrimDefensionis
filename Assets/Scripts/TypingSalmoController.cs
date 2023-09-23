@@ -144,8 +144,10 @@ public class TypingSalmoController : MonoBehaviour
                 return;
             }
             FeedbackError();
+            string aux = currentWord.Substring(indexCharPos, 1);
+            if (aux == " ") aux = "█";
             mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
-                            "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + currentWord.Substring(indexCharPos, 1) + "</voffset></color>" + "<color=#"
+                            "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                            + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
 
             //failComplex.Play();
@@ -188,9 +190,10 @@ public class TypingSalmoController : MonoBehaviour
         int auxIndexCharPos = indexCharPos + 1;
         string offsetChar = "voffset=0.2em";
         keyToPush = currentWord.ToLower().ToCharArray()[indexCharPos];
-
+        string aux = currentWord.Substring(indexCharPos, 1);
+        if(aux == " ") aux = "█";
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
-                "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">" + currentWord.Substring(indexCharPos, 1) + "</voffset></color>" + "<color=#"
+                "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
 
     }

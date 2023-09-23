@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -114,9 +114,11 @@ public class TypingTowerController : MonoBehaviour
         if (keyToPush == keyPushedChar)
         {
             if (auxIndexCharPos == currentWord.Length) auxIndexCharFinalPos--;
+            string auxChar = currentWord.Substring(auxIndexCharPos, auxIndexCharFinalPos - auxIndexCharPos);
+            if (auxChar == " ") auxChar = "█";
             mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, auxIndexCharPos) + "</color>" + "<color=#"
                 + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">"
-                + currentWord.Substring(auxIndexCharPos, auxIndexCharFinalPos - auxIndexCharPos) + "</voffset></color>"
+                + auxChar + "</voffset></color>"
                 + "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharFinalPos..] + "</color>";
             // typeCorrect.Play();
             SetNextKeyToPush();
@@ -137,8 +139,10 @@ public class TypingTowerController : MonoBehaviour
             FeedbackError();
             if (currentWord.Length > 1)
             {
+                string aux = currentWord.Substring(indexCharPos, 1);
+                if (aux == " ") aux = "█";
                 mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
-                                "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + currentWord.Substring(indexCharPos, 1) + "</voffset></color>" + "<color=#"
+                                "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                                + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
             }
             else
@@ -172,7 +176,7 @@ public class TypingTowerController : MonoBehaviour
         });
     }
 
-    //Decide qu� tecla vamos a tener que pulsar para que lo de como correcto
+    //Decide qué tecla vamos a tener que pulsar para que lo de como correcto
     private void SetNextKeyToPush()
     {
         indexCharPos++;
