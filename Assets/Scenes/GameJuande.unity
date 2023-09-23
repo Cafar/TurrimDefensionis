@@ -844,6 +844,63 @@ MonoBehaviour:
   isActive: 1
   showGizmos: 0
   autonomyTimer: 0
+--- !u!1001 &1000280981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3261614607727111031, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_Name
+      value: "Fondo d\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.988872
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.299376
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.1108084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855234001008366631, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b4973e79597e884c8d0c42d88a3c45d, type: 3}
 --- !u!1 &1057999465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,8 +1149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 668d6630328ca7f49946175ceefe434a, type: 2}
-  isActive: 0
-  showGizmos: 0
+  isActive: 1
+  showGizmos: 1
   autonomyTimer: 0
 --- !u!212 &1125070455
 SpriteRenderer:
@@ -1136,7 +1193,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7592099ea1d23254ea2d22061a657612, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 534991f3e107701408276bce309f6bd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
