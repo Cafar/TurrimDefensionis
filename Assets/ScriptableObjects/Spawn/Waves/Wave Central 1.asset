@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave Central 1
   m_EditorClassIdentifier: 
   squadSpawnOrder:
-  - {fileID: 11400000, guid: 397843d38fcc3ba45bce16de1a59c16f, type: 2}
+  - {fileID: 11400000, guid: a591a51ab86d71b4480bb8ea8c64d781, type: 2}
   - {fileID: 11400000, guid: 3b8e3e3398aca9c4eb98dde265a2f3e2, type: 2}
   - {fileID: 11400000, guid: 213e76fa5edbe284984f92e6d0f1709c, type: 2}
   - {fileID: 0}
