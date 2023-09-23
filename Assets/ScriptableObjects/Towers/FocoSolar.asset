@@ -19,7 +19,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 3
   attackRange: 10
-  attackDamage: 20
+  attackDamage: 35
   attackRate: 1
   attackAOE: 1.5
   towerName: Foco solar

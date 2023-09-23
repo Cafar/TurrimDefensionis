@@ -18,12 +18,12 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   attackEffect: {fileID: 0}
   targettingStrategy: 1
-  attackRange: 15
-  attackDamage: 95
-  attackRate: 1.4
+  attackRange: 14
+  attackDamage: 62
+  attackRate: 1.5
   attackAOE: 0
   towerName: canon de plata
-  description: "Est\xE1 casi, va ya est\xE1."
+  description: 
   shopImage: {fileID: 0}
   cost: 0
   possibleLocations: 

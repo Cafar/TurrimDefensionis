@@ -48,8 +48,7 @@ MonoBehaviour:
   squadFormation: {fileID: 4270703872504092711, guid: f775cd1ef4013bf4495a74fd07ae511d, type: 3}
   laneWave:
   - {fileID: 11400000, guid: dc14a1d65be32bc46b4c6be3a47b424f, type: 2}
-  squadSpawnRate: 2
-  waveLevel: 0
+  squadSpawnRate: 5
   squadIndex: 0
 --- !u!212 &6367094089469964253
 SpriteRenderer:

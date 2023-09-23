@@ -18,8 +18,8 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   attackEffect: {fileID: 0}
   targettingStrategy: 1
-  attackRange: 11.5
-  attackDamage: 17
+  attackRange: 11
+  attackDamage: 11
   attackRate: 0.3
   attackAOE: 0
   towerName: Disparador de ajos
