@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float waveSpawnRate = 4f;
+    public int wavesPerNight = 30;
+    public float maxEnemyTimeToChurch = 65f;
+    public bool hasFinishedSpawning = false;
+
+    private void OnEnable()
     {
-        
+        GameManager.onStartNight += GameManager_OnStartNight;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GameManager_OnStartNight()
     {
-        
+        hasFinishedSpawning = false;
     }
+
+    void Start()
+    {
+        hasFinishedSpawning = false;
+    }
+
+
 }

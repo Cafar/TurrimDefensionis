@@ -7,13 +7,14 @@ public class Spawner : MonoBehaviour
     [Header("Basic configuration")]
     public GameObject squadFormation;
     public LaneWaveData[] laneWave;
-    public float squadSpawnRate = 4f;
     [Space(10)]
 
     [Header("Testing")]
     public int squadIndex = 0;
 
+    private GameObject gmObj;
     private GameManager gm;
+    private SpawnManager sm;
 
     private void OnEnable()
     {
@@ -33,18 +34,22 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gmObj = GameObject.Find("GameManager");
+        gm = gmObj.GetComponent<GameManager>();
+        sm = gmObj.GetComponent<SpawnManager>();
     }
 
     public IEnumerator StartWave()
     {
-        while (squadIndex < laneWave[gm.waveLevel].squadSpawnOrder.Length)
+        while (squadIndex < laneWave[gm.nightLevel].squadSpawnOrder.Length
+            && squadIndex < sm.wavesPerNight)
         {
-            if (laneWave[gm.waveLevel].squadSpawnOrder[squadIndex] != null)
-                SpawnSquad(laneWave[gm.waveLevel].squadSpawnOrder[squadIndex]);
+            if (laneWave[gm.nightLevel].squadSpawnOrder[squadIndex] != null)
+                SpawnSquad(laneWave[gm.nightLevel].squadSpawnOrder[squadIndex]);
             squadIndex++;
-            yield return new WaitForSeconds(squadSpawnRate);
+            yield return new WaitForSeconds(sm.waveSpawnRate);
         }
+        sm.hasFinishedSpawning = true;
     }
 
     void Update()
@@ -52,8 +57,8 @@ public class Spawner : MonoBehaviour
         // FOR TESTING
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (laneWave[gm.waveLevel].squadSpawnOrder[squadIndex] != null)
-                SpawnSquad(laneWave[gm.waveLevel].squadSpawnOrder[squadIndex]);
+            if (laneWave[gm.nightLevel].squadSpawnOrder[squadIndex] != null)
+                SpawnSquad(laneWave[gm.nightLevel].squadSpawnOrder[squadIndex]);
             squadIndex++;
         }
         if (Input.GetKeyDown(KeyCode.X))
