@@ -16,6 +16,7 @@ MonoBehaviour:
   resistance: 0
   autonomyTime: 0
   mapImage: {fileID: 0}
+  imageScaling: 0.4
   attackEffect: {fileID: 0}
   targettingStrategy: 3
   attackRange: 10
