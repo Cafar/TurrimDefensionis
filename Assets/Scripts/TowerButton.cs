@@ -21,6 +21,7 @@ public class TowerButton : MonoBehaviour
 
         towerNameMP.text = data?.towerName;
         towerImage.sprite = data?.mapImage;
+        towerImage.SetVerticesDirty();
         towerCostMP.text = data?.cost.ToString();
     }
 }

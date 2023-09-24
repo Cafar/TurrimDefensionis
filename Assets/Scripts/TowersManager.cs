@@ -47,9 +47,13 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            if(item.TypingTower.GetInstanceID() != tower.GetInstanceID())
+            if (item.gameObject.activeSelf)
             {
-                item.TypingTower.SetTowerPaused();
+                if(item.TypingTower.GetInstanceID() != tower.GetInstanceID())
+                {
+                    item.TypingTower.SetTowerPaused();
+                }
+
             }
         }
     }
@@ -58,8 +62,12 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            if (!item.Tower.isActive)
-                item.TypingTower.ResumeTower();
+            if (item.gameObject.activeSelf)
+            {
+                if (!item.Tower.isActive)
+                    item.TypingTower.ResumeTower();
+
+            }
         }
     }
 
@@ -67,7 +75,10 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            item.TypingTower.isInFocus = inFocus;
+            if (item.gameObject.activeSelf)
+            {
+                item.TypingTower.isInFocus = inFocus;
+            }
         }
     }
 

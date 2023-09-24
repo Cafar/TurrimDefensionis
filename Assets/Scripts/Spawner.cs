@@ -55,22 +55,22 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         // FOR TESTING
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (laneWave[gm.nightLevel].squadSpawnOrder[squadIndex] != null)
-                SpawnSquad(laneWave[gm.nightLevel].squadSpawnOrder[squadIndex]);
-            squadIndex++;
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("Wave started");
-            StartCoroutine(StartWave());
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Debug.Log("Wave stopped");
-            StopAllCoroutines();
-        }
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    if (laneWave[gm.nightLevel].squadSpawnOrder[squadIndex] != null)
+        //        SpawnSquad(laneWave[gm.nightLevel].squadSpawnOrder[squadIndex]);
+        //    squadIndex++;
+        //}
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    Debug.Log("Wave started");
+        //    StartCoroutine(StartWave());
+        //}
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    Debug.Log("Wave stopped");
+        //    StopAllCoroutines();
+        //}
     }
 
     void SpawnSquad(SquadData squadToSpawn)
