@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour
     public CooldownHandler cooldownHandler;
     public Sprite destroyedImage;
     public float destroyedImageScale = 1f;
+    public Image panelImage;
     [Space(10)]
 
     [Header("Testing")]
@@ -25,6 +26,7 @@ public class Tower : MonoBehaviour
     private int towerResistance;
     private TowersManager tm;
     private TypingTowerController tpc;
+    private Slider towerHealthbar;
 
     private void OnEnable()
     {
@@ -35,11 +37,17 @@ public class Tower : MonoBehaviour
     private void GameManager_OnStartDay()
     {
         isActive = false;
+        panelImage.enabled = false;
+        towerHealthbar.gameObject.SetActive(false);
+        tpc.gameObject.SetActive(false);
     }
 
     private void GameManager_OnStartNight()
     {
         towerResistance = data.resistance;
+        panelImage.enabled = true;
+        towerHealthbar.gameObject.SetActive(true);
+        tpc.gameObject.SetActive(true);
     }
 
     private void Start()
@@ -54,6 +62,8 @@ public class Tower : MonoBehaviour
             sp.transform.localScale = Vector3.one * data.imageScaling;
         }
         tpc = gameObject.GetComponentInChildren<TypingTowerController>();
+        towerHealthbar = GetComponentInChildren<Slider>();
+        towerHealthbar.value = data.resistance;
     }
 
     private void Update()
@@ -247,6 +257,7 @@ public class Tower : MonoBehaviour
     public void TakeDamage()
     {
         towerResistance--;
+        towerHealthbar.value = towerResistance;
         if (towerResistance <= 0)
             DestroyTower();
     }
@@ -254,7 +265,7 @@ public class Tower : MonoBehaviour
     private void DestroyTower()
     {
         Debug.Log("Tower Destroyed");
-        transform.GetChild(0).gameObject.SetActive(false);
+        tpc.gameObject.SetActive(false);
         isActive = false;
         tm.ResumeAllTowers();
         if (destroyedImage != null)
