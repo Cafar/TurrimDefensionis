@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fe0d58ec1eb5346a73a7cd1b6456c1, type: 3}
+  m_Name: Wave Central X
+  m_EditorClassIdentifier: 
+  squadSpawnOrder:
+  - {fileID: 11400000, guid: a591a51ab86d71b4480bb8ea8c64d781, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 213e76fa5edbe284984f92e6d0f1709c, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3dcfad9d5087b64458724430db4f5076, type: 2}
+  - {fileID: 11400000, guid: 27ab9e7fbcbe113418a94a405bcc4f66, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3dcfad9d5087b64458724430db4f5076, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 7fc7bf8e072950045b77f06218b847e7, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3e8dcfe47d980b7448c13c885806cc84, type: 2}
+  - {fileID: 11400000, guid: 213e76fa5edbe284984f92e6d0f1709c, type: 2}
+  - {fileID: 11400000, guid: 213e76fa5edbe284984f92e6d0f1709c, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: cbf8cd6a85279824a9733cd4efffed2d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 33236c5f53895924081818bdfbe3afc0, type: 2}
+  - {fileID: 11400000, guid: 33236c5f53895924081818bdfbe3afc0, type: 2}
+  - {fileID: 11400000, guid: 7fc7bf8e072950045b77f06218b847e7, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 27ab9e7fbcbe113418a94a405bcc4f66, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

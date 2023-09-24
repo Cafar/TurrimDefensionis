@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fe0d58ec1eb5346a73a7cd1b6456c1, type: 3}
+  m_Name: Wave Derecha 3
+  m_EditorClassIdentifier: 
+  squadSpawnOrder:
+  - {fileID: 11400000, guid: 5384655a1660d3745b513f2888ade127, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3dcfad9d5087b64458724430db4f5076, type: 2}
+  - {fileID: 11400000, guid: 5384655a1660d3745b513f2888ade127, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 47d8f2cf63d56024fb3723ce9b237107, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 213e76fa5edbe284984f92e6d0f1709c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3e8dcfe47d980b7448c13c885806cc84, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e17fc875a6f5feb4ca333bc6614fb99a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e08ed4005cb88234b8e412ff25688b6a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 622ddafa499a7c44a9090f5f63cbe17d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
