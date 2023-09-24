@@ -23,7 +23,7 @@ public class TypingSalmoController : MonoBehaviour
     }
 
     public event Action OnSalmoCompleted;
-    public event Action OnFirstWordPushed;
+    //public event Action OnFirstWordPushed;
 
     [Header("Settings")]
     [SerializeField]
@@ -53,6 +53,7 @@ public class TypingSalmoController : MonoBehaviour
     //[SerializeField]
     //private AudioSource switchSound;
 
+    private GameManager gm;
     private string currentWord;
     private string keyPushedString;
     private char keyPushedChar;
@@ -69,6 +70,7 @@ public class TypingSalmoController : MonoBehaviour
     private void Start()
     {
         InitSalmo();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public void InitSalmo()
@@ -201,7 +203,7 @@ public class TypingSalmoController : MonoBehaviour
     {
 
         OnSalmoCompleted?.Invoke();
-        //perfectWord.Play();
+        gm.EndNight();
     }
 
 
