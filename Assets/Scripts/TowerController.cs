@@ -15,7 +15,13 @@ public class TowerController : MonoBehaviour
     private void Start()
     {
         typingTower.OnWordCompleted += TypingTower_OnWordCompleted;
-        typingTower.OnFirstWordPushed += TypingTower_OnFirstWordPushed; ;
+        typingTower.OnFirstWordPushed += TypingTower_OnFirstWordPushed;
+        GameManager.onStartDay += GameManager_OnStartDay;
+    }
+
+    private void GameManager_OnStartDay()
+    {
+        typingTower.gameObject.SetActive(true);
     }
 
     private void TypingTower_OnFirstWordPushed()
@@ -26,5 +32,7 @@ public class TowerController : MonoBehaviour
     private void TypingTower_OnWordCompleted()
     {
         tower.ActivateTower();
+        typingTower.SetTowerPaused();
+        TowersManager.Instance.ResumeAllTowers();
     }
 }

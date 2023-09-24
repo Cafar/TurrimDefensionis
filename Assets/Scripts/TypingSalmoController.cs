@@ -59,7 +59,7 @@ public class TypingSalmoController : MonoBehaviour
     private char keyToPush;
     private int indexCharPos;
     //private bool isPerfect;
-    private bool isReady;
+    public bool isInFocus;
     private float penaltyErrorSecondsElapsed;
     private float secondsToBackLetterElapsed;
 
@@ -74,7 +74,6 @@ public class TypingSalmoController : MonoBehaviour
     public void InitSalmo()
     {
         indexCharPos = -1;
-        isReady = true;
         currentWord = salmoText;
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><voffset=0.2em>"
             + currentWord.Substring(0, 1) + "</voffset></color>" + currentWord[1..];
@@ -96,12 +95,12 @@ public class TypingSalmoController : MonoBehaviour
             secondsToBackLetterElapsed = 0;
         }
 
-        if (isReady && penaltyErrorSecondsElapsed > penaltyErrorSeconds)
+        if (penaltyErrorSecondsElapsed > penaltyErrorSeconds)
         {
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace)) return;
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab) || !isInFocus) return;
 
                 if (Input.GetKeyDown(key))
                 {
@@ -200,7 +199,6 @@ public class TypingSalmoController : MonoBehaviour
 
     private void SalmoCompleted()
     {
-
 
         OnSalmoCompleted?.Invoke();
         //perfectWord.Play();

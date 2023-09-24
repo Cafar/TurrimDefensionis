@@ -544,7 +544,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &3304692409669025611
 MonoBehaviour:
@@ -603,6 +603,8 @@ MonoBehaviour:
     CurrentCharColorText: {r: 0.959038, g: 1, b: 0, a: 1}
     CorrectCharText: {r: 0.1010772, g: 1, b: 0, a: 1}
     IncorrectCharText: {r: 1, g: 0, b: 0, a: 1}
+  words:
+  - 
   backgroundText: {fileID: 3304692408530943766}
   mainText: {fileID: 3304692409468838947}
   perfectText: {fileID: 2143343189}

@@ -26,6 +26,9 @@ public class TypingTowerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField]
     private GameModeColors wordsColors;
+    [SerializeField]
+    private string[] words = new string[1];
+
     [Header("UI")]
     [SerializeField]
     private GameObject backgroundText;
@@ -58,14 +61,50 @@ public class TypingTowerController : MonoBehaviour
     private int indexCharPos;
     //private bool isPerfect;
     private bool isReady;
-
-
+    public bool isInFocus;
 
     private Sequence errorSeq;
+    private Tower tower;
+
+    public void ToggleReady()
+    {
+        if (isReady)
+            isReady = false;
+        else
+            isReady = true;
+    }
+
+    public void SetIsReady(bool ready)
+    {
+        isReady = ready;
+    }
+        
+
+
+    private void OnEnable()
+    {
+        GameManager.onStartDay += GameManager_OnStartDay;
+        GameManager.onStartNight += GameManager_OnStartNight;
+    }
+
+
+    private void GameManager_OnStartDay()
+    {
+        SetTowerPaused();
+    }
+
+
+    private void GameManager_OnStartNight()
+    {
+        ResumeTower();
+        isInFocus = true;
+    }
+
 
     private void Start()
     {
         SetTowerPaused();
+        tower = transform.parent.GetComponent<Tower>();
     }
 
     public void InitTower(string word)
@@ -84,12 +123,12 @@ public class TypingTowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isReady)
+        if (isReady && isInFocus)
         {
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace)) return;
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab)) return;
 
                 if (Input.GetKeyDown(key))
                 {
@@ -137,6 +176,7 @@ public class TypingTowerController : MonoBehaviour
                 return;
             }
             FeedbackError();
+            tower.TakeDamage();
             if (currentWord.Length > 1)
             {
                 string aux = currentWord.Substring(indexCharPos, 1);
@@ -218,7 +258,14 @@ public class TypingTowerController : MonoBehaviour
 
     public void ResumeTower()
     {
-        InitTower(currentWord);
+        InitTower(GetRandomWord());
+    }
+
+
+    private string GetRandomWord()
+    {
+        string randomWord = words[new System.Random().Next(0, words.Length)];
+        return randomWord;
     }
 
     private void CleanKeyStringAndConvertToChar()

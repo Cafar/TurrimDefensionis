@@ -18,10 +18,13 @@ public class Tower : MonoBehaviour
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
     private SpriteRenderer sp;
+    private int towerResistance;
+    private TowersManager tm;
 
     private void OnEnable()
     {
         GameManager.onStartDay += GameManager_OnStartDay;
+        GameManager.onStartNight += GameManager_OnStartNight;
     }
 
     private void GameManager_OnStartDay()
@@ -29,8 +32,15 @@ public class Tower : MonoBehaviour
         isActive = false;
     }
 
+    private void GameManager_OnStartNight()
+    {
+        towerResistance = data.resistance;
+    }
+
     private void Start()
     {
+        tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
+        towerResistance = data.resistance;
         isActive = false;
         if (data.mapImage != null)
         {
@@ -92,6 +102,7 @@ public class Tower : MonoBehaviour
     {
         isActive = true;
         StartCoroutine(StartTowerCooldown());
+        // activate cooldown ui
     }
 
 
@@ -223,5 +234,20 @@ public class Tower : MonoBehaviour
                     transform.position + transform.right * data.attackRange);
             }
         }
+    }
+
+    public void TakeDamage()
+    {
+        towerResistance--;
+        if (towerResistance <= 0)
+            DestroyTower();
+    }
+
+    private void DestroyTower()
+    {
+        Debug.Log("Tower Destroyed");
+        transform.GetChild(0).gameObject.SetActive(false);
+        isActive = false;
+        tm.ResumeAllTowers();
     }
 }

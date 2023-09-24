@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public int nightLevel = 0;
     public float[] nightTimes;
+    public GameObject dayUI;
+    public GameObject nightUI;
 
     public static event Action onStartDay;
     public static event Action onStartNight;
@@ -16,10 +18,32 @@ public class GameManager : MonoBehaviour
 
     private float nightStartTime;
 
+    private TowersManager tm;
+    private TypingSalmoController tsc;
+
     void Start()
     {
         StartDay();
         nightTimes = new float[6];
+        tm = gameObject.GetComponent<TowersManager>();
+        tsc = gameObject.GetComponent<TypingSalmoController>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (tsc.isInFocus)
+            {
+                tsc.isInFocus = false;
+                tm.SetAllTowersIsInFocus(true);
+            }
+            else
+            {
+                tsc.isInFocus = true;
+                tm.SetAllTowersIsInFocus(false);
+            }
+        }
     }
 
     // Desactiva y resetea las palabras de activación de torres
@@ -35,6 +59,8 @@ public class GameManager : MonoBehaviour
     public void StartDay()
     {
         onStartDay?.Invoke();
+        nightUI.SetActive(false);
+        dayUI.SetActive(true);
     }
 
     // Desactiva todos los elementos de UI de día
@@ -46,6 +72,8 @@ public class GameManager : MonoBehaviour
     // (Primera noche) Activa banner tutorial noche
     public void StartNight()
     {
+        dayUI.SetActive(false);
+        nightUI.SetActive(true);
         onStartNight?.Invoke();
         nightStartTime = Time.time;
     }

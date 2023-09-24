@@ -40,7 +40,7 @@ public class TowersManager : MonoBehaviour
 
     private void GameManager_OnGameStart()
     {
-        SetAllTowersReady();
+        ResumeAllTowers();
     }
 
     public void SetAllTowersUnreadyExcept(TypingTowerController tower)
@@ -58,18 +58,17 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            item.TypingTower.ResumeTower();
+            if (!item.Tower.isActive)
+                item.TypingTower.ResumeTower();
         }
     }
 
-    public void SetAllTowersReady()
+    public void SetAllTowersIsInFocus(bool inFocus)
     {
-        int a = 0;
         foreach (var item in towers)
         {
-            //TODO: guardar en una lista las palabras que ya están utilizadas por una torre
-            //para comprobar que a otra torre no se le asigna una palabra que empiece por la misma letra
-            item.TypingTower.InitTower(posibleWords[a++]);
+            item.TypingTower.isInFocus = inFocus;
         }
     }
+
 }
