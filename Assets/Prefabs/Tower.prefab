@@ -136,6 +136,8 @@ MonoBehaviour:
   destroyedImage: {fileID: 21300000, guid: debb8e0dc574442408697709d1880c1f, type: 3}
   destroyedImageScale: 1
   panelImage: {fileID: 5066877238408664780}
+  towerHealthbar: {fileID: 7802479395521297240}
+  tpc: {fileID: 5874340622581188100}
   isActive: 0
   showGizmos: 0
   autonomyTimer: 0
@@ -605,6 +607,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 388857934b2d9f244b4f9cb082fd76f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7802479395521297240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3692186560274778201, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+  m_PrefabInstance: {fileID: 6880006778436694785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8261309851980778568 stripped

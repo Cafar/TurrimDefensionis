@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float[] nightTimes;
     public GameObject dayUI;
     public GameObject nightUI;
+    public GameObject dayBackground;
+    public GameObject nightBackground;
 
     public static event Action onStartDay;
     public static event Action onStartNight;
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour
         onStartDay?.Invoke();
         nightUI.SetActive(false);
         dayUI.SetActive(true);
+        nightBackground.SetActive(false);
+        dayBackground.SetActive(true);
     }
 
     // Desactiva todos los elementos de UI de día
@@ -74,6 +78,8 @@ public class GameManager : MonoBehaviour
     {
         dayUI.SetActive(false);
         nightUI.SetActive(true);
+        dayBackground.SetActive(false);
+        nightBackground.SetActive(true);
         onStartNight?.Invoke();
         nightStartTime = Time.time;
     }
