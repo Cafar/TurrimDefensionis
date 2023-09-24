@@ -178,7 +178,7 @@ public class TypingSalmoController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(SalmoCompleted());
+            SalmoCompleted();
         }
     }
 
@@ -197,9 +197,9 @@ public class TypingSalmoController : MonoBehaviour
 
     }
 
-    private IEnumerator SalmoCompleted()
+    private void SalmoCompleted()
     {
-        yield return new WaitForSeconds(.5f);
+
         OnSalmoCompleted?.Invoke();
         //perfectWord.Play();
     }
