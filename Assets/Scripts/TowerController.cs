@@ -9,12 +9,12 @@ public class TowerController : MonoBehaviour
     private Tower tower;
     public Tower Tower => tower;
 
+    [SerializeField]
     private TypingTowerController typingTower;
     public TypingTowerController TypingTower => typingTower;
 
     private void Start()
     {
-        typingTower = gameObject.GetComponentInChildren<TypingTowerController>();
         typingTower.OnWordCompleted += TypingTower_OnWordCompleted;
         typingTower.OnFirstWordPushed += TypingTower_OnFirstWordPushed;
         GameManager.onStartDay += GameManager_OnStartDay;

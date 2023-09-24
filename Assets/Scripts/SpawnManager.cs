@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public float waveSpawnRate = 4f;
+    public float waveSpawnRate = 10f;
     public int wavesPerNight = 30;
     public float maxEnemyTimeToChurch = 65f;
     public bool hasFinishedSpawning = false;

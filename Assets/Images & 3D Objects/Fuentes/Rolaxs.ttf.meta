@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: cada8610cb7d7114dace53ceec1b272f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Rolaxs
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1a73a1d5984298146b77ca0e3bb0250b, type: 3}
+  - {fileID: 12800000, guid: a70de424acbdcc74d98c1519a9e09e8a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
