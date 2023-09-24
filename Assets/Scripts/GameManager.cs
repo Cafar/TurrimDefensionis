@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     private TowersManager tm;
     private TypingSalmoController tsc;
+    private SpawnManager sm;
+    private Spawner spawner;
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
         nightTimes = new float[6];
         tm = gameObject.GetComponent<TowersManager>();
         tsc = gameObject.GetComponent<TypingSalmoController>();
+        sm = gameObject.GetComponent<SpawnManager>();
+        spawner = GameObject.Find("Spawners").GetComponentInChildren<Spawner>();
     }
 
     void Update()
@@ -45,6 +49,11 @@ public class GameManager : MonoBehaviour
                 tsc.isInFocus = true;
                 tm.SetAllTowersIsInFocus(false);
             }
+        }
+        if (spawner.squadIndex >= sm.wavesPerNight)
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                EndNight();
         }
     }
 
@@ -90,6 +99,7 @@ public class GameManager : MonoBehaviour
         nightTimes[nightLevel] = Time.time - nightStartTime;
         onEndNight?.Invoke();
         nightLevel++;
+        StartDay();
     }
 
     // Mostrar pantalla de game over con el botón de volver al inicio o reiniciar
