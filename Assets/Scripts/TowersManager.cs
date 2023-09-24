@@ -64,9 +64,8 @@ public class TowersManager : MonoBehaviour
         {
             if (item.gameObject.activeSelf)
             {
-                if (!item.Tower.isActive)
+                if (!item.Tower.isActive && item.TypingTower.gameObject.activeSelf)
                     item.TypingTower.ResumeTower();
-
             }
         }
     }
