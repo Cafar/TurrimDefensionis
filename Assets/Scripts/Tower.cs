@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
         isActive = false;
         panelImage.enabled = false;
         towerHealthbar.gameObject.SetActive(false);
-        tpc.gameObject.SetActive(false);
+        tpc.SetTowerPaused();
     }
 
     private void GameManager_OnStartNight()
@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour
         towerResistance = data.resistance;
         panelImage.enabled = true;
         towerHealthbar.gameObject.SetActive(true);
-        tpc.gameObject.SetActive(true);
+        tpc.ResumeTower();
     }
 
     private void Start()
@@ -264,7 +264,7 @@ public class Tower : MonoBehaviour
     private void DestroyTower()
     {
         Debug.Log("Tower Destroyed");
-        tpc.gameObject.SetActive(false);
+        tpc.SetTowerPaused();
         isActive = false;
         tm.ResumeAllTowers();
         if (destroyedImage != null)
