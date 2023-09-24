@@ -28,6 +28,8 @@ public class TypingTowerController : MonoBehaviour
     private GameModeColors wordsColors;
     [SerializeField]
     private string[] words = new string[1];
+    [SerializeField]
+    private Tower tower;
 
     [Header("UI")]
     [SerializeField]
@@ -38,6 +40,8 @@ public class TypingTowerController : MonoBehaviour
     private TMP_Text perfectText;
     [SerializeField]
     private TMP_Text failText;
+    [SerializeField]
+    private GameObject cooldownBar;
     //[Header("SOUNDS")]
     //[SerializeField]
     //private AudioSource perfectWord;
@@ -64,7 +68,7 @@ public class TypingTowerController : MonoBehaviour
     public bool isInFocus;
 
     private Sequence errorSeq;
-    private Tower tower;
+    private Image backgroundImage;
 
     public void ToggleReady()
     {
@@ -91,6 +95,7 @@ public class TypingTowerController : MonoBehaviour
     private void GameManager_OnStartDay()
     {
         SetTowerPaused();
+        backgroundImage.enabled = false;
     }
 
 
@@ -98,13 +103,15 @@ public class TypingTowerController : MonoBehaviour
     {
         ResumeTower();
         isInFocus = true;
+        backgroundImage.enabled = true;
     }
 
 
     private void Start()
     {
         SetTowerPaused();
-        tower = transform.parent.GetComponent<Tower>();
+        cooldownBar.SetActive(false);
+        backgroundImage = gameObject.GetComponent<Image>();
     }
 
     public void InitTower(string word)
@@ -247,6 +254,7 @@ public class TypingTowerController : MonoBehaviour
             perfectText.DOFade(0, 0.5f);
         });
         OnWordCompleted?.Invoke();
+        cooldownBar.SetActive(true);
         //perfectWord.Play();
     }
 

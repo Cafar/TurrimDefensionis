@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 668d6630328ca7f49946175ceefe434a, type: 2}
+  cooldownHandler: {fileID: 4124338712775193404}
+  destroyedImage: {fileID: 21300000, guid: debb8e0dc574442408697709d1880c1f, type: 3}
   isActive: 0
   showGizmos: 0
   autonomyTimer: 0
@@ -148,7 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 7972505701935909422}
-  typingTower: {fileID: 6880006778795661708}
 --- !u!1001 &6880006778436694785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,6 +157,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7972505701935909393}
     m_Modifications:
+    - target: {fileID: 1080696899195303173, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 7972505701935909422}
+    - target: {fileID: 1197218914820543781, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3304692409669025608, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
       propertyPath: m_Name
       value: TextTurrets
@@ -252,17 +261,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5338647606240474524, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338647606240474524, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
---- !u!114 &6880006778795661708 stripped
+--- !u!114 &4124338712775193404 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 916105869, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7369623485886545981, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
   m_PrefabInstance: {fileID: 6880006778436694785}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 388857934b2d9f244b4f9cb082fd76f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 584bbb03f7756fc448fc03f39600f1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8261309851980778568 stripped

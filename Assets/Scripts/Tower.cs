@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
     [Header("Configuration")]
     public TowerData data;
+    public CooldownHandler cooldownHandler;
+    public Sprite destroyedImage;
+    public float destroyedImageScale = 1f;
     [Space(10)]
 
     [Header("Testing")]
@@ -20,6 +24,7 @@ public class Tower : MonoBehaviour
     private SpriteRenderer sp;
     private int towerResistance;
     private TowersManager tm;
+    private TypingTowerController tpc;
 
     private void OnEnable()
     {
@@ -48,6 +53,7 @@ public class Tower : MonoBehaviour
             sp.sprite = data.mapImage;
             sp.transform.localScale = Vector3.one * data.imageScaling;
         }
+        tpc = gameObject.GetComponentInChildren<TypingTowerController>();
     }
 
     private void Update()
@@ -96,13 +102,15 @@ public class Tower : MonoBehaviour
         }
         isActive = false;
         autonomyTimer = 0f;
+        cooldownHandler.gameObject.SetActive(false);
+        tpc.ResumeTower();
     }
 
     public void ActivateTower()
     {
         isActive = true;
         StartCoroutine(StartTowerCooldown());
-        // activate cooldown ui
+        cooldownHandler.gameObject.SetActive(true);
     }
 
 
@@ -249,5 +257,10 @@ public class Tower : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         isActive = false;
         tm.ResumeAllTowers();
+        if (destroyedImage != null)
+        {
+            transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = destroyedImage;
+            transform.localScale = Vector3.one * destroyedImageScale;
+        }
     }
 }
