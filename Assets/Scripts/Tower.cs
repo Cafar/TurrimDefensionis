@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
     private void GameManager_OnStartDay()
     {
         isActive = false;
-        panelImage.enabled = false;
+        //panelImage.enabled = false;
         towerHealthbar.gameObject.SetActive(false);
         tpc.SetTowerPaused();
     }
@@ -46,7 +46,7 @@ public class Tower : MonoBehaviour
     private void GameManager_OnStartNight()
     {
         towerResistance = data.resistance;
-        panelImage.enabled = true;
+        //panelImage.enabled = true;
         towerHealthbar.gameObject.SetActive(true);
         tpc.ResumeTower();
     }
