@@ -427,12 +427,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordsColors:
-    NormalColorText: {r: 1, g: 1, b: 1, a: 1}
-    CurrentCharColorText: {r: 0.959038, g: 1, b: 0, a: 1}
-    CorrectCharText: {r: 0.1010772, g: 1, b: 0, a: 1}
-    IncorrectCharText: {r: 1, g: 0, b: 0, a: 1}
+    NormalColorText: {r: 0, g: 0, b: 0, a: 1}
+    CurrentCharColorText: {r: 0, g: 0.07871564, b: 0.6415094, a: 1}
+    CorrectCharText: {r: 0.075989544, g: 0.745283, b: 0, a: 1}
+    IncorrectCharText: {r: 0.754717, g: 0, b: 0, a: 1}
   words:
   - 
+  tower: {fileID: 0}
   backgroundText: {fileID: 3304692408530943766}
   mainText: {fileID: 3304692409468838947}
   perfectText: {fileID: 2143343189}
@@ -774,7 +775,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3304692409669025610
 MonoBehaviour:
   m_ObjectHideFlags: 0

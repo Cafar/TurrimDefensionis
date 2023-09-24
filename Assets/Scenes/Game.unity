@@ -909,18 +909,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordsColors:
-    NormalColorText: {r: 1, g: 1, b: 1, a: 1}
-    CurrentCharColorText: {r: 0.8978462, g: 1, b: 0, a: 1}
-    CorrectCharText: {r: 0, g: 1, b: 0.025922537, a: 1}
-    IncorrectCharText: {r: 1, g: 0, b: 0, a: 1}
+    NormalColorText: {r: 0, g: 0, b: 0, a: 1}
+    CurrentCharColorText: {r: 0.03936458, g: 0, b: 0.745283, a: 1}
+    CorrectCharText: {r: 0, g: 0.6320754, b: 0.017351126, a: 1}
+    IncorrectCharText: {r: 0.754717, g: 0, b: 0, a: 1}
   salmoText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
     eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
     in culpa qui officia deserunt mollit anim id est laborum.
-  penaltyErrorSeconds: 1
-  secondsToBackLetter: 4
+  penaltyErrorSeconds: 0.5
+  secondsToBackLetter: 8
   mainText: {fileID: 373397332}
   isInFocus: 0
 --- !u!1 &326078974
@@ -2308,6 +2308,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 62347714}
+    - target: {fileID: 8261309852315178786, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309852315178786, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309852315178786, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309852315178786, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
 --- !u!114 &767621250 stripped
