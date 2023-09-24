@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "Vac\xEDo 1"
   m_EditorClassIdentifier: 
   squadSpawnOrder:
-  - {fileID: 11400000, guid: 8ebf46e07707c8149b6d307b1aa2644f, type: 2}
-  - {fileID: 11400000, guid: 2fbf6eb78e1551d4bab1c9935e5f05b5, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: a37e550259a6db34c939d3135255fd0a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
