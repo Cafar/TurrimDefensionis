@@ -70,18 +70,18 @@ public class TypingTowerController : MonoBehaviour
     private Sequence errorSeq;
     private Image backgroundImage;
 
-    public void ToggleReady()
-    {
-        if (isReady)
-            isReady = false;
-        else
-            isReady = true;
-    }
+    //public void ToggleReady()
+    //{
+    //    if (isReady)
+    //        isReady = false;
+    //    else
+    //        isReady = true;
+    //}
 
-    public void SetIsReady(bool ready)
-    {
-        isReady = ready;
-    }
+    //public void SetIsReady(bool ready)
+    //{
+    //    isReady = ready;
+    //}
         
 
 
@@ -114,10 +114,10 @@ public class TypingTowerController : MonoBehaviour
         backgroundImage = gameObject.GetComponent<Image>();
     }
 
-    public void InitTower(string word)
+    private IEnumerator InitTower(string word)
     {
+        yield return new WaitForEndOfFrame();
         indexCharPos = -1;
-        isReady = true;
         currentWord = word;
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><voffset=0.2em>"
             + currentWord.Substring(0, 1) + "</voffset></color>" + currentWord[1..];
@@ -125,6 +125,7 @@ public class TypingTowerController : MonoBehaviour
         mainText.color = wordsColors.NormalColorText;
         backgroundText.SetActive(true);
         SetNextKeyToPush();
+        isReady = true;
     }
 
     // Update is called once per frame
@@ -266,7 +267,7 @@ public class TypingTowerController : MonoBehaviour
 
     public void ResumeTower()
     {
-        InitTower(GetRandomWord());
+        StartCoroutine(InitTower(GetRandomWord()));
     }
 
 
