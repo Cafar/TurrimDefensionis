@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerType: 0
   resistance: 0
-  autonomyTime: 0
+  autonomyTime: 9
   mapImage: {fileID: 21300000, guid: cc00c938cc1fc0544aff2ab379b4c7e5, type: 3}
   imageScaling: 0.4
   attackEffect: {fileID: 0}
