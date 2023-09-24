@@ -11,6 +11,8 @@ public class Tower : MonoBehaviour
     public Sprite destroyedImage;
     public float destroyedImageScale = 1f;
     public Image panelImage;
+    public Slider towerHealthbar;
+    public TypingTowerController tpc;
     [Space(10)]
 
     [Header("Testing")]
@@ -25,8 +27,7 @@ public class Tower : MonoBehaviour
     private SpriteRenderer sp;
     private int towerResistance;
     private TowersManager tm;
-    private TypingTowerController tpc;
-    private Slider towerHealthbar;
+    
 
     private void OnEnable()
     {
@@ -61,8 +62,6 @@ public class Tower : MonoBehaviour
             sp.sprite = data.mapImage;
             sp.transform.localScale = Vector3.one * data.imageScaling;
         }
-        tpc = gameObject.GetComponentInChildren<TypingTowerController>();
-        towerHealthbar = GetComponentInChildren<Slider>();
         towerHealthbar.value = data.resistance;
     }
 
