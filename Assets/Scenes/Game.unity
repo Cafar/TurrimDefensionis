@@ -540,6 +540,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5485275533102048463, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: mater dolorosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: miraculum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: monasterium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: monstra timete
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: moriuntur pagani
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: mors vampiro
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: bilis
@@ -596,6 +628,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: bf047b872e476e34598be52580043e57, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7248
@@ -615,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309851980778570, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778573, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_Camera
@@ -1892,37 +1932,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
-    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
-      propertyPath: words.Array.size
+    - target: {fileID: 5485275533102048463, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
-      value: hola
+      value: decapitatio
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[1]
-      value: hola
+      value: dei genitrix
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[2]
-      value: hola
+      value: descendere
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[3]
-      value: hola
+      value: dimittis
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[4]
-      value: hola
+      value: divina potentia
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[5]
-      value: hola
+      value: dominus deus
       objectReference: {fileID: 0}
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[6]
-      value: hola
+      value: tutela trinitatis
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: taestamentum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: tormentum
       objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
@@ -1977,11 +2029,19 @@ PrefabInstance:
       value: Tower (10)
       objectReference: {fileID: 0}
     - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 00a65db8c981ed5429b2baba6cf0ae4d, type: 2}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: showGizmos
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778569, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309851980778570, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778573, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
@@ -2312,8 +2372,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
     - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
-      value: casa
+      value: obsecare
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: omnipotentia
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: oratio ecclesiae
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: paenitentia
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: passio haeretici
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: peccatores mori
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: pietas popularis
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: potestas solaris
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: purgatorium
       objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
@@ -2329,7 +2425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972505701935909393, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119.2
+      value: 120.05
       objectReference: {fileID: 0}
     - target: {fileID: 7972505701935909393, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2366,6 +2462,10 @@ PrefabInstance:
     - target: {fileID: 7972505701935909395, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_Name
       value: Tower (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309851980778570, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778573, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_Camera
@@ -2913,6 +3013,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5485275533102048463, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: redemptor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: requisece in pace
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: reverte ad infernos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: rosarium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: vade retro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: venerato domino
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: via ad infernum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: virgo maria
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: vos trahatis
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: farina
@@ -2969,6 +3113,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 00a65db8c981ed5429b2baba6cf0ae4d, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3447
@@ -3263,6 +3411,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5485275533102048463, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: sacramentum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: sacratum cor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: sacrificium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: sancta maria
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: sepultura
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: sitiens infixit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: sol divinus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: spiritus sanctus
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: dies
@@ -3331,6 +3519,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: b1f51c09a7bff1e46808f6c07dd30324, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5215
@@ -3350,6 +3542,10 @@ PrefabInstance:
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.0999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309851980778570, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778573, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_Camera
@@ -3956,6 +4152,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: caelos aperire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: castigatio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: cinis pagana
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: cor impurum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: crucifixio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: culpa divina
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: atrium
@@ -4012,6 +4236,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: bf047b872e476e34598be52580043e57, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8206277
@@ -4116,6 +4344,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: episcopus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: essentia solis
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: evangelizatio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: exommunicatio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: exularet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: baptismus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: beatus deus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: benedictio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: brachium dei
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: erile
@@ -4172,6 +4440,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: b1f51c09a7bff1e46808f6c07dd30324, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3801
@@ -4284,6 +4556,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5485275533102048463, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: gladius dei
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: gloria patri
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: gothicus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: gratia divina
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: ictus lucis
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: in nomine patris
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: in pace mori
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: iter vetitum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: iudicium finale
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: hilium
@@ -4294,7 +4610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972505701935909393, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.53
+      value: 3.95
       objectReference: {fileID: 0}
     - target: {fileID: 7972505701935909393, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4593,6 +4909,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: fides catholica
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: fides cruciata
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: flagellum dei
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: foras hinc
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: furor argenti
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: lapidatio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: laudate dominum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: lex orandi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[8]
+      value: lux aeterna
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: gorrino
@@ -4649,6 +5005,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a4274a0a22d1bc4bbe462aa8eff2dc0, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1768
@@ -5123,6 +5483,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 250364554}
     m_Modifications:
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[0]
+      value: ubiquitas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[1]
+      value: ultio divina
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[2]
+      value: universitas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[3]
+      value: agnus dei
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[4]
+      value: angelus crux
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[5]
+      value: angelus custos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[6]
+      value: aqua sancta
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874340622581188100, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: words.Array.data[7]
+      value: argentum omnibus
+      objectReference: {fileID: 0}
     - target: {fileID: 6880006778795661708, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: words.Array.data[0]
       value: cartus
@@ -5179,6 +5575,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7972505701935909422, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a4274a0a22d1bc4bbe462aa8eff2dc0, type: 2}
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.552977
@@ -5198,6 +5598,10 @@ PrefabInstance:
     - target: {fileID: 8261309851373997078, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261309851980778570, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261309851980778573, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_Camera
