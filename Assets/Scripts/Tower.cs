@@ -20,6 +20,7 @@ public class Tower : MonoBehaviour
     public Image textBackground;
     public Image cooldownFill;
     public GameObject towerPlaceNumber;
+    public GameObject backgroundFocus;
 
     [Space(10)]
 
@@ -66,6 +67,8 @@ public class Tower : MonoBehaviour
     {
         towerHealthbarEnabler.SetActive(setVisible);
         textBackground.enabled = setVisible;
+        if (setVisible == false)
+            backgroundFocus.SetActive(false);
         cooldownFill.enabled = false;
         towerPlaceNumber.SetActive(!setVisible);
 }
