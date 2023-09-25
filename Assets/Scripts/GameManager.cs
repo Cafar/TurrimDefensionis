@@ -20,15 +20,17 @@ public class GameManager : MonoBehaviour
 
     [Header("SOUNDS")]
     [SerializeField]
-    private AudioSource gameOver;
+    private AudioSource audioSource;
     [SerializeField]
-    private AudioSource endNight;
+    private AudioClip endNightClip;
     [SerializeField]
-    private AudioSource baseDay;
+    private AudioClip baseDayClip;
     [SerializeField]
-    private AudioSource baseNight;
+    private AudioClip baseNightClip;
     [SerializeField]
-    private AudioSource baseLastNight;
+    private AudioClip baseLastNightClip;
+    [SerializeField]
+    private AudioClip gameOverClip;
     //[SerializeField]
     //private AudioSource failComplex;
     //[SerializeField]
@@ -141,6 +143,8 @@ public class GameManager : MonoBehaviour
         nightBackground.SetActive(false);
         dayBackground.SetActive(true);
         descriptionText.text = initialDescriptionText;
+        audioSource.clip = baseDayClip;
+        audioSource.Play();
     }
 
     // Desactiva todos los elementos de UI de día
@@ -160,6 +164,9 @@ public class GameManager : MonoBehaviour
         psalmFocus.SetActive(false);
         onStartNight?.Invoke();
         nightStartTime = Time.time;
+        audioSource.clip = baseNightClip;
+        audioSource.Play();
+
     }
 
     // Calcular el favor divino conseguido en la noche
@@ -169,6 +176,7 @@ public class GameManager : MonoBehaviour
         onEndNight?.Invoke();
         nightLevel++;
         StartDay();
+        audioSource.PlayOneShot(endNightClip);
     }
 
     // Mostrar pantalla de game over con el botón de volver al inicio o reiniciar
@@ -176,6 +184,7 @@ public class GameManager : MonoBehaviour
     {
         nightTimes[nightLevel] = Time.time - nightStartTime;
         onGameOver?.Invoke();
+        audioSource.PlayOneShot(gameOverClip);
     }
 
     public void ReturnToMenu()

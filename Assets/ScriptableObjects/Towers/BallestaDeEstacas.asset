@@ -23,6 +23,8 @@ MonoBehaviour:
   attackDamage: 29
   attackRate: 1
   attackAOE: 0
+  attackSound: {fileID: 8300000, guid: 6115375698a48994588b45602e0d4071, type: 3}
+  destroySound: {fileID: 8300000, guid: 39bc5a6f20810b94ca6cd80af75b5ca5, type: 3}
   towerName: Ballesta de Estacas
   description: "Lanza estacas purificadas al enemigo m\xE1s cercano hasta matarlo.\r\n\n\n\tDa\xF1o:
     45 | Rango: medio | Cadencia: 1"

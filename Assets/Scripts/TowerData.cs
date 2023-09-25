@@ -36,6 +36,8 @@ public class TowerData : ScriptableObject
     public int attackDamage;
     public float attackRate;
     public float attackAOE;
+    public AudioClip attackSound;
+    public AudioClip destroySound;
     [Space(10)]
 
     [Header("Shop")]
