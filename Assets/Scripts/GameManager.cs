@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private TypingSalmoController tsc;
     private SpawnManager sm;
     private Spawner spawner;
+    private bool isDay;
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
                 tm.SetAllTowersIsInFocus(false);
             }
         }
-        if (spawner.squadIndex >= sm.wavesPerNight)
+        if (!isDay && spawner.squadIndex >= sm.wavesPerNight)
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
                 EndNight();
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     // (Primer día) Activa banner tutorial día
     public void StartDay()
     {
+        isDay = true;
         onStartDay?.Invoke();
         nightUI.SetActive(false);
         dayUI.SetActive(true);
@@ -89,6 +91,7 @@ public class GameManager : MonoBehaviour
     // (Primera noche) Activa banner tutorial noche
     public void StartNight()
     {
+        isDay = false;
         dayUI.SetActive(false);
         nightUI.SetActive(true);
         dayBackground.SetActive(false);

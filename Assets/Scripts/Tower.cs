@@ -48,15 +48,22 @@ public class Tower : MonoBehaviour
     {
         towerResistance = data.resistance;
         //panelImage.enabled = true;
-        towerHealthbar.gameObject.SetActive(true);
-        tpc.ResumeTower();
+        if (data.resistance == 0)
+        {
+            towerHealthbar.gameObject.SetActive(true);
+            tpc.ResumeTower();
+        }
     }
 
     public void SetTowerData(TowerData data)
     {
         towerResistance = data.resistance;
-        sp.sprite = data.mapImage;
-        sp.transform.localScale = Vector3.one * data.imageScaling;
+        if (data.mapImage != null)
+        {
+            sp.sprite = data.mapImage;
+            sp.transform.localScale = Vector3.one * data.imageScaling;
+
+        }
         towerHealthbar.value = data.resistance;
     }
 
