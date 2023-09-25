@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [TextArea(3, 10)] public string initialDescriptionText;
     public TextMeshProUGUI descriptionText;
     public GameObject psalmFocus;
+    public TextMeshProUGUI clock;
 
     [Header("SOUNDS")]
     [SerializeField]
@@ -60,6 +61,37 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        UpdateClock();
+        CheckFocus();
+        CheckPause();
+        if (!isDay && spawner.squadIndex >= sm.wavesPerNight)
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                EndNight();
+        }
+        
+    }
+
+    private void CheckPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isDay)
+        {
+            if (Time.timeScale == 1)
+            {
+                tm.PauseAllTowers();
+                Time.timeScale = 0;
+            }
+            else
+            {
+                tm.ResumeAllTowers();
+                Time.timeScale = 1;
+            }
+
+        }
+    }
+
+    private void CheckFocus()
+    {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (tsc.isInFocus)
@@ -75,21 +107,31 @@ public class GameManager : MonoBehaviour
                 tm.SetAllTowersIsInFocus(false);
             }
         }
-        if (!isDay && spawner.squadIndex >= sm.wavesPerNight)
+    }
+
+    private void UpdateClock()
+    {
+        if (!isDay)
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-                EndNight();
+            int time = 6 + (((spawner.squadIndex - 1) / 2)) % 6;
+            string amOrPm = " pm";
+            if ((((spawner.squadIndex - 1) / 2)) / 6 == 1)
+            {
+                amOrPm = " am";
+                time -= 6;
+            }
+            clock.text = time.ToString() + amOrPm;
         }
     }
 
-    // Desactiva y resetea las palabras de activación de torres
-    // Desactiva y resetea salmo
-    // Desactiva todos los elementos de UI de noche
+    // Desactiva y resetea las palabras de activación de torres (Done)
+    // Desactiva y resetea salmo (Done)
+    // Desactiva todos los elementos de UI de noche (Done)
     // Desactiva todas las torretas (Done)
     // Desactiva los spawners de enemigos (Done)
     // Destruye todos los enemigos (Done)
     // Pone al máximo la vida de la iglesia (Done)
-    // Activa todos los elementos de UI de día
+    // Activa todos los elementos de UI de día (Done)
     // Activa música de día
     // (Primer día) Activa banner tutorial día
     public void StartDay()
