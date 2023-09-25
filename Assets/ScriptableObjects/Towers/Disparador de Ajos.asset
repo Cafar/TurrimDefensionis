@@ -24,7 +24,8 @@ MonoBehaviour:
   attackRate: 0.3
   attackAOE: 0
   towerName: Disparador de ajos
-  description: "Est\xE1 casi, va ya est\xE1."
+  description: "Dispara ajos a gran velocidad contra el enemigo m\xE1s cercano hasta
+    matarlo.\r\n\r\n\tDa\xF1o: 17 Rango: 15 Cadencia: 0.3 sec"
   shopImage: {fileID: 0}
-  cost: 250
+  cost: 150
   possibleLocations: 

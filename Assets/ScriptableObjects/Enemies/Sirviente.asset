@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8320ed4222abc4db80e285c12a28ac, type: 3}
   m_Name: Sirviente
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   moveSpeed: 2
-  attackDamage: 0
+  attackDamage: 50
   loot: 0
   mapImage: {fileID: 21300000, guid: 9ff18781170e5a54eb4c2fd3a3336e8b, type: 3}
   imageScaling: 0.19

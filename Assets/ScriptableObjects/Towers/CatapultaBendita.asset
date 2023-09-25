@@ -24,7 +24,9 @@ MonoBehaviour:
   attackRate: 4
   attackAOE: 6.5
   towerName: Catapulta bendita
-  description: Te queda un alioli divino
+  description: "Lanza una gran bomba de agua bendita que inflige mucho da\xF1o en
+    \xE1rea y ataca al enemigo con mayor\r\nsalud.\r\n\r\n\tDa\xF1o: 150 Rango: 50
+    Cadencia: 3 sec"
   shopImage: {fileID: 0}
-  cost: 400
+  cost: 350
   possibleLocations: 

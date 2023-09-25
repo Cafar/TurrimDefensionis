@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8320ed4222abc4db80e285c12a28ac, type: 3}
   m_Name: Ghoul 1
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 75
   moveSpeed: 5
-  attackDamage: 25
+  attackDamage: 50
   loot: 0
   mapImage: {fileID: 21300000, guid: 8227e363081b1f649b1ac8871bdf2755, type: 3}
   imageScaling: 0.11
