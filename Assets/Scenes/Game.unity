@@ -4797,7 +4797,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3112624772216666095, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 4.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112624772216666095, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112624772216666095, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00000041723
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112624772216666095, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3263929465445928544, guid: 4a6d0355e4172674bb404b6a374e1b59, type: 3}
       propertyPath: m_text
@@ -6846,8 +6858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199c0057c6167be4c9aa0185b61b8bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 5000
+  maxHealth: 5000
 --- !u!65 &956379884
 BoxCollider:
   m_ObjectHideFlags: 0
