@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: WorldUI
+    uniqueID: 1538847015
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
