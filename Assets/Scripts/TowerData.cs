@@ -38,6 +38,7 @@ public class TowerData : ScriptableObject
     public float attackAOE;
     public AudioClip attackSound;
     public AudioClip destroySound;
+    public RuntimeAnimatorController animator;
     [Space(10)]
 
     [Header("Shop")]

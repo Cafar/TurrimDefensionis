@@ -2324,7 +2324,6 @@ GameObject:
   - component: {fileID: 310613577}
   - component: {fileID: 310613578}
   - component: {fileID: 310613579}
-  - component: {fileID: 310613580}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2573,14 +2572,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &310613580
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310613572}
-  m_Enabled: 1
 --- !u!4 &318928676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b780b44973c09e44e88314506d533638, type: 3}
