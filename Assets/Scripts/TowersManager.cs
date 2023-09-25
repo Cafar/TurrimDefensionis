@@ -77,6 +77,7 @@ public class TowersManager : MonoBehaviour
             if (item.gameObject.activeSelf)
             {
                 item.Tower.SetNightUIVisibility(false);
+                item.Tower.SetDayUIVisibility(true);
                 item.Tower.isActive = false;
                 item.Tower.backgroundFocus.SetActive(false);
                 item.TypingTower.SetTowerPaused();
@@ -101,6 +102,7 @@ public class TowersManager : MonoBehaviour
                 {
                     item.Tower.SetNightUIVisibility(false);
                 }
+                item.Tower.SetDayUIVisibility(false);
             }
         }
         SetAllTowersIsInFocus(true);
@@ -115,6 +117,7 @@ public class TowersManager : MonoBehaviour
                 if (!item.Tower.isActive && !item.Tower.isDestroyed && item.TypingTower.gameObject.activeSelf && item.Tower.data.resistance > 0)
                 {
                     item.Tower.SetNightUIVisibility(true);
+                    item.Tower.SetDayUIVisibility(false);
                     item.Tower.SetTowerData(item.Tower.data);
                     item.TypingTower.ResumeTower();
                 }

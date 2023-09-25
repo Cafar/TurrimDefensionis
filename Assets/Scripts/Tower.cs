@@ -21,6 +21,7 @@ public class Tower : MonoBehaviour
     public Image cooldownFill;
     public GameObject towerPlaceNumber;
     public GameObject backgroundFocus;
+    public GameObject dayUI;
 
     [Space(10)]
 
@@ -88,7 +89,12 @@ public class Tower : MonoBehaviour
             backgroundFocus.SetActive(false);
         cooldownFill.enabled = false;
         towerPlaceNumber.SetActive(!setVisible);
-}
+    }
+
+    public void SetDayUIVisibility(bool setVisible)
+    {
+        dayUI.SetActive(setVisible);
+    }
 
     private void Start()
     {
