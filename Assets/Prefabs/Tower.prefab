@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3504715685626581836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,11 +548,6 @@ MonoBehaviour:
   isDestroyed: 0
   showGizmos: 0
   autonomyTimer: 0
-  buildTower: {fileID: 0}
-  destroyTower: {fileID: 0}
-  ballesta: {fileID: 0}
-  canon: {fileID: 0}
-  catapulta: {fileID: 0}
 --- !u!114 &3999195876345214595
 MonoBehaviour:
   m_ObjectHideFlags: 0
