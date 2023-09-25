@@ -28,6 +28,8 @@ public class TowersManager : MonoBehaviour
     {
         Instance = this;
         GameManager.onStartNight += GameManager_OnGameStart;
+        GameManager.onStartDay += GameManager_OnStartDay;
+        GameManager.onStartNight += GameManager_OnStartNight;
     }
 
     private void Update()
@@ -39,6 +41,16 @@ public class TowersManager : MonoBehaviour
     }
 
     private void GameManager_OnGameStart()
+    {
+        ResumeAllTowers();
+    }
+
+    private void GameManager_OnStartDay()
+    {
+        PauseAllTowers();
+    }
+
+    private void GameManager_OnStartNight()
     {
         ResumeAllTowers();
     }
@@ -58,13 +70,24 @@ public class TowersManager : MonoBehaviour
         }
     }
 
+    public void PauseAllTowers()
+    {
+        foreach (var item in towers)
+        {
+            if (item.gameObject.activeSelf )
+            {
+                item.TypingTower.SetTowerPaused();
+            }
+        }
+    }
+
     public void ResumeAllTowers()
     {
         foreach (var item in towers)
         {
             if (item.gameObject.activeSelf)
             {
-                if (!item.Tower.isActive && item.TypingTower.gameObject.activeSelf)
+                if (!item.Tower.isActive && item.TypingTower.gameObject.activeSelf && item.Tower.data.resistance > 0)
                     item.TypingTower.ResumeTower();
             }
         }

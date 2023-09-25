@@ -79,7 +79,7 @@ public class TypingTowerController : MonoBehaviour
 
     private void GameManager_OnStartDay()
     {
-        SetTowerPaused();
+        //SetTowerPaused();
         backgroundImage.enabled = false;
     }
 
@@ -88,7 +88,7 @@ public class TypingTowerController : MonoBehaviour
     {
         if (tower.data.resistance == 0)
             return;
-        ResumeTower();
+        //ResumeTower();
         isInFocus = true;
         backgroundImage.enabled = true;
     }
@@ -97,7 +97,7 @@ public class TypingTowerController : MonoBehaviour
     private void Start()
     {
         SetTowerPaused();
-        cooldownBar.SetActive(false);
+        //cooldownBar.SetActive(false);
         backgroundImage = gameObject.GetComponent<Image>();
     }
 
@@ -110,7 +110,7 @@ public class TypingTowerController : MonoBehaviour
             + currentWord.Substring(0, 1) + "</voffset></color>" + currentWord[1..];
 
         mainText.color = wordsColors.NormalColorText;
-        backgroundText.SetActive(true);
+        //backgroundText.SetActive(true);
         SetNextKeyToPush();
         isReady = true;
     }
@@ -242,14 +242,14 @@ public class TypingTowerController : MonoBehaviour
             perfectText.DOFade(0, 0.5f);
         });
         OnWordCompleted?.Invoke();
-        cooldownBar.SetActive(true);
+        //cooldownBar.SetActive(true);
         //perfectWord.Play();
     }
 
     public void SetTowerPaused()
     {
         isReady = false;
-        backgroundText.SetActive(false);
+        //backgroundText.SetActive(false);
     }
 
     public void ResumeTower()
