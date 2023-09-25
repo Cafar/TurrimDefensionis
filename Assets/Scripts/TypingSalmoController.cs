@@ -53,14 +53,14 @@ public class TypingSalmoController : MonoBehaviour
     //[SerializeField]
     //private AudioSource switchSound;
 
+    public bool isInFocus;
+
     private GameManager gm;
     private string currentWord;
     private string keyPushedString;
     private char keyPushedChar;
     private char keyToPush;
     private int indexCharPos;
-    //private bool isPerfect;
-    public bool isInFocus;
     private float penaltyErrorSecondsElapsed;
     private float secondsToBackLetterElapsed;
 
@@ -69,8 +69,13 @@ public class TypingSalmoController : MonoBehaviour
 
     private void Start()
     {
-        InitSalmo();
+        GameManager.onStartNight += GameManager_OnStartNight;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    private void GameManager_OnStartNight()
+    {
+        InitSalmo();
     }
 
     public void InitSalmo()
