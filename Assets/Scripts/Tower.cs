@@ -39,6 +39,7 @@ public class Tower : MonoBehaviour
     {
         isActive = false;
         //panelImage.enabled = false;
+        SetTowerData(data);
         towerHealthbar.gameObject.SetActive(false);
         tpc.SetTowerPaused();
     }
