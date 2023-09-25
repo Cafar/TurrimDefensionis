@@ -541,6 +541,7 @@ MonoBehaviour:
   textBackground: {fileID: 4411716163244895678}
   cooldownFill: {fileID: 1391691584259923684}
   towerPlaceNumber: {fileID: 1928554803342222348}
+  backgroundFocus: {fileID: 439311976868011798}
   isActive: 0
   isDestroyed: 0
   showGizmos: 0
@@ -1068,6 +1069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+--- !u!1 &439311976868011798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6440726208718400535, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
+  m_PrefabInstance: {fileID: 6880006778436694785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1391691584259923684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5488473603442290149, guid: 35cd20c6f5df8ff40b820b8b5ff78d4d, type: 3}
