@@ -532,7 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 668d6630328ca7f49946175ceefe434a, type: 2}
   cooldownHandler: {fileID: 4124338712775193404}
-  destroyedImage: {fileID: 21300000, guid: debb8e0dc574442408697709d1880c1f, type: 3}
+  destroyedImage: {fileID: 21300000, guid: 8f8d646e8947cf641bd97f2579661834, type: 3}
   destroyedImageScale: 1
   panelImage: {fileID: 5066877238408664780}
   towerHealthbar: {fileID: 7802479395521297240}

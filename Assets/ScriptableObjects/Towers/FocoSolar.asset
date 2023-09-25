@@ -23,8 +23,10 @@ MonoBehaviour:
   attackDamage: 35
   attackRate: 1
   attackAOE: 1.5
-  towerName: Foco solar
-  description: Bronceado express
+  towerName: Foco Solar
+  description: "Proyecta un haz de luz fijo que atraviesa el camino, infligiendo
+    da\xF1o a los enemigos quelo atraviesen.\r\n\r\n\tDa\xF1o: 55 Rango: - Cadencia:
+    -"
   shopImage: {fileID: 0}
-  cost: 150
+  cost: 200
   possibleLocations: 

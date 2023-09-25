@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8320ed4222abc4db80e285c12a28ac, type: 3}
   m_Name: Alto 1
   m_EditorClassIdentifier: 
-  maxHealth: 240
+  maxHealth: 225
   moveSpeed: 4
   attackDamage: 250
   loot: 0

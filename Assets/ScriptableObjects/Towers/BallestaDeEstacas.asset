@@ -23,8 +23,9 @@ MonoBehaviour:
   attackDamage: 29
   attackRate: 1
   attackAOE: 0
-  towerName: Ballesta de estacas
-  description: "Est\xE1 casi, va ya est\xE1."
+  towerName: Ballesta de Estacas
+  description: "Lanza estacas purificadas al enemigo m\xE1s cercano hasta matarlo.\r\n\n\tDa\xF1o:
+    45 Rango: 15 Cadencia: 1 sec"
   shopImage: {fileID: 0}
   cost: 100
   possibleLocations: 
