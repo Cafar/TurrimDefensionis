@@ -8,11 +8,17 @@ public class Tower : MonoBehaviour
     [Header("Configuration")]
     public TowerData data;
     public CooldownHandler cooldownHandler;
+    public Slider towerHealthbar;
     public Sprite destroyedImage;
     public float destroyedImageScale = 1f;
-    public Image panelImage;
-    public Slider towerHealthbar;
     public TypingTowerController tpc;
+    [Space(10)]
+
+    [Header("UI")]
+    public GameObject towerHealthbarEnabler;
+    public Image textBackground;
+    public Image cooldownFill;
+
     [Space(10)]
 
     [Header("Testing")]
@@ -37,22 +43,13 @@ public class Tower : MonoBehaviour
 
     private void GameManager_OnStartDay()
     {
-        isActive = false;
-        //panelImage.enabled = false;
-        SetTowerData(data);
-        towerHealthbar.gameObject.SetActive(false);
-        tpc.SetTowerPaused();
+        //isActive = false;
+        //SetTowerData(data);
     }
 
     private void GameManager_OnStartNight()
     {
         towerResistance = data.resistance;
-        //panelImage.enabled = true;
-        if (data.resistance == 0)
-        {
-            towerHealthbar.gameObject.SetActive(true);
-            tpc.ResumeTower();
-        }
     }
 
     public void SetTowerData(TowerData data)
@@ -67,12 +64,17 @@ public class Tower : MonoBehaviour
         towerHealthbar.value = data.resistance;
     }
 
+    public void SetNightUIVisibility(bool visible)
+    {
+        towerHealthbarEnabler.SetActive(visible);
+        textBackground.enabled = visible;
+        cooldownFill.enabled = visible;
+}
+
     private void Start()
     {
         tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
         sp = gameObject.GetComponentInChildren<SpriteRenderer>();
-        isActive = false;
-        SetTowerData(data);
     }
 
     private void Update()
@@ -121,7 +123,7 @@ public class Tower : MonoBehaviour
         }
         isActive = false;
         autonomyTimer = 0f;
-        cooldownHandler.gameObject.SetActive(false);
+        //cooldownHandler.gameObject.SetActive(false);
         tpc.ResumeTower();
     }
 
@@ -129,7 +131,7 @@ public class Tower : MonoBehaviour
     {
         isActive = true;
         StartCoroutine(StartTowerCooldown());
-        cooldownHandler.gameObject.SetActive(true);
+        //cooldownHandler.gameObject.SetActive(true);
     }
 
 
