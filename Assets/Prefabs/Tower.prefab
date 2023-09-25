@@ -542,10 +542,16 @@ MonoBehaviour:
   cooldownFill: {fileID: 1391691584259923684}
   towerPlaceNumber: {fileID: 1928554803342222348}
   backgroundFocus: {fileID: 439311976868011798}
+  dayUI: {fileID: 1928554803342222348}
   isActive: 0
   isDestroyed: 0
   showGizmos: 0
   autonomyTimer: 0
+  buildTower: {fileID: 0}
+  destroyTower: {fileID: 0}
+  ballesta: {fileID: 0}
+  canon: {fileID: 0}
+  catapulta: {fileID: 0}
 --- !u!114 &3999195876345214595
 MonoBehaviour:
   m_ObjectHideFlags: 0

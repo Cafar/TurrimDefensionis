@@ -111,7 +111,7 @@ public class TypingSalmoController : MonoBehaviour
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab) || !isInFocus) return;
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape) || !isInFocus) return;
 
                 if (Input.GetKeyDown(key))
                 {
