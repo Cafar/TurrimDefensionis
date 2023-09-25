@@ -29,7 +29,7 @@ public class TypingSalmoController : MonoBehaviour
     [SerializeField]
     private GameModeColors wordsColors;
     [SerializeField]
-    private string salmoText;
+    [TextArea(3, 10)] private string[] salmoText;
     [SerializeField]
     private float penaltyErrorSeconds;
     [SerializeField]
@@ -76,7 +76,7 @@ public class TypingSalmoController : MonoBehaviour
     public void InitSalmo()
     {
         indexCharPos = -1;
-        currentWord = salmoText;
+        currentWord = salmoText[gm.nightLevel];
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><voffset=0.2em>"
             + currentWord.Substring(0, 1) + "</voffset></color>" + currentWord[1..];
         penaltyErrorSecondsElapsed = penaltyErrorSeconds;
