@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject nightUI;
     public GameObject dayBackground;
     public GameObject nightBackground;
+    [TextArea(3, 10)] public string initialDescriptionText;
+    public TextMeshProUGUI descriptionText;
 
     public static event Action onStartDay;
     public static event Action onStartNight;
@@ -74,6 +77,7 @@ public class GameManager : MonoBehaviour
         dayUI.SetActive(true);
         nightBackground.SetActive(false);
         dayBackground.SetActive(true);
+        descriptionText.text = initialDescriptionText;
     }
 
     // Desactiva todos los elementos de UI de día

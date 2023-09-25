@@ -22,7 +22,8 @@ public class TowerController : MonoBehaviour
 
     private void GameManager_OnStartDay()
     {
-        typingTower.gameObject.SetActive(true);
+        if (tower.data.resistance != 0)
+            typingTower.gameObject.SetActive(true);
     }
 
     private void TypingTower_OnFirstWordPushed()

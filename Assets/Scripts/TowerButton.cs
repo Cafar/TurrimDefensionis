@@ -10,7 +10,10 @@ public class TowerButton : MonoBehaviour
     public TextMeshProUGUI towerNameMP;
     public Image towerImage;
     public TextMeshProUGUI towerCostMP;
+    public Button[] buyButtons;
+    public TextMeshProUGUI descriptionText;
 
+    private EconomyManager em;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +22,31 @@ public class TowerButton : MonoBehaviour
         towerImage.sprite = data?.mapImage;
         towerImage.SetVerticesDirty();
         towerCostMP.text = data?.cost.ToString();
+        em = GameObject.Find("GameManager").GetComponent<EconomyManager>();
     }
+
+    private void Update()
+    {
+        CheckInteractable();
+    }
+
+    public void SetDescriptionText()
+    {
+        descriptionText.text = data.description;
+    }
+
+    private void CheckInteractable()
+    {
+        if (em.currentCoin < data.cost)
+        {
+            foreach (Button button in buyButtons)
+                button.interactable = false;
+        }
+        else
+        {
+            foreach (Button button in buyButtons)
+                button.interactable = true;
+        }
+    }
+
 }

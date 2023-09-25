@@ -342,7 +342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4075312065189587551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 993954516719448086}
+        m_TargetAssemblyTypeName: TowerButton, Assembly-CSharp
+        m_MethodName: SetDescriptionText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &8533041430779645783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1386,6 +1398,8 @@ MonoBehaviour:
   towerNameMP: {fileID: 1087596710446547903}
   towerImage: {fileID: 1087596711048392265}
   towerCostMP: {fileID: 1087596711060296137}
+  buyButtons: []
+  descriptionText: {fileID: 0}
 --- !u!1 &3010751848847835129
 GameObject:
   m_ObjectHideFlags: 0

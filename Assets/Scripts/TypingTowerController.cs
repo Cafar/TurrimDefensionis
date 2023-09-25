@@ -70,21 +70,6 @@ public class TypingTowerController : MonoBehaviour
     private Sequence errorSeq;
     private Image backgroundImage;
 
-    //public void ToggleReady()
-    //{
-    //    if (isReady)
-    //        isReady = false;
-    //    else
-    //        isReady = true;
-    //}
-
-    //public void SetIsReady(bool ready)
-    //{
-    //    isReady = ready;
-    //}
-        
-
-
     private void OnEnable()
     {
         GameManager.onStartDay += GameManager_OnStartDay;
@@ -101,6 +86,8 @@ public class TypingTowerController : MonoBehaviour
 
     private void GameManager_OnStartNight()
     {
+        if (tower.data.resistance == 0)
+            return;
         ResumeTower();
         isInFocus = true;
         backgroundImage.enabled = true;

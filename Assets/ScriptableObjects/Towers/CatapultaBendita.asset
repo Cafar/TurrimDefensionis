@@ -26,5 +26,5 @@ MonoBehaviour:
   towerName: Catapulta bendita
   description: Te queda un alioli divino
   shopImage: {fileID: 0}
-  cost: 0
+  cost: 400
   possibleLocations: 
