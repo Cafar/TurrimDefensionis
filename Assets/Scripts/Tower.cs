@@ -30,6 +30,23 @@ public class Tower : MonoBehaviour
     public bool showGizmos = true;
     public float autonomyTimer = 0f;
 
+    [Header("SOUNDS")]
+    [SerializeField]
+    private AudioSource buildTower;
+    [SerializeField]
+    private AudioSource destroyTower;
+    [SerializeField]
+    private AudioSource ballesta;
+    [SerializeField]
+    private AudioSource canon;
+    [SerializeField]
+    private AudioSource catapulta;
+    //[SerializeField]
+    //private AudioSource failComplex;
+    //[SerializeField]
+    //private AudioSource switchSound;
+
+
     private List<Enemy> enemiesInattackRange = new List<Enemy>();
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
     private Enemy currentTarget = null;
