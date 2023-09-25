@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed3c896336258ed45b26c1d7feaf9a11, type: 3}
-  m_Name: MorteroBendito
+  m_Name: CatapultaBendita
   m_EditorClassIdentifier: 
   towerType: 1
   resistance: 10
@@ -23,7 +23,7 @@ MonoBehaviour:
   attackDamage: 100
   attackRate: 4
   attackAOE: 6.5
-  towerName: Mortero bendito
+  towerName: Catapulta bendita
   description: Te queda un alioli divino
   shopImage: {fileID: 0}
   cost: 0

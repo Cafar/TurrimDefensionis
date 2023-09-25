@@ -51,18 +51,20 @@ public class Tower : MonoBehaviour
         tpc.ResumeTower();
     }
 
+    public void SetTowerData(TowerData data)
+    {
+        towerResistance = data.resistance;
+        sp.sprite = data.mapImage;
+        sp.transform.localScale = Vector3.one * data.imageScaling;
+        towerHealthbar.value = data.resistance;
+    }
+
     private void Start()
     {
         tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
-        towerResistance = data.resistance;
+        sp = gameObject.GetComponentInChildren<SpriteRenderer>();
         isActive = false;
-        if (data.mapImage != null)
-        {
-            sp = gameObject.GetComponentInChildren<SpriteRenderer>();
-            sp.sprite = data.mapImage;
-            sp.transform.localScale = Vector3.one * data.imageScaling;
-        }
-        towerHealthbar.value = data.resistance;
+        SetTowerData(data);
     }
 
     private void Update()
