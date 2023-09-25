@@ -30,7 +30,8 @@ public class TypingTowerController : MonoBehaviour
     private string[] words = new string[1];
     [SerializeField]
     private Tower tower;
-
+    [SerializeField]
+    private float holyErrorSeconds = 1;
     [Header("UI")]
     [SerializeField]
     private GameObject backgroundText;
@@ -66,7 +67,7 @@ public class TypingTowerController : MonoBehaviour
     //private bool isPerfect;
     private bool isReady;
     public bool isInFocus;
-
+    private float holyErrorSecondsElapsed;
     private Sequence errorSeq;
     private Image backgroundImage;
 
@@ -103,6 +104,7 @@ public class TypingTowerController : MonoBehaviour
     private IEnumerator InitTower(string word)
     {
         yield return new WaitForEndOfFrame();
+        holyErrorSecondsElapsed = 0;
         indexCharPos = -1;
         currentWord = word;
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><voffset=0.2em>"
@@ -118,6 +120,7 @@ public class TypingTowerController : MonoBehaviour
     {
         if (isReady && isInFocus)
         {
+            holyErrorSecondsElapsed += Time.deltaTime;
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
@@ -141,7 +144,7 @@ public class TypingTowerController : MonoBehaviour
         int auxIndexCharPosForBig = indexCharPos + 1;
         string offsetChar = "voffset=0.2em";
 
-        
+
 
         if (keyToPush == keyPushedChar)
         {
@@ -156,7 +159,7 @@ public class TypingTowerController : MonoBehaviour
             SetNextKeyToPush();
 
             //Si es la primera letra que activo, desactivo las otras torretas para que puedan activarse
-            if(indexCharPos == 1)
+            if (indexCharPos == 1)
             {
                 OnFirstWordPushed?.Invoke();
             }
@@ -168,8 +171,12 @@ public class TypingTowerController : MonoBehaviour
             {
                 return;
             }
-            FeedbackError();
-            tower.TakeDamage();
+            if (holyErrorSecondsElapsed >= holyErrorSeconds)
+            {
+                FeedbackError();
+                tower.TakeDamage();
+                holyErrorSecondsElapsed = 0;
+            }
             if (currentWord.Length > 1)
             {
                 string aux = currentWord.Substring(indexCharPos, 1);
