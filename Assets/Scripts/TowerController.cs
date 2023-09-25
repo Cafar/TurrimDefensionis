@@ -23,13 +23,14 @@ public class TowerController : MonoBehaviour
 
     private void GameManager_OnStartDay()
     {
-        tower.SetNightUIVisibility(false);
-        tower.isActive = false;
+        //tower.SetNightUIVisibility(false);
+        //tower.isActive = false;
     }
 
     private void GameManager_OnStartNight()
     {
-        tower.SetNightUIVisibility(true);
+        //tower.SetNightUIVisibility(true);
+        //tower.SetTowerData(tower.data);
     }
 
     private void TypingTower_OnFirstWordPushed()
