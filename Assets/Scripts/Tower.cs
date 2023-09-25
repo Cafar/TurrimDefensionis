@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
     private void GameManager_OnStartDay()
     {
         isActive = false;
-        panelImage.enabled = false;
+        //panelImage.enabled = false;
         towerHealthbar.gameObject.SetActive(false);
         tpc.SetTowerPaused();
     }
@@ -46,23 +46,25 @@ public class Tower : MonoBehaviour
     private void GameManager_OnStartNight()
     {
         towerResistance = data.resistance;
-        panelImage.enabled = true;
+        //panelImage.enabled = true;
         towerHealthbar.gameObject.SetActive(true);
         tpc.ResumeTower();
+    }
+
+    public void SetTowerData(TowerData data)
+    {
+        towerResistance = data.resistance;
+        sp.sprite = data.mapImage;
+        sp.transform.localScale = Vector3.one * data.imageScaling;
+        towerHealthbar.value = data.resistance;
     }
 
     private void Start()
     {
         tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
-        towerResistance = data.resistance;
+        sp = gameObject.GetComponentInChildren<SpriteRenderer>();
         isActive = false;
-        if (data.mapImage != null)
-        {
-            sp = gameObject.GetComponentInChildren<SpriteRenderer>();
-            sp.sprite = data.mapImage;
-            sp.transform.localScale = Vector3.one * data.imageScaling;
-        }
-        towerHealthbar.value = data.resistance;
+        SetTowerData(data);
     }
 
     private void Update()

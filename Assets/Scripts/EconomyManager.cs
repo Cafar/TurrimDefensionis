@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EconomyManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EconomyManager : MonoBehaviour
     public int maxReward = 1200;
     public float minNightTime = 60f;
     public float rewardMultiplier = 1.5f;
+    public TextMeshProUGUI coinText;
 
     [Space(10)]
 
@@ -39,12 +41,14 @@ public class EconomyManager : MonoBehaviour
         sm = gmObj.GetComponent<SpawnManager>();
     }
 
-    public bool SpendCoin(int coinToSpend)
+    private void Update()
     {
-        if (coinToSpend > currentCoin)
-            return false;
-        currentCoin -= coinToSpend;
-        return true;
+        coinText.text = currentCoin.ToString();
+    }
+
+    public void SpendCoin(TowerData data)
+    {
+        currentCoin -= data.cost;
     }
 
     private void GainCoin(int coinToGain)

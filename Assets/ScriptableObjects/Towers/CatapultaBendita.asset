@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed3c896336258ed45b26c1d7feaf9a11, type: 3}
-  m_Name: FocoSolar
+  m_Name: CatapultaBendita
   m_EditorClassIdentifier: 
-  towerType: 2
+  towerType: 1
   resistance: 10
-  autonomyTime: 23
-  mapImage: {fileID: 21300000, guid: a9dde19248cee5a4ea4d1f6a9885b413, type: 3}
-  imageScaling: 0.29
+  autonomyTime: 20
+  mapImage: {fileID: 21300000, guid: 7592099ea1d23254ea2d22061a657612, type: 3}
+  imageScaling: 0.35
   attackEffect: {fileID: 0}
-  targettingStrategy: 3
-  attackRange: 10
-  attackDamage: 35
-  attackRate: 1
-  attackAOE: 1.5
-  towerName: Foco solar
-  description: Bronceado express
+  targettingStrategy: 2
+  attackRange: 30
+  attackDamage: 100
+  attackRate: 4
+  attackAOE: 6.5
+  towerName: Catapulta bendita
+  description: Te queda un alioli divino
   shopImage: {fileID: 0}
-  cost: 150
+  cost: 400
   possibleLocations: 

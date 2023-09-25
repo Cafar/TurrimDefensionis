@@ -26,5 +26,5 @@ MonoBehaviour:
   towerName: Disparador de ajos
   description: "Est\xE1 casi, va ya est\xE1."
   shopImage: {fileID: 0}
-  cost: 0
+  cost: 250
   possibleLocations: 

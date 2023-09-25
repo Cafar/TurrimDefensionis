@@ -26,5 +26,5 @@ MonoBehaviour:
   towerName: canon de plata
   description: 
   shopImage: {fileID: 0}
-  cost: 0
+  cost: 150
   possibleLocations: 
