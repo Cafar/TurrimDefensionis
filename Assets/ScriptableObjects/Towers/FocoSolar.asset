@@ -23,9 +23,9 @@ MonoBehaviour:
   attackDamage: 35
   attackRate: 1
   attackAOE: 1.5
-  towerName: Foco solar
+  towerName: Foco Solar
   description: "Proyecta un haz de luz fijo que atraviesa el camino, infligiendo
-    da\xF1o a los enemigos que pasen por \xE9l.\r\n\r\n\tDa\xF1o: 55 Rango: - Cadencia:
+    da\xF1o a los enemigos quelo atraviesen.\r\n\r\n\tDa\xF1o: 55 Rango: - Cadencia:
     -"
   shopImage: {fileID: 0}
   cost: 200

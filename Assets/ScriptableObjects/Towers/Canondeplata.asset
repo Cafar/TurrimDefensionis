@@ -23,9 +23,9 @@ MonoBehaviour:
   attackDamage: 62
   attackRate: 1.5
   attackAOE: 0
-  towerName: canon de plata
-  description: "Dispara un potente proyectil al enemigo m\xE1s cercano y cambia de
-    objetivo tras el ataque.\r\n\r\n\tDa\xF1o: 90 Rango: 20 Cadencia: 1.3 sec"
+  towerName: "Ca\xF1\xF3n de Plata"
+  description: "Dispara un potente proyectil de plata al vampiro m\xE1s cercano.\n\r\n\tDa\xF1o:
+    90 Rango: 20 Cadencia: 1.3 sec"
   shopImage: {fileID: 0}
   cost: 200
   possibleLocations: 
