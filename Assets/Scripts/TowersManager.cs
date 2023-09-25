@@ -96,6 +96,10 @@ public class TowersManager : MonoBehaviour
                     item.Tower.isDestroyed = false;
                     item.TypingTower.ResumeTower();
                 }
+                else
+                {
+                    item.Tower.SetNightUIVisibility(false);
+                }
             }
         }
     }
