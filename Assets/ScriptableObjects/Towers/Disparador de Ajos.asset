@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Disparador de Ajos
   m_EditorClassIdentifier: 
   towerType: 0
-  resistance: 10
-  autonomyTime: 17
+  resistance: 7
+  autonomyTime: 18
   mapImage: {fileID: 21300000, guid: 08b6c9738242e56429571aeb4921b386, type: 3}
   imageScaling: 0.29
   attackEffect: {fileID: 0}
@@ -25,7 +25,7 @@ MonoBehaviour:
   attackAOE: 0
   towerName: Disparador de Ajos
   description: "Dispara ajos con gran cadencia contra el enemigo m\xE1s cercano hasta
-    matarlo.\r\n\r\n\n\tDa\xF1o: 17 | Rango: corto | Cadencia: 0.3 sec"
+    matarlo.\r\n\r\n\n\tDa\xF1o: 18 | Rango: corto | Cadencia: 0.3"
   shopImage: {fileID: 0}
   cost: 150
   possibleLocations: 

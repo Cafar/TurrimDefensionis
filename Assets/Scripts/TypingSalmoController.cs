@@ -34,6 +34,8 @@ public class TypingSalmoController : MonoBehaviour
     private float penaltyErrorSeconds;
     [SerializeField]
     private float secondsToBackLetter;
+    [SerializeField]
+    private float secondsToStartBackLetter;
     [Header("UI")]
     [SerializeField]
     private TMP_Text mainText;
@@ -63,6 +65,7 @@ public class TypingSalmoController : MonoBehaviour
     private int indexCharPos;
     private float penaltyErrorSecondsElapsed;
     private float secondsToBackLetterElapsed;
+    private float secondsToStartBackLetterElapsed;
 
 
     private Sequence errorSeq;
@@ -95,8 +98,9 @@ public class TypingSalmoController : MonoBehaviour
     {
         penaltyErrorSecondsElapsed += Time.deltaTime;
         secondsToBackLetterElapsed += Time.deltaTime;
+        secondsToStartBackLetterElapsed += Time.deltaTime;
 
-        if(secondsToBackLetterElapsed >= secondsToBackLetter)
+        if(secondsToStartBackLetterElapsed >= secondsToStartBackLetter && secondsToBackLetterElapsed >= secondsToBackLetter)
         {
             SetLastKeyToPush();
             secondsToBackLetterElapsed = 0;
@@ -140,6 +144,7 @@ public class TypingSalmoController : MonoBehaviour
                 + "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharFinalPos..] + "</color>";
             // typeCorrect.Play();
             SetNextKeyToPush();
+            secondsToStartBackLetterElapsed = 0;
             secondsToBackLetterElapsed = 0;
         }
         else

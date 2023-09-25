@@ -15,6 +15,23 @@ public class GameManager : MonoBehaviour
     public GameObject nightBackground;
     [TextArea(3, 10)] public string initialDescriptionText;
     public TextMeshProUGUI descriptionText;
+    public GameObject psalmFocus;
+
+    [Header("SOUNDS")]
+    [SerializeField]
+    private AudioSource gameOver;
+    [SerializeField]
+    private AudioSource endNight;
+    [SerializeField]
+    private AudioSource baseDay;
+    [SerializeField]
+    private AudioSource baseNight;
+    [SerializeField]
+    private AudioSource baseLastNight;
+    //[SerializeField]
+    //private AudioSource failComplex;
+    //[SerializeField]
+    //private AudioSource switchSound;
 
     public static event Action onStartDay;
     public static event Action onStartNight;
@@ -46,11 +63,13 @@ public class GameManager : MonoBehaviour
             if (tsc.isInFocus)
             {
                 tsc.isInFocus = false;
+                psalmFocus.SetActive(false);
                 tm.SetAllTowersIsInFocus(true);
             }
             else
             {
                 tsc.isInFocus = true;
+                psalmFocus.SetActive(true);
                 tm.SetAllTowersIsInFocus(false);
             }
         }
@@ -96,6 +115,7 @@ public class GameManager : MonoBehaviour
         nightUI.SetActive(true);
         dayBackground.SetActive(false);
         nightBackground.SetActive(true);
+        psalmFocus.SetActive(false);
         onStartNight?.Invoke();
         nightStartTime = Time.time;
     }

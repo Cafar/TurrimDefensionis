@@ -42,7 +42,7 @@ public class TowersManager : MonoBehaviour
 
     private void GameManager_OnGameStart()
     {
-        ResumeAllTowers();
+        //ResumeAllTowers();
     }
 
     private void GameManager_OnStartDay()
@@ -52,7 +52,7 @@ public class TowersManager : MonoBehaviour
 
     private void GameManager_OnStartNight()
     {
-        ResumeAllTowers();
+        StartAllTowers();
     }
 
     public void SetAllTowersUnreadyExcept(TypingTowerController tower)
@@ -74,11 +74,36 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            if (item.gameObject.activeSelf )
+            if (item.gameObject.activeSelf)
             {
+                item.Tower.SetNightUIVisibility(false);
+                item.Tower.isActive = false;
+                item.Tower.backgroundFocus.SetActive(false);
                 item.TypingTower.SetTowerPaused();
             }
         }
+    }
+
+    public void StartAllTowers()
+    {
+        foreach (var item in towers)
+        {
+            if (item.gameObject.activeSelf)
+            {
+                if (item.Tower.data.resistance > 0)
+                {
+                    item.Tower.SetNightUIVisibility(true);
+                    item.Tower.SetTowerData(item.Tower.data);
+                    item.Tower.isDestroyed = false;
+                    item.TypingTower.ResumeTower();
+                }
+                else
+                {
+                    item.Tower.SetNightUIVisibility(false);
+                }
+            }
+        }
+        SetAllTowersIsInFocus(true);
     }
 
     public void ResumeAllTowers()
@@ -87,8 +112,12 @@ public class TowersManager : MonoBehaviour
         {
             if (item.gameObject.activeSelf)
             {
-                if (!item.Tower.isActive && item.TypingTower.gameObject.activeSelf && item.Tower.data.resistance > 0)
+                if (!item.Tower.isActive && !item.Tower.isDestroyed && item.TypingTower.gameObject.activeSelf && item.Tower.data.resistance > 0)
+                {
+                    item.Tower.SetNightUIVisibility(true);
+                    item.Tower.SetTowerData(item.Tower.data);
                     item.TypingTower.ResumeTower();
+                }
             }
         }
     }
@@ -97,9 +126,10 @@ public class TowersManager : MonoBehaviour
     {
         foreach (var item in towers)
         {
-            if (item.gameObject.activeSelf)
+            if (item.gameObject.activeSelf && item.Tower.data.resistance > 0 && !item.Tower.isDestroyed)
             {
                 item.TypingTower.isInFocus = inFocus;
+                item.Tower.backgroundFocus.SetActive(inFocus);
             }
         }
     }

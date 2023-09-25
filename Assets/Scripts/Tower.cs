@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     [Header("Configuration")]
     public TowerData data;
     public CooldownHandler cooldownHandler;
+    public Slider cooldownSlider;
     public Slider towerHealthbar;
     public Sprite destroyedImage;
     public float destroyedImageScale = 1f;
@@ -18,13 +19,33 @@ public class Tower : MonoBehaviour
     public GameObject towerHealthbarEnabler;
     public Image textBackground;
     public Image cooldownFill;
+    public GameObject towerPlaceNumber;
+    public GameObject backgroundFocus;
 
     [Space(10)]
 
     [Header("Testing")]
     public bool isActive = false;
+    public bool isDestroyed = false;
     public bool showGizmos = true;
     public float autonomyTimer = 0f;
+
+    [Header("SOUNDS")]
+    [SerializeField]
+    private AudioSource buildTower;
+    [SerializeField]
+    private AudioSource destroyTower;
+    [SerializeField]
+    private AudioSource ballesta;
+    [SerializeField]
+    private AudioSource canon;
+    [SerializeField]
+    private AudioSource catapulta;
+    //[SerializeField]
+    //private AudioSource failComplex;
+    //[SerializeField]
+    //private AudioSource switchSound;
+
 
     private List<Enemy> enemiesInattackRange = new List<Enemy>();
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
@@ -37,14 +58,7 @@ public class Tower : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.onStartDay += GameManager_OnStartDay;
         GameManager.onStartNight += GameManager_OnStartNight;
-    }
-
-    private void GameManager_OnStartDay()
-    {
-        //isActive = false;
-        //SetTowerData(data);
     }
 
     private void GameManager_OnStartNight()
@@ -52,9 +66,11 @@ public class Tower : MonoBehaviour
         towerResistance = data.resistance;
     }
 
-    public void SetTowerData(TowerData data)
+    public void SetTowerData(TowerData newData)
     {
+        data = newData;
         towerResistance = data.resistance;
+        cooldownSlider.maxValue = data.autonomyTime;
         if (data.mapImage != null)
         {
             sp.sprite = data.mapImage;
@@ -64,11 +80,14 @@ public class Tower : MonoBehaviour
         towerHealthbar.value = data.resistance;
     }
 
-    public void SetNightUIVisibility(bool visible)
+    public void SetNightUIVisibility(bool setVisible)
     {
-        towerHealthbarEnabler.SetActive(visible);
-        textBackground.enabled = visible;
-        cooldownFill.enabled = visible;
+        towerHealthbarEnabler.SetActive(setVisible);
+        textBackground.enabled = setVisible;
+        if (setVisible == false)
+            backgroundFocus.SetActive(false);
+        cooldownFill.enabled = false;
+        towerPlaceNumber.SetActive(!setVisible);
 }
 
     private void Start()
@@ -116,6 +135,7 @@ public class Tower : MonoBehaviour
 
     private IEnumerator StartTowerCooldown()
     {
+        cooldownFill.enabled = true;
         while (autonomyTimer <= data.autonomyTime)
         {
             autonomyTimer += 0.01f;
@@ -123,7 +143,7 @@ public class Tower : MonoBehaviour
         }
         isActive = false;
         autonomyTimer = 0f;
-        //cooldownHandler.gameObject.SetActive(false);
+        cooldownFill.enabled = false;
         tpc.ResumeTower();
     }
 
@@ -131,9 +151,7 @@ public class Tower : MonoBehaviour
     {
         isActive = true;
         StartCoroutine(StartTowerCooldown());
-        //cooldownHandler.gameObject.SetActive(true);
     }
-
 
     private void DetectEnemies()
     {
@@ -275,9 +293,10 @@ public class Tower : MonoBehaviour
 
     private void DestroyTower()
     {
-        Debug.Log("Tower Destroyed");
         tpc.SetTowerPaused();
+        SetNightUIVisibility(false);
         isActive = false;
+        isDestroyed = true;
         tm.ResumeAllTowers();
         if (destroyedImage != null)
         {
