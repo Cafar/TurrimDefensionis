@@ -41,6 +41,7 @@ public class ChurchHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        churchDamage.Play();
         Debug.Log("The church took " + damage + " damage");
         health -= damage;
         // Show damage effect

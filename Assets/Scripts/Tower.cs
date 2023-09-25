@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,16 +32,7 @@ public class Tower : MonoBehaviour
     public float autonomyTimer = 0f;
 
     [Header("SOUNDS")]
-    [SerializeField]
-    private AudioSource buildTower;
-    [SerializeField]
-    private AudioSource destroyTower;
-    [SerializeField]
-    private AudioSource ballesta;
-    [SerializeField]
-    private AudioSource canon;
-    [SerializeField]
-    private AudioSource catapulta;
+    private AudioSource audioSource;
     //[SerializeField]
     //private AudioSource failComplex;
     //[SerializeField]
@@ -54,11 +46,14 @@ public class Tower : MonoBehaviour
     private SpriteRenderer sp;
     private int towerResistance;
     private TowersManager tm;
-    
+
 
     private void OnEnable()
     {
         GameManager.onStartNight += GameManager_OnStartNight;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            gameObject.AddComponent<AudioSource>();
     }
 
     private void GameManager_OnStartNight()
@@ -88,7 +83,7 @@ public class Tower : MonoBehaviour
             backgroundFocus.SetActive(false);
         cooldownFill.enabled = false;
         towerPlaceNumber.SetActive(!setVisible);
-}
+    }
 
     private void Start()
     {
@@ -214,7 +209,8 @@ public class Tower : MonoBehaviour
     private void Shoot()
     {
         lastAttackTime = Time.time;
-
+        if (data.attackSound)
+            audioSource.PlayOneShot(data.attackSound);
         if (data.towerType == TowerType.AOE || data.attackAOE > 0)
             DamageArea(data.attackDamage);
         else
@@ -277,7 +273,7 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                Gizmos.DrawLine(transform.position, 
+                Gizmos.DrawLine(transform.position,
                     transform.position + transform.right * data.attackRange);
             }
         }
@@ -293,6 +289,8 @@ public class Tower : MonoBehaviour
 
     private void DestroyTower()
     {
+        if (data.destroySound)
+            audioSource.PlayOneShot(data.destroySound);
         tpc.SetTowerPaused();
         SetNightUIVisibility(false);
         isActive = false;
