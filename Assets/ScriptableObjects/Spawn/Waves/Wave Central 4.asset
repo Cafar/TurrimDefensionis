@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67fe0d58ec1eb5346a73a7cd1b6456c1, type: 3}
-  m_Name: Wave Izquierda 3
+  m_Name: Wave Central 4
   m_EditorClassIdentifier: 
   squadSpawnOrder:
+  - {fileID: 0}
   - {fileID: 11400000, guid: 5384655a1660d3745b513f2888ade127, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 397843d38fcc3ba45bce16de1a59c16f, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: e17fc875a6f5feb4ca333bc6614fb99a, type: 2}
+  - {fileID: 11400000, guid: f9e376259f00e8040884da20194af78b, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: cbe7800468b337043b84f33ec4645bd8, type: 2}
+  - {fileID: 11400000, guid: d9c1ff848f8eb2e41994a7478dc090ea, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 777bbfa3a3435384ba423ca6a0460066, type: 2}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: d478c26cf47d56f41bc26bbb99c89799, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 042ba09224350c445bd6cdb1d2e6e534, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 27ab9e7fbcbe113418a94a405bcc4f66, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 47d8f2cf63d56024fb3723ce9b237107, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: cbf8cd6a85279824a9733cd4efffed2d, type: 2}
+  - {fileID: 11400000, guid: a7b6b6a4661e9b94cac087e647b319d7, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 500bd697573dca84cb03c8810746d631, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c070a93bcb029f14898b8d79b8ab8e60, type: 2}
+  - {fileID: 11400000, guid: 33236c5f53895924081818bdfbe3afc0, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
