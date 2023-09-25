@@ -7,6 +7,20 @@ public class ChurchHealth : MonoBehaviour
     public int health = 1000;
     public int maxHealth = 1000;
 
+    [Header("SOUNDS")]
+    [SerializeField]
+    private AudioSource churchDamage;
+    //[SerializeField]
+    //private AudioSource type;
+    //[SerializeField]
+    //private AudioSource completeWord;
+    //[SerializeField]
+    //private AudioSource failSimple;
+    //[SerializeField]
+    //private AudioSource failComplex;
+    //[SerializeField]
+    //private AudioSource switchSound;
+
     private GameManager gameManager;
 
     private void OnEnable()

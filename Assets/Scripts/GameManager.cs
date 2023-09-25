@@ -17,6 +17,22 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI descriptionText;
     public GameObject psalmFocus;
 
+    [Header("SOUNDS")]
+    [SerializeField]
+    private AudioSource gameOver;
+    [SerializeField]
+    private AudioSource endNight;
+    [SerializeField]
+    private AudioSource baseDay;
+    [SerializeField]
+    private AudioSource baseNight;
+    [SerializeField]
+    private AudioSource baseLastNight;
+    //[SerializeField]
+    //private AudioSource failComplex;
+    //[SerializeField]
+    //private AudioSource switchSound;
+
     public static event Action onStartDay;
     public static event Action onStartNight;
     public static event Action onEndNight;
