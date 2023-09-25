@@ -14,6 +14,7 @@ public class Tower : MonoBehaviour
     public Sprite destroyedImage;
     public float destroyedImageScale = 1f;
     public TypingTowerController tpc;
+    public Animator animator;
     [Space(10)]
 
     [Header("UI")]
@@ -67,6 +68,7 @@ public class Tower : MonoBehaviour
         data = newData;
         towerResistance = data.resistance;
         cooldownSlider.maxValue = data.autonomyTime;
+        animator.runtimeAnimatorController = data.animator;
         if (data.mapImage != null)
         {
             sp.sprite = data.mapImage;
@@ -143,6 +145,7 @@ public class Tower : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         isActive = false;
+        animator.Rebind();
         autonomyTimer = 0f;
         cooldownFill.enabled = false;
         tpc.ResumeTower();
@@ -151,6 +154,7 @@ public class Tower : MonoBehaviour
     public void ActivateTower()
     {
         isActive = true;
+        animator.Play("Attack");
         StartCoroutine(StartTowerCooldown());
     }
 

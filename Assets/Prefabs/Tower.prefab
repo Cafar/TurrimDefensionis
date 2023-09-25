@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 7972505701935909422}
   - component: {fileID: 3999195876345214595}
   - component: {fileID: 5915160318410566111}
+  - component: {fileID: 3868864684113732724}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -538,6 +539,7 @@ MonoBehaviour:
   destroyedImage: {fileID: 21300000, guid: 8f8d646e8947cf641bd97f2579661834, type: 3}
   destroyedImageScale: 1
   tpc: {fileID: 5874340622581188100}
+  animator: {fileID: 3868864684113732724}
   towerHealthbarEnabler: {fileID: 1572726258818699137}
   textBackground: {fileID: 4411716163244895678}
   cooldownFill: {fileID: 1391691584259923684}
@@ -548,11 +550,6 @@ MonoBehaviour:
   isDestroyed: 0
   showGizmos: 0
   autonomyTimer: 0
-  buildTower: {fileID: 0}
-  destroyTower: {fileID: 0}
-  ballesta: {fileID: 0}
-  canon: {fileID: 0}
-  catapulta: {fileID: 0}
 --- !u!114 &3999195876345214595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +660,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &3868864684113732724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972505701935909395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6880006778436694785
 PrefabInstance:
   m_ObjectHideFlags: 0
