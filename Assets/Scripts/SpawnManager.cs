@@ -9,15 +9,15 @@ public class SpawnManager : MonoBehaviour
     public float maxEnemyTimeToChurch = 65f;
     public bool hasFinishedSpawning = false;
 
-    private void OnEnable()
-    {
-        GameManager.onStartNight += GameManager_OnStartNight;
-    }
+    // private void OnEnable()
+    // {
+    //     GameManager.onStartNight += GameManager_OnStartNight;
+    // }
 
-    private void GameManager_OnStartNight()
-    {
-        hasFinishedSpawning = false;
-    }
+    // private void GameManager_OnStartNight()
+    // {
+    //     hasFinishedSpawning = false;
+    // }
 
     void Start()
     {

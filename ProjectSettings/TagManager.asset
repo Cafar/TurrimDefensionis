@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Tower
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1130360165
+    locked: 0
+  - name: TurretImage
+    uniqueID: 3941539163
+    locked: 0
   - name: WorldUI
     uniqueID: 1538847015
     locked: 0

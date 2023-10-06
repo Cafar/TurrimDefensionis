@@ -15,45 +15,47 @@ public class TowersManager : MonoBehaviour
     [SerializeField]
     private List<TowerController> towers;
 
-    private List<string> posibleWords = new List<string>{"Mare","Nos trum","Pija","Dura","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen",
-        "Seventeen", "Eighteen", "Nineteen","Twenty", "Twentyone", "Twentytwo", "Twentythree", "Twentyfour", "Twentyfive", "Twentysix", "Twentyseven", "Twentyeight", "Twentynine",
-        "Thirty", "Thirtyone", "Thirtytwo", "Thirtythree", "Thirtyfour", "Thirtyfive", "Thirtysix", "Thirtyseven", "Thirtyeight", "Thirtynine", "Forty", "Fortyone", "Fortytwo",
-        "Fortythree", "Fortyfour", "Fortyfive", "Fortysix", "Fortyseven", "Fortyeight", "Fortynine", "Fifty", "Fiftyone", "Fiftytwo", "Fiftythree", "Fiftyfour", "Fiftyfive",
-        "Fiftysix", "Fiftyseven", "Fiftyeight", "Fiftynine", "Sixty", "Sixtyone", "Sixtytwo", "Sixtythree", "Sixtyfour", "Sixtyfive", "Sixtysix", "Sixtyseven", "Sixtyeight",
-        "Sixtynine", "Seventy", "Seventyone", "Seventytwo", "Seventythree", "Seventyfour", "Seventyfive", "Seventysix", "Seventyseven", "Seventyeight", "Seventynine", "Eighty",
-        "Eightyone", "Eightytwo", "Eightythree", "Eightyfour", "Eightyfive", "Eightysix", "Eightyseven", "Eightyeight", "Eightynine", "Ninety", "Ninetyone", "Ninetytwo", "Ninetythree",
-        "Ninetyfour", "Ninetyfive", "Ninetysix", "Ninetyseven", "Ninetyeight", "Ninetynine", "One hundred"};
+    private List<string> posibleWords = new List<string>{"agnus dei", "angelus crux", "angelus custos", "aqua sancta", 
+        "argentum omnibus", "baptismus", "beatus deus", "benedictio", "brachium dei", "caelos aperire", 
+        "castigatio", "cinis pagana", "cor impurum", "crucifixio", "culpa divina", "decapitatio", "Dei Genitrix", 
+        "descendere angeli", "dimittis", "divina potentia", "dominus deus", "episcopus", "essentia solis", "evangelizatio", 
+        "excommunicatio", "exularet", "fides catholica", "fides cruciata", "flagellum dei", "foras hinc", "furor argenti", 
+        "gladius dei", "gloria patri", "gothicus ", "gratia divina", "ictus lucis", "in nomine patris", "in pace mori", 
+        "iter vetitum", "iudicium finale", "lapidatio", "laudate dominum", "lex orandi", "lux aeterna", "mater dolorosa", 
+        "miraculum", "monasterium", "monstra timete", "moriuntur pagani", "mors vampiro", "obsecrare", "omnpotenita", 
+        "oratio ecclesiae", "paenitentia", "passio haeretici", "peccatores mori", "pietas popularis", "potestas solaris", 
+        "purgatorium", "redemptor", "Requiesce in pace", "revertere ad inferos", "rosarium", "sacramentum", "sacratum cor", 
+        "sacrificium", "Sancta Maria", "sepultura", "sitiens infixit", "sol divinus", "spiritus Sanctus", "taestamentum", 
+        "tormentum amen", "trinitas", "tutela trinitatis", "ubiquitas", "ultio divina", "universitas", "vade retro", 
+        "veneratio domino", "via ad infernum", "Virgo Maria", "vos trahatis"};
 
-    private void Awake()
-    {
-        Instance = this;
-        GameManager.onStartNight += GameManager_OnGameStart;
-        GameManager.onStartDay += GameManager_OnStartDay;
-        GameManager.onStartNight += GameManager_OnStartNight;
-    }
+//     private void Awake()
+//     {
+//         Instance = this;
+//     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-            ResumeAllTowers();
-        }
-    }
+//     private void Update()
+//     {
+//         if(Input.GetKeyDown(KeyCode.Backspace))
+//         {
+//             ResumeAllTowers();
+//         }
+//     }
 
-    private void GameManager_OnGameStart()
-    {
-        //ResumeAllTowers();
-    }
+//     private void GameManager_OnGameStart()
+//     {
+//         //ResumeAllTowers();
+//     }
 
-    private void GameManager_OnStartDay()
-    {
-        PauseAllTowers();
-    }
+//     private void GameManager_OnStartDay()
+//     {
+//         PauseAllTowers();
+//     }
 
-    private void GameManager_OnStartNight()
-    {
-        StartAllTowers();
-    }
+//     private void GameManager_OnStartNight()
+//     {
+//         StartAllTowers();
+//     }
 
     public void SetAllTowersUnreadyExcept(TypingTowerController tower)
     {
@@ -76,8 +78,6 @@ public class TowersManager : MonoBehaviour
         {
             if (item.gameObject.activeSelf)
             {
-                item.Tower.SetNightUIVisibility(false);
-                item.Tower.SetDayUIVisibility(true);
                 item.Tower.isActive = false;
                 item.Tower.backgroundFocus.SetActive(false);
                 item.TypingTower.SetTowerPaused();
@@ -93,16 +93,10 @@ public class TowersManager : MonoBehaviour
             {
                 if (item.Tower.data.resistance > 0)
                 {
-                    item.Tower.SetNightUIVisibility(true);
                     item.Tower.SetTowerData(item.Tower.data);
                     item.Tower.isDestroyed = false;
                     item.TypingTower.ResumeTower();
                 }
-                else
-                {
-                    item.Tower.SetNightUIVisibility(false);
-                }
-                item.Tower.SetDayUIVisibility(false);
             }
         }
         SetAllTowersIsInFocus(true);
@@ -116,8 +110,6 @@ public class TowersManager : MonoBehaviour
             {
                 if (!item.Tower.isActive && !item.Tower.isDestroyed && item.TypingTower.gameObject.activeSelf && item.Tower.data.resistance > 0)
                 {
-                    item.Tower.SetNightUIVisibility(true);
-                    item.Tower.SetDayUIVisibility(false);
                     item.Tower.SetTowerData(item.Tower.data);
                     item.TypingTower.ResumeTower();
                 }

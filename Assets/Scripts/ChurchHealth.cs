@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ChurchHealth : MonoBehaviour
 {
-    public int health = 1000;
-    public int maxHealth = 1000;
+    public int health = 5000;
+    public int maxHealth = 5000;
 
     [Header("SOUNDS")]
     [SerializeField]
@@ -23,15 +23,15 @@ public class ChurchHealth : MonoBehaviour
 
     private GameManager gameManager;
 
-    private void OnEnable()
-    {
-        GameManager.onStartDay += GameManager_OnStartDay;
-    }
+    // private void OnEnable()
+    // {
+    //     GameManager.onStartDay += GameManager_OnStartDay;
+    // }
 
-    private void GameManager_OnStartDay()
-    {
-        health = maxHealth;
-    }
+    // private void GameManager_OnStartDay()
+    // {
+    //     health = maxHealth;
+    // }
 
     private void Start()
     {

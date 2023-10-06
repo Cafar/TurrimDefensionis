@@ -25,9 +25,10 @@ MonoBehaviour:
   attackAOE: 0
   attackSound: {fileID: 8300000, guid: 0205aa0d165eabf44adc94d2125869a4, type: 3}
   destroySound: {fileID: 8300000, guid: 39bc5a6f20810b94ca6cd80af75b5ca5, type: 3}
+  animator: {fileID: 0}
   towerName: Disparador de Ajos
   description: "Dispara ajos con gran cadencia contra el enemigo m\xE1s cercano hasta
     matarlo.\r\n\r\n\n\tDa\xF1o: 18 | Rango: corto | Cadencia: 0.3"
   shopImage: {fileID: 0}
   cost: 150
-  possibleLocations: 
+  possibleLocations: 0200000003000000040000000500000006000000070000000800000009000000

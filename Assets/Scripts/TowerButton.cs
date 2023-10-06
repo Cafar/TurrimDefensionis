@@ -10,10 +10,12 @@ public class TowerButton : MonoBehaviour
     public TextMeshProUGUI towerNameMP;
     public Image towerImage;
     public TextMeshProUGUI towerCostMP;
-    public Button[] buyButtons;
     public TextMeshProUGUI descriptionText;
+    public Button button;
 
     private EconomyManager em;
+    private DayManager dm;
+    private Image buttonImage;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,18 @@ public class TowerButton : MonoBehaviour
         towerImage.SetVerticesDirty();
         towerCostMP.text = data?.cost.ToString();
         em = GameObject.Find("GameManager").GetComponent<EconomyManager>();
+        dm = GameObject.Find("DayManager").GetComponent<DayManager>();
+        buttonImage = button.gameObject.GetComponentInChildren<Image>();
     }
 
     private void Update()
     {
         CheckInteractable();
+        if (dm.selectedTowerData == dm.emptyTowerData)
+        {
+            // Disable particle effect
+            buttonImage.color = Color.white;
+        }
     }
 
     public void SetDescriptionText()
@@ -35,17 +44,22 @@ public class TowerButton : MonoBehaviour
         descriptionText.text = data.description;
     }
 
+    public void SetSelectedTowerData()
+    {
+        dm.SetSelectedTowerData(data);
+        // Activate particle effect
+        buttonImage.color = Color.yellow;
+    }
+
     private void CheckInteractable()
     {
         if (em.currentCoin < data.cost)
         {
-            foreach (Button button in buyButtons)
-                button.interactable = false;
+            button.interactable = false;
         }
         else
         {
-            foreach (Button button in buyButtons)
-                button.interactable = true;
+            button.interactable = true;
         }
     }
 

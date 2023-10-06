@@ -16,27 +16,28 @@ public class Spawner : MonoBehaviour
     private GameManager gm;
     private SpawnManager sm;
 
-    private void OnEnable()
-    {
-        GameManager.onStartDay += GameManager_OnStartDay;
-        GameManager.onStartNight += GameManager_OnStartNight;
-    }
+    // private void OnEnable()
+    // {
+    //     GameManager.onStartDay += GameManager_OnStartDay;
+    //     GameManager.onStartNight += GameManager_OnStartNight;
+    // }
 
-    private void GameManager_OnStartDay()
-    {
-        StopAllCoroutines();
-    }
+    // private void GameManager_OnStartDay()
+    // {
+    //     StopAllCoroutines();
+    // }
 
-    private void GameManager_OnStartNight()
-    {
-        StartCoroutine(StartWave());
-    }
+    // private void GameManager_OnStartNight()
+    // {
+    //     StartCoroutine(StartWave());
+    // }
 
     private void Start()
     {
         gmObj = GameObject.Find("GameManager");
         gm = gmObj.GetComponent<GameManager>();
         sm = gmObj.GetComponent<SpawnManager>();
+        StartCoroutine(StartWave());
     }
 
     public IEnumerator StartWave()

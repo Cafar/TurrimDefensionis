@@ -12,15 +12,15 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer sp;
 
 
-    private void OnEnable()
-    {
-        GameManager.onStartDay += GameManager_OnStartDay;
-    }
+    // private void OnEnable()
+    // {
+    //     GameManager.onStartDay += GameManager_OnStartDay;
+    // }
 
-    private void GameManager_OnStartDay()
-    {
-        Die();
-    }
+    // private void GameManager_OnStartDay()
+    // {
+    //     Die();
+    // }
 
     void Start()
     {

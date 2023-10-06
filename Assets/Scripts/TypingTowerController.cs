@@ -41,8 +41,8 @@ public class TypingTowerController : MonoBehaviour
     private TMP_Text perfectText;
     [SerializeField]
     private TMP_Text failText;
-    [SerializeField]
-    private GameObject cooldownBar;
+
+
     //[Header("SOUNDS")]
     //[SerializeField]
     //private AudioSource perfectWord;
@@ -71,34 +71,15 @@ public class TypingTowerController : MonoBehaviour
     private Sequence errorSeq;
     private Image backgroundImage;
 
-    private void OnEnable()
-    {
-        GameManager.onStartDay += GameManager_OnStartDay;
-        GameManager.onStartNight += GameManager_OnStartNight;
-    }
-
-
-    private void GameManager_OnStartDay()
-    {
-        //SetTowerPaused();
-        //backgroundImage.enabled = false;
-    }
-
-
-    private void GameManager_OnStartNight()
-    {
-        if (tower.data.resistance == 0)
-            return;
-        //ResumeTower();
-        isInFocus = true;
-        //backgroundImage.enabled = true;
-    }
 
 
     private void Start()
     {
         SetTowerPaused();
         backgroundImage = gameObject.GetComponent<Image>();
+        if (tower.data.resistance == 0)
+            return;
+        isInFocus = true;
     }
 
     private IEnumerator InitTower(string word)

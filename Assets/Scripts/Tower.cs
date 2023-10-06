@@ -8,7 +8,6 @@ public class Tower : MonoBehaviour
 {
     [Header("Configuration")]
     public TowerData data;
-    public CooldownHandler cooldownHandler;
     public Slider cooldownSlider;
     public Slider towerHealthbar;
     public Sprite destroyedImage;
@@ -18,12 +17,7 @@ public class Tower : MonoBehaviour
     [Space(10)]
 
     [Header("UI")]
-    public GameObject towerHealthbarEnabler;
-    public Image textBackground;
-    public Image cooldownFill;
-    public GameObject towerPlaceNumber;
     public GameObject backgroundFocus;
-    public GameObject dayUI;
 
     [Space(10)]
 
@@ -50,19 +44,6 @@ public class Tower : MonoBehaviour
     private TowersManager tm;
 
 
-    private void OnEnable()
-    {
-        GameManager.onStartNight += GameManager_OnStartNight;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            gameObject.AddComponent<AudioSource>();
-    }
-
-    private void GameManager_OnStartNight()
-    {
-        towerResistance = data.resistance;
-    }
-
     public void SetTowerData(TowerData newData)
     {
         data = newData;
@@ -78,25 +59,13 @@ public class Tower : MonoBehaviour
         towerHealthbar.value = data.resistance;
     }
 
-    public void SetNightUIVisibility(bool setVisible)
-    {
-        towerHealthbarEnabler.SetActive(setVisible);
-        textBackground.enabled = setVisible;
-        if (setVisible == false)
-            backgroundFocus.SetActive(false);
-        cooldownFill.enabled = false;
-        towerPlaceNumber.SetActive(!setVisible);
-    }
-
-    public void SetDayUIVisibility(bool setVisible)
-    {
-        dayUI.SetActive(setVisible);
-    }
-
     private void Start()
     {
         tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
         sp = gameObject.GetComponentInChildren<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            gameObject.AddComponent<AudioSource>();
     }
 
     private void Update()
@@ -138,23 +107,20 @@ public class Tower : MonoBehaviour
 
     private IEnumerator StartTowerCooldown()
     {
-        cooldownFill.enabled = true;
-        while (autonomyTimer <= data.autonomyTime)
+        cooldownSlider.value = cooldownSlider.maxValue;
+        while (cooldownSlider.value > 0f)
         {
-            autonomyTimer += 0.01f;
+            cooldownSlider.value -= 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
+        cooldownSlider.value = 0f;
         isActive = false;
-        animator.Rebind();
-        autonomyTimer = 0f;
-        cooldownFill.enabled = false;
         tpc.ResumeTower();
     }
 
     public void ActivateTower()
     {
         isActive = true;
-        animator.Play("Attack");
         StartCoroutine(StartTowerCooldown());
     }
 
@@ -302,7 +268,6 @@ public class Tower : MonoBehaviour
         if (data.destroySound)
             audioSource.PlayOneShot(data.destroySound);
         tpc.SetTowerPaused();
-        SetNightUIVisibility(false);
         isActive = false;
         isDestroyed = true;
         tm.ResumeAllTowers();

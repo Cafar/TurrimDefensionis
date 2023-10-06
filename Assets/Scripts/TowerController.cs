@@ -17,21 +17,19 @@ public class TowerController : MonoBehaviour
     {
         typingTower.OnWordCompleted += TypingTower_OnWordCompleted;
         typingTower.OnFirstWordPushed += TypingTower_OnFirstWordPushed;
-        GameManager.onStartDay += GameManager_OnStartDay;
-        GameManager.onStartNight += GameManager_OnStartNight;
     }
 
-    private void GameManager_OnStartDay()
-    {
-        //tower.SetNightUIVisibility(false);
-        //tower.isActive = false;
-    }
+    // private void GameManager_OnStartDay()
+    // {
+    //     tower.SetNightUIVisibility(false);
+    //     tower.isActive = false;
+    // }
 
-    private void GameManager_OnStartNight()
-    {
-        //tower.SetNightUIVisibility(true);
-        //tower.SetTowerData(tower.data);
-    }
+    // private void GameManager_OnStartNight()
+    // {
+    //     tower.SetNightUIVisibility(true);
+    //     tower.SetTowerData(tower.data);
+    // }
 
     private void TypingTower_OnFirstWordPushed()
     {

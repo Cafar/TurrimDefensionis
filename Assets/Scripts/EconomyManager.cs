@@ -12,7 +12,6 @@ public class EconomyManager : MonoBehaviour
     public int maxReward = 1200;
     public float minNightTime = 60f;
     public float rewardMultiplier = 1.5f;
-    public TextMeshProUGUI coinText;
 
     [Space(10)]
 
@@ -23,15 +22,15 @@ public class EconomyManager : MonoBehaviour
     private GameManager gm;
     private SpawnManager sm;
 
-    private void OnEnable()
-    {
-        GameManager.onEndNight += GameManager_OnEndNight;
-    }
+    // private void OnEnable()
+    // {
+    //     GameManager.onEndNight += GameManager_OnEndNight;
+    // }
 
-    private void GameManager_OnEndNight()
-    {
-        GetEndOfNightReward();
-    }
+    // private void GameManager_OnEndNight()
+    // {
+    //     GetEndOfNightReward();
+    // }
 
     void Start()
     {
@@ -39,11 +38,6 @@ public class EconomyManager : MonoBehaviour
         gmObj = GameObject.Find("GameManager");
         gm = gmObj.GetComponent<GameManager>();
         sm = gmObj.GetComponent<SpawnManager>();
-    }
-
-    private void Update()
-    {
-        coinText.text = currentCoin.ToString();
     }
 
     public void SpendCoin(TowerData data)

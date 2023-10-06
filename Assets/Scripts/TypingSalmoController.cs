@@ -29,7 +29,12 @@ public class TypingSalmoController : MonoBehaviour
     [SerializeField]
     private GameModeColors wordsColors;
     [SerializeField]
-    [TextArea(3, 10)] private string[] salmoText;
+    [TextArea(3, 10)] private List<string> salmoText = new List<string>{"Dominus reget me et nihil mihi deerit in loco pascuae ibi me collocabit uper aquam refectionis educavit me animam meam convertit deduxit me super semitas justitiae propter nomen suum etiam si ambulavero in valle mortis non timebo malum quoniam tu mecum es",
+        "Virga tua et baculus tuus ipsa me consolata sunt parasti in conspectu meo mensam adversus eos qui tribulant me Impinguasti in oleo caput meum et calix meus inebrians quam paeclarus est et misericordia tua subsequetur me omnibus diebus vitae et ut inhabitem in domo domini in longitudinem dierum",
+        "Beatus vir qui non abiit in consilio impiorum et in via peccatorum non stetit et in cathedra pestilentiae non sedit sed in lege domini voluntas ejus et in lege ejus meditabitur die ac nocte et erit tamquam lignum quod plantatum est secus decursus aquarum quod fructum suum dabit in tempore suo et folium ejus non defluet et omnia quaecumque faciet prosperabuntur",
+        "Bonum est confiteri domino et psallere nomini tuo ad annuntiandum mane misericordiam tuam et veritatem tuam per noctem in decachordo psallere cum cantico quia delectasti me domine in factura tua et in operibus manuum tuarum exsultabo quam magnificata sunt opera tua domine nimis profundae factae sunt cogitationes tuae vir insipiens non",
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum"};
+
     [SerializeField]
     private float penaltyErrorSeconds;
     [SerializeField]
@@ -72,12 +77,7 @@ public class TypingSalmoController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.onStartNight += GameManager_OnStartNight;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-    private void GameManager_OnStartNight()
-    {
         InitSalmo();
     }
 
@@ -213,7 +213,7 @@ public class TypingSalmoController : MonoBehaviour
     {
 
         OnSalmoCompleted?.Invoke();
-        gm.EndNight();
+        // gm.EndNight();
     }
 
 
