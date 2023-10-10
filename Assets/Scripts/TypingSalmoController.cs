@@ -63,6 +63,7 @@ public class TypingSalmoController : MonoBehaviour
     public bool isInFocus;
 
     private GameManager gm;
+    private NightManager nm;
     private string currentWord;
     private string keyPushedString;
     private char keyPushedChar;
@@ -71,6 +72,7 @@ public class TypingSalmoController : MonoBehaviour
     private float penaltyErrorSecondsElapsed;
     private float secondsToBackLetterElapsed;
     private float secondsToStartBackLetterElapsed;
+    private bool isFinished;
 
 
     private Sequence errorSeq;
@@ -78,11 +80,13 @@ public class TypingSalmoController : MonoBehaviour
     private void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        nm = GameObject.Find("NightManager").GetComponent<NightManager>();
         InitSalmo();
     }
 
     public void InitSalmo()
     {
+        isFinished = false;
         indexCharPos = -1;
         currentWord = salmoText[gm.nightLevel];
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><voffset=0.2em>"
@@ -111,7 +115,7 @@ public class TypingSalmoController : MonoBehaviour
             var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
             foreach (var key in allKeys)
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape) || !isInFocus) return;
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape) || !isInFocus || isFinished) return;
 
                 if (Input.GetKeyDown(key))
                 {
@@ -137,7 +141,7 @@ public class TypingSalmoController : MonoBehaviour
             if (auxIndexCharPos == currentWord.Length) auxIndexCharFinalPos--;
 
             string auxChar = currentWord.Substring(auxIndexCharPos, auxIndexCharFinalPos - auxIndexCharPos);
-            if (auxChar == " ") auxChar = "█";
+            if (auxChar == " ") auxChar = "\u25A1";
             mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, auxIndexCharPos) + "</color>" + "<color=#"
                 + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">"
                 + auxChar + "</voffset></color>"
@@ -156,7 +160,7 @@ public class TypingSalmoController : MonoBehaviour
             }
             FeedbackError();
             string aux = currentWord.Substring(indexCharPos, 1);
-            if (aux == " ") aux = "█";
+            if (aux == " ") aux = "\u25A1";
             mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
                             "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                            + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
@@ -202,7 +206,7 @@ public class TypingSalmoController : MonoBehaviour
         string offsetChar = "voffset=0.2em";
         keyToPush = currentWord.ToLower().ToCharArray()[indexCharPos];
         string aux = currentWord.Substring(indexCharPos, 1);
-        if(aux == " ") aux = "█";
+        if(aux == " ") aux = "\u25A1";
         mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
                 "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
@@ -213,7 +217,8 @@ public class TypingSalmoController : MonoBehaviour
     {
 
         OnSalmoCompleted?.Invoke();
-        // gm.EndNight();
+        isFinished = true;
+        nm.EndNight();
     }
 
 

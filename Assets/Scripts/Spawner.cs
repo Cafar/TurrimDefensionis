@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     public int squadIndex = 0;
 
     private GameObject gmObj;
+    private GameObject nmObj;
     private GameManager gm;
     private SpawnManager sm;
 
@@ -36,7 +37,8 @@ public class Spawner : MonoBehaviour
     {
         gmObj = GameObject.Find("GameManager");
         gm = gmObj.GetComponent<GameManager>();
-        sm = gmObj.GetComponent<SpawnManager>();
+        nmObj = GameObject.Find("NightManager");
+        sm = nmObj.GetComponent<SpawnManager>();
         StartCoroutine(StartWave());
     }
 

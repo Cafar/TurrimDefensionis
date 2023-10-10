@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
     private float nightStartTime;
     private bool isDay;
 
+    private EconomyManager economyManager;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         InitializeGame();
+        economyManager = gameObject.GetComponent<EconomyManager>();
     }
 
     public void InitializeGame()
@@ -79,13 +82,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    // void Start()
-    // {
-    //     tm = gameObject.GetComponent<TowersManager>();
-    //     tsc = gameObject.GetComponent<TypingSalmoController>();
-    //     sm = gameObject.GetComponent<SpawnManager>();
-    //     spawner = GameObject.Find("Spawners").GetComponentInChildren<Spawner>();
-    // }
+    
 
     void Update()
     {
@@ -118,40 +115,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // private void CheckFocus()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Tab))
-    //     {
-    //         if (tsc.isInFocus)
-    //         {
-    //             tsc.isInFocus = false;
-    //             psalmFocus.SetActive(false);
-    //             tm.SetAllTowersIsInFocus(true);
-    //         }
-    //         else
-    //         {
-    //             tsc.isInFocus = true;
-    //             psalmFocus.SetActive(true);
-    //             tm.SetAllTowersIsInFocus(false);
-    //         }
-    //     }
-    // }
-
-    // private void UpdateClock()
-    // {
-    //     if (!isDay)
-    //     {
-    //         int time = 6 + (((spawner.squadIndex - 1) / 2)) % 6;
-    //         string amOrPm = " pm";
-    //         if ((((spawner.squadIndex - 1) / 2)) / 6 == 1)
-    //         {
-    //             amOrPm = " am";
-    //             time -= 6;
-    //         }
-    //         clock.text = time.ToString() + amOrPm;
-    //     }
-    // }
-
     // Desactiva y resetea las palabras de activaci�n de torres (Done)
     // Desactiva y resetea salmo (Done)
     // Desactiva todos los elementos de UI de noche (Done)
@@ -182,30 +145,26 @@ public class GameManager : MonoBehaviour
     // Inicializa salmo
     // Activa m�sica de noche
     // (Primera noche) Activa banner tutorial noche
-    // public void StartNight()
-    // {
-    //     isDay = false;
-    //     dayUI.SetActive(false);
-    //     nightUI.SetActive(true);
-    //     dayBackground.SetActive(false);
-    //     nightBackground.SetActive(true);
-    //     psalmFocus.SetActive(false);
-    //     onStartNight?.Invoke();
-    //     nightStartTime = Time.time;
-    //     audioSource.clip = baseNightClip;
-    //     audioSource.Play();
+    public void EndDay()
+    {
+        isDay = false;
+        // psalmFocus.SetActive(false);
+        SceneManager.LoadScene("GameNight");
+        nightStartTime = Time.time;
+        // audioSource.clip = baseNightClip;
+        // audioSource.Play();
 
-    // }
+    }
 
-    // Calcular el favor divino conseguido en la noche
-    // public void EndNight()
-    // {
-    //     nightTimes[nightLevel] = Time.time - nightStartTime;
-    //     onEndNight?.Invoke();
-    //     nightLevel++;
-    //     StartDay();
-    //     audioSource.PlayOneShot(endNightClip);
-    // }
+    public void EndNight()
+    {
+        isDay = true;
+        nightTimes[nightLevel] = Time.time - nightStartTime;
+        economyManager.GetEndOfNightReward();
+        nightLevel++;
+        SceneManager.LoadScene("GameDay");
+        // audioSource.PlayOneShot(endNightClip);
+    }
 
     // Mostrar pantalla de game over con el bot�n de volver al inicio o reiniciar
     public void GameOver()

@@ -15,6 +15,8 @@ public class TowersManager : MonoBehaviour
     [SerializeField]
     private List<TowerController> towers;
 
+    public bool towerSelected = false;
+
     private List<string> posibleWords = new List<string>{"agnus dei", "angelus crux", "angelus custos", "aqua sancta", 
         "argentum omnibus", "baptismus", "beatus deus", "benedictio", "brachium dei", "caelos aperire", 
         "castigatio", "cinis pagana", "cor impurum", "crucifixio", "culpa divina", "decapitatio", "Dei Genitrix", 
@@ -29,33 +31,18 @@ public class TowersManager : MonoBehaviour
         "tormentum amen", "trinitas", "tutela trinitatis", "ubiquitas", "ultio divina", "universitas", "vade retro", 
         "veneratio domino", "via ad infernum", "Virgo Maria", "vos trahatis"};
 
-//     private void Awake()
-//     {
-//         Instance = this;
-//     }
+    private void Awake()
+    {
+        Instance = this;
+    }
 
-//     private void Update()
-//     {
-//         if(Input.GetKeyDown(KeyCode.Backspace))
-//         {
-//             ResumeAllTowers();
-//         }
-//     }
-
-//     private void GameManager_OnGameStart()
-//     {
-//         //ResumeAllTowers();
-//     }
-
-//     private void GameManager_OnStartDay()
-//     {
-//         PauseAllTowers();
-//     }
-
-//     private void GameManager_OnStartNight()
-//     {
-//         StartAllTowers();
-//     }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            ResumeAllTowers();
+        }
+    }
 
     public void SetAllTowersUnreadyExcept(TypingTowerController tower)
     {
@@ -127,6 +114,36 @@ public class TowersManager : MonoBehaviour
                 item.Tower.backgroundFocus.SetActive(inFocus);
             }
         }
+    }
+
+    private string GetRandomWord()
+    {
+        return posibleWords[Random.Range(0, posibleWords.Count - 1)];
+    }
+
+    public string GetNewWord()
+    {
+        int i = -1;
+        string new_word = GetRandomWord();
+        while (++i < towers.Count)
+        {
+            if (towers[i].Tower.data.resistance == 0)
+                continue;
+            if (towers[i].Tower.isDestroyed)
+                continue;
+            if (towers[i].TypingTower.currentWord == "")
+            {
+                towers[i].TypingTower.currentWord = new_word;
+                i = -1;
+                continue;
+            }
+            if (towers[i].TypingTower.currentWord[0] == new_word[0])
+            {
+                new_word = GetRandomWord();
+                i = -1;
+            }
+        }
+        return new_word;
     }
 
 }

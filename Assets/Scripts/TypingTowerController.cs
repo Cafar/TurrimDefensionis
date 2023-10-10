@@ -26,8 +26,7 @@ public class TypingTowerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField]
     private GameModeColors wordsColors;
-    [SerializeField]
-    private string[] words = new string[1];
+
     [SerializeField]
     private Tower tower;
     [SerializeField]
@@ -59,7 +58,7 @@ public class TypingTowerController : MonoBehaviour
     //[SerializeField]
     //private AudioSource switchSound;
 
-    private string currentWord;
+    public string currentWord;
     private string keyPushedString;
     private char keyPushedChar;
     private char keyToPush;
@@ -71,10 +70,13 @@ public class TypingTowerController : MonoBehaviour
     private Sequence errorSeq;
     private Image backgroundImage;
 
+    private TowersManager tm;
+
 
 
     private void Start()
     {
+        tm = GameObject.Find("NightManager").GetComponent<TowersManager>();
         SetTowerPaused();
         backgroundImage = gameObject.GetComponent<Image>();
         if (tower.data.resistance == 0)
@@ -131,7 +133,7 @@ public class TypingTowerController : MonoBehaviour
         {
             if (auxIndexCharPos == currentWord.Length) auxIndexCharFinalPos--;
             string auxChar = currentWord.Substring(auxIndexCharPos, auxIndexCharFinalPos - auxIndexCharPos);
-            if (auxChar == " ") auxChar = "█";
+            if (auxChar == " ") auxChar = "\u25A1";
             mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, auxIndexCharPos) + "</color>" + "<color=#"
                 + ColorUtility.ToHtmlStringRGB(wordsColors.CurrentCharColorText) + "><" + offsetChar + ">"
                 + auxChar + "</voffset></color>"
@@ -161,7 +163,7 @@ public class TypingTowerController : MonoBehaviour
             if (currentWord.Length > 1)
             {
                 string aux = currentWord.Substring(indexCharPos, 1);
-                if (aux == " ") aux = "█";
+                if (aux == " ") aux = "\u25A1";
                 mainText.text = "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.CorrectCharText) + ">" + currentWord.Substring(0, indexCharPos) + "</color>" +
                                 "<color=#" + ColorUtility.ToHtmlStringRGB(wordsColors.IncorrectCharText) + "><" + offsetChar + ">" + aux + "</voffset></color>" + "<color=#"
                                + ColorUtility.ToHtmlStringRGB(wordsColors.NormalColorText) + ">" + currentWord[auxIndexCharPos..] + "</color>";
@@ -240,14 +242,7 @@ public class TypingTowerController : MonoBehaviour
     public void ResumeTower()
     {
         backgroundText.SetActive(true);
-        StartCoroutine(InitTower(GetRandomWord()));
-    }
-
-
-    private string GetRandomWord()
-    {
-        string randomWord = words[new System.Random().Next(0, words.Length)];
-        return randomWord;
+        StartCoroutine(InitTower(tm.GetNewWord()));
     }
 
     private void CleanKeyStringAndConvertToChar()

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChurchHealth : MonoBehaviour
 {
-    public int health = 5000;
     public int maxHealth = 5000;
+
+    public Slider churchHealthbar;
 
     [Header("SOUNDS")]
     [SerializeField]
@@ -35,17 +37,21 @@ public class ChurchHealth : MonoBehaviour
 
     private void Start()
     {
-        health = maxHealth;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        churchHealthbar.maxValue = maxHealth;
+        churchHealthbar.value = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
         churchDamage.Play();
         Debug.Log("The church took " + damage + " damage");
-        health -= damage;
+        if (churchHealthbar.value - damage < 0)
+            churchHealthbar.value = 0;
+        else
+            churchHealthbar.value -= damage;
         // Show damage effect
-        if (health <= 0)
+        if (churchHealthbar.value == 0)
         {
             Debug.Log("The church was destroyed. Game Over");
             gameManager.GameOver();

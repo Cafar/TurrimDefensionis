@@ -19,21 +19,10 @@ public class TowerController : MonoBehaviour
         typingTower.OnFirstWordPushed += TypingTower_OnFirstWordPushed;
     }
 
-    // private void GameManager_OnStartDay()
-    // {
-    //     tower.SetNightUIVisibility(false);
-    //     tower.isActive = false;
-    // }
-
-    // private void GameManager_OnStartNight()
-    // {
-    //     tower.SetNightUIVisibility(true);
-    //     tower.SetTowerData(tower.data);
-    // }
-
     private void TypingTower_OnFirstWordPushed()
     {
         TowersManager.Instance.SetAllTowersUnreadyExcept(typingTower);
+        TowersManager.Instance.towerSelected = true;
     }
 
     private void TypingTower_OnWordCompleted()
@@ -41,5 +30,6 @@ public class TowerController : MonoBehaviour
         tower.ActivateTower();
         typingTower.SetTowerPaused();
         TowersManager.Instance.ResumeAllTowers();
+        TowersManager.Instance.towerSelected = false;
     }
 }

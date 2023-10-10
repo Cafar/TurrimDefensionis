@@ -9,6 +9,9 @@ public class SpawnManager : MonoBehaviour
     public float maxEnemyTimeToChurch = 65f;
     public bool hasFinishedSpawning = false;
 
+    private float startTime;
+    private float maxTime;
+
     // private void OnEnable()
     // {
     //     GameManager.onStartNight += GameManager_OnStartNight;
@@ -22,7 +25,20 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         hasFinishedSpawning = false;
+        startTime = Time.time;
+        maxTime = waveSpawnRate * wavesPerNight + maxEnemyTimeToChurch;
     }
+
+    void Update()
+    {
+        if (Time.time - startTime >= maxTime)
+        {
+            hasFinishedSpawning = true;
+            GameManager.Instance.EndNight();
+        }
+    }
+
+
 
 
 }

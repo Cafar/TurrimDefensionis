@@ -244,20 +244,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e5f2637bf7e7246bf49e1375fbba5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
   data: {fileID: 11400000, guid: fbd6cb6135fba2b43919dc0033a122d1, type: 2}
-  cooldownHandler: {fileID: 0}
   cooldownSlider: {fileID: 6675021852573290164}
   towerHealthbar: {fileID: 800043494783537094}
   destroyedImage: {fileID: 21300000, guid: 8f8d646e8947cf641bd97f2579661834, type: 3}
   destroyedImageScale: 1
   tpc: {fileID: 3952035486837502618}
   animator: {fileID: 5975534623396040938}
-  towerHealthbarEnabler: {fileID: 8254773525754673951}
-  textBackground: {fileID: 6513395299664861472}
-  cooldownFill: {fileID: 8362589557387963002}
-  towerPlaceNumber: {fileID: 0}
   backgroundFocus: {fileID: 7009031554625989512}
-  dayUI: {fileID: 0}
+  uiCanvas: {fileID: 1584065785079888087}
   isActive: 0
   isDestroyed: 0
   showGizmos: 0
@@ -798,20 +794,13 @@ MonoBehaviour:
     CurrentCharColorText: {r: 0, g: 0.07871564, b: 0.6415094, a: 1}
     CorrectCharText: {r: 0.075989544, g: 0.745283, b: 0, a: 1}
     IncorrectCharText: {r: 0.754717, g: 0, b: 0, a: 1}
-  words:
-  - mater dolorosa
-  - miraculum
-  - monasterium
-  - monstra timete
-  - moriuntur
-  - mors vampiro
   tower: {fileID: 718796140486344368}
   holyErrorSeconds: 1
   backgroundText: {fileID: 1584065783806539913}
   mainText: {fileID: 1584065784745354172}
   perfectText: {fileID: 4046232807625315786}
   failText: {fileID: 4046232806676989947}
-  cooldownBar: {fileID: 0}
+  currentWord: 
   isInFocus: 0
 --- !u!222 &5706276099423102871
 CanvasRenderer:

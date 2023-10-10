@@ -22,22 +22,12 @@ public class EconomyManager : MonoBehaviour
     private GameManager gm;
     private SpawnManager sm;
 
-    // private void OnEnable()
-    // {
-    //     GameManager.onEndNight += GameManager_OnEndNight;
-    // }
-
-    // private void GameManager_OnEndNight()
-    // {
-    //     GetEndOfNightReward();
-    // }
 
     void Start()
     {
         currentCoin = initialCoin;
         gmObj = GameObject.Find("GameManager");
         gm = gmObj.GetComponent<GameManager>();
-        sm = gmObj.GetComponent<SpawnManager>();
     }
 
     public void SpendCoin(TowerData data)
@@ -53,8 +43,9 @@ public class EconomyManager : MonoBehaviour
             currentCoin += coinToGain;
     }
 
-    private void GetEndOfNightReward()
+    public void GetEndOfNightReward()
     {
+        sm = GameObject.Find("NightManager").GetComponent<SpawnManager>();
         float nightTime = gm.nightTimes[gm.nightLevel];
         float maxNightTime = sm.waveSpawnRate * sm.wavesPerNight + sm.maxEnemyTimeToChurch;
         if (sm.hasFinishedSpawning)
@@ -63,7 +54,7 @@ public class EconomyManager : MonoBehaviour
         {
             int rewardRange = maxReward - minReward;
             float nightTimeRange = maxNightTime - minNightTime;
-            float coinCalc = (rewardRange / nightTime) * nightTimeRange;
+            float coinCalc = (rewardRange / nightTimeRange) * nightTime;
             GainCoin(Mathf.RoundToInt(coinCalc * rewardMultiplier));
         }
     }

@@ -77,5 +77,10 @@ public class DayManager : MonoBehaviour
         }
     }
 
+    public void EndDay()
+    {
+        GameManager.Instance.EndDay();
+    }
+
 
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Tower : MonoBehaviour
 {
     [Header("Configuration")]
+    public int index;
     public TowerData data;
     public Slider cooldownSlider;
     public Slider towerHealthbar;
@@ -18,6 +19,7 @@ public class Tower : MonoBehaviour
 
     [Header("UI")]
     public GameObject backgroundFocus;
+    public GameObject uiCanvas;
 
     [Space(10)]
 
@@ -49,23 +51,27 @@ public class Tower : MonoBehaviour
         data = newData;
         towerResistance = data.resistance;
         cooldownSlider.maxValue = data.autonomyTime;
-        animator.runtimeAnimatorController = data.animator;
+        // animator.runtimeAnimatorController = data.animator;
         if (data.mapImage != null)
         {
             sp.sprite = data.mapImage;
             sp.transform.localScale = Vector3.one * data.imageScaling;
-
         }
         towerHealthbar.value = data.resistance;
     }
 
     private void Start()
     {
-        tm = GameObject.Find("GameManager").GetComponent<TowersManager>();
+        tm = GameObject.Find("NightManager").GetComponent<TowersManager>();
         sp = gameObject.GetComponentInChildren<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            gameObject.AddComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
+        // if (audioSource == null)
+        //     gameObject.AddComponent<AudioSource>();
+        SetTowerData(GameManager.Instance.towerDataList[index]);
+        isActive = false;
+        cooldownSlider.value = 0f;
+        if (data.resistance == 0)
+            uiCanvas.SetActive(false);
     }
 
     private void Update()
@@ -115,7 +121,8 @@ public class Tower : MonoBehaviour
         }
         cooldownSlider.value = 0f;
         isActive = false;
-        tpc.ResumeTower();
+        if (!tm.towerSelected)
+            tpc.ResumeTower();
     }
 
     public void ActivateTower()
@@ -185,8 +192,8 @@ public class Tower : MonoBehaviour
     private void Shoot()
     {
         lastAttackTime = Time.time;
-        if (data.attackSound)
-            audioSource.PlayOneShot(data.attackSound);
+        // if (data.attackSound)
+        //     audioSource.PlayOneShot(data.attackSound);
         if (data.towerType == TowerType.AOE || data.attackAOE > 0)
             DamageArea(data.attackDamage);
         else
@@ -265,8 +272,8 @@ public class Tower : MonoBehaviour
 
     private void DestroyTower()
     {
-        if (data.destroySound)
-            audioSource.PlayOneShot(data.destroySound);
+        // if (data.destroySound)
+        //     audioSource.PlayOneShot(data.destroySound);
         tpc.SetTowerPaused();
         isActive = false;
         isDestroyed = true;
@@ -276,5 +283,6 @@ public class Tower : MonoBehaviour
             transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = destroyedImage;
             transform.localScale = Vector3.one * destroyedImageScale;
         }
+        uiCanvas.SetActive(false);
     }
 }
