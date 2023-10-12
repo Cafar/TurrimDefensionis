@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FocoSolar
   m_EditorClassIdentifier: 
   towerType: 2
-  resistance: 9
-  autonomyTime: 23
+  resistance: 6
+  autonomyTime: 30
   mapImage: {fileID: 21300000, guid: a9dde19248cee5a4ea4d1f6a9885b413, type: 3}
   imageScaling: 0.29
   attackEffect: {fileID: 0}
@@ -31,5 +31,5 @@ MonoBehaviour:
     da\xF1o a los enemigos quelo atraviesen.\r\n\n\tDa\xF1o: 55 | Rango: - | Cadencia:
     -"
   shopImage: {fileID: 0}
-  cost: 200
+  cost: 150
   possibleLocations: 0000000001000000

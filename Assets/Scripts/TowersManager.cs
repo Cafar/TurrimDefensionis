@@ -19,17 +19,17 @@ public class TowersManager : MonoBehaviour
 
     private List<string> posibleWords = new List<string>{"agnus dei", "angelus crux", "angelus custos", "aqua sancta", 
         "argentum omnibus", "baptismus", "beatus deus", "benedictio", "brachium dei", "caelos aperire", 
-        "castigatio", "cinis pagana", "cor impurum", "crucifixio", "culpa divina", "decapitatio", "Dei Genitrix", 
+        "castigatio", "cinis pagana", "cor impurum", "crucifixio", "culpa divina", "decapitatio", "dei genitrix", 
         "descendere angeli", "dimittis", "divina potentia", "dominus deus", "episcopus", "essentia solis", "evangelizatio", 
         "excommunicatio", "exularet", "fides catholica", "fides cruciata", "flagellum dei", "foras hinc", "furor argenti", 
-        "gladius dei", "gloria patri", "gothicus ", "gratia divina", "ictus lucis", "in nomine patris", "in pace mori", 
+        "gladius dei", "gloria patri", "gothicus", "gratia divina", "ictus lucis", "in pace mori", 
         "iter vetitum", "iudicium finale", "lapidatio", "laudate dominum", "lex orandi", "lux aeterna", "mater dolorosa", 
-        "miraculum", "monasterium", "monstra timete", "moriuntur pagani", "mors vampiro", "obsecrare", "omnpotenita", 
-        "oratio ecclesiae", "paenitentia", "passio haeretici", "peccatores mori", "pietas popularis", "potestas solaris", 
-        "purgatorium", "redemptor", "Requiesce in pace", "revertere ad inferos", "rosarium", "sacramentum", "sacratum cor", 
-        "sacrificium", "Sancta Maria", "sepultura", "sitiens infixit", "sol divinus", "spiritus Sanctus", "taestamentum", 
+        "miraculum", "monasterium", "monstra timete", "moriuntur pagani", "mors vampiro", "obsecrare", "omnpotentia", 
+        "oratio ecclesiae", "paenitentia", "passio haeretici", "peccatores mori", "pietas popularis", 
+        "potestas solaris", "purgatorium", "redemptor", "rosarium", "sacramentum", "sacratum cor", 
+        "sacrificium", "sancta maria", "sepultura", "sitiens infixit", "sol divinus", "spiritus sanctus", "taestamentum", 
         "tormentum amen", "trinitas", "tutela trinitatis", "ubiquitas", "ultio divina", "universitas", "vade retro", 
-        "veneratio domino", "via ad infernum", "Virgo Maria", "vos trahatis"};
+        "veneratio domino", "via ad infernum", "virgo maria", "vos trahatis"};
 
     private void Awake()
     {

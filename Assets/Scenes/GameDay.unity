@@ -2055,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c109cc0e4e82044f882b04c7129583a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCoin: 500
+  initialCoin: 600
   maxCoin: 6000
   minReward: 200
   maxReward: 1200
