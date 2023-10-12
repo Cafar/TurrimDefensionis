@@ -2056,9 +2056,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialCoin: 600
-  maxCoin: 6000
-  minReward: 200
-  maxReward: 1200
+  maxCoin: 5000
+  minReward: 250
+  maxReward: 900
   minNightTime: 60
   rewardMultiplier: 1.5
   currentCoin: 0

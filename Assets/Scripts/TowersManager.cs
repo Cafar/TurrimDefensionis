@@ -17,19 +17,23 @@ public class TowersManager : MonoBehaviour
 
     public bool towerSelected = false;
 
-    private List<string> posibleWords = new List<string>{"agnus dei", "angelus crux", "angelus custos", "aqua sancta", 
-        "argentum omnibus", "baptismus", "beatus deus", "benedictio", "brachium dei", "caelos aperire", 
-        "castigatio", "cinis pagana", "cor impurum", "crucifixio", "culpa divina", "decapitatio", "dei genitrix", 
-        "descendere angeli", "dimittis", "divina potentia", "dominus deus", "episcopus", "essentia solis", "evangelizatio", 
-        "excommunicatio", "exularet", "fides catholica", "fides cruciata", "flagellum dei", "foras hinc", "furor argenti", 
-        "gladius dei", "gloria patri", "gothicus", "gratia divina", "ictus lucis", "in pace mori", 
-        "iter vetitum", "iudicium finale", "lapidatio", "laudate dominum", "lex orandi", "lux aeterna", "mater dolorosa", 
-        "miraculum", "monasterium", "monstra timete", "moriuntur pagani", "mors vampiro", "obsecrare", "omnpotentia", 
-        "oratio ecclesiae", "paenitentia", "passio haeretici", "peccatores mori", "pietas popularis", 
-        "potestas solaris", "purgatorium", "redemptor", "rosarium", "sacramentum", "sacratum cor", 
-        "sacrificium", "sancta maria", "sepultura", "sitiens infixit", "sol divinus", "spiritus sanctus", "taestamentum", 
-        "tormentum amen", "trinitas", "tutela trinitatis", "ubiquitas", "ultio divina", "universitas", "vade retro", 
-        "veneratio domino", "via ad infernum", "virgo maria", "vos trahatis"};
+    private List<string> posibleWords = new List<string>{"agnus dei", "angelus crux", "aqua sancta", "argentum",
+        "baptismus", "beatus deus", "benedictio", "brachium dei",
+        "castigatio", "cinis pagana", "cor impurum", "crucifixio",
+        "decapitatio", "dei genitrix", "dimittis", "dominus deus",
+        "episcopus", "essentia dei", "evangelium", "exularet",
+        "fides divina", "flagellum", "foras hinc", "furor argenti", 
+        "gladius dei", "gloria patri", "gothicus", 
+        "ictus lucis", "iter vetitum", "iudicium", 
+        "lapidatio", "laudate", "lex orandi", "lux aeterna", 
+        "mater dolorosa", "miraculum", "monasterium", "mors vampiro",
+        "obsecrare", "omnipotentia", "oratio",
+        "paenitentia", "popularis", "potestas", "purgatorium",
+        "redemptor", "rosarium",
+        "sacramentum", "sacrificium", "sepultura", "sol divinus",
+        "taestamentum", "tormentum", "trinitas", 
+        "ubiquitas", "ultio divina", "universitas",
+        "vade retro", "veneratio", "virgo maria", "vos trahatis"};
 
     private void Awake()
     {

@@ -20,7 +20,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 1
   attackRange: 12
-  attackDamage: 29
+  attackDamage: 35
   attackRate: 1
   attackAOE: 0
   attackSound: {fileID: 8300000, guid: 6115375698a48994588b45602e0d4071, type: 3}

@@ -423,10 +423,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c109cc0e4e82044f882b04c7129583a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCoin: 500
-  maxCoin: 1000
-  minReward: 200
-  maxReward: 1200
+  initialCoin: 600
+  maxCoin: 5000
+  minReward: 250
+  maxReward: 900
   minNightTime: 60
   rewardMultiplier: 1.5
   currentCoin: 0
@@ -4103,6 +4103,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1427892190}
+    - target: {fileID: 3563478353538757633, guid: 29ebdaab7ca5a7143a8a7271dabc9f78, type: 3}
+      propertyPath: showGizmos
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4075100047442553818, guid: 29ebdaab7ca5a7143a8a7271dabc9f78, type: 3}
       propertyPath: m_Name
       value: DefenseUnitsNight
