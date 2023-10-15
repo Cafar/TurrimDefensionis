@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public int nightLevel = 0;
+    public int nightLevel;
     public float[] nightTimes;
     public TowerData emptyTowerData;
 
@@ -69,11 +69,13 @@ public class GameManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(gameObject);
 
-        InitializeGame();
+        nightTimes = new float[5];
+        towerDataList = new List<TowerData>{emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData,
+                                            emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData};
         economyManager = gameObject.GetComponent<EconomyManager>();
     }
 
-    public void InitializeGame()
+    public void RestartGame()
     {
         nightLevel = 0;
         nightTimes = new float[5];
@@ -176,7 +178,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        InitializeGame();
+        RestartGame();
         SceneManager.LoadScene("Menu");
     }
 
