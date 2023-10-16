@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +54,10 @@ public class Enemy : MonoBehaviour
         Debug.Log(gameObject.name + " took " + damage + " damage");
         if (health <= 0)
             Die();
+
+        Sequence seq = DOTween.Sequence();
+        seq.Append(sp.DOColor(Color.red, .1f));
+        seq.Append(sp.DOColor(Color.white, 1f));
     }
 
     private void Die()

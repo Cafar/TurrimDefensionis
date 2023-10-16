@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -198,6 +199,13 @@ public class Tower : MonoBehaviour
             DamageArea(data.attackDamage);
         else
             currentTarget.TakeDamage(data.attackDamage);
+
+
+        Vector3 toMove = sp.transform.position + sp.transform.right * 1.02f;
+        Vector3 originalPos = sp.transform.position;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(sp.transform.DOMoveX(toMove.x, 0.1f).SetEase(Ease.InBack));
+        seq.Append(sp.transform.DOMoveX(originalPos.x, 0.1f));
     }
 
     private void DamageArea(int damage)
