@@ -28,7 +28,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   towerName: Catapulta Bendita
   description: "Lanza una gran bomba de agua bendita que inflige mucho da\xF1o en
-    \xE1rea.\n\r\n\n\tDa\xF1o: 150 | Rango: largo | Cadencia: 3"
+    \xE1rea.\n\r\n\n\tDa\xF1o: 125 | Rango: largo | Cadencia: 3"
   shopImage: {fileID: 0}
   cost: 350
   possibleLocations: 06000000070000000800000009000000

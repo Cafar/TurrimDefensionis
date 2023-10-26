@@ -20,7 +20,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 3
   attackRange: 10
-  attackDamage: 35
+  attackDamage: 30
   attackRate: 1
   attackAOE: 1.5
   attackSound: {fileID: 0}
@@ -28,8 +28,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   towerName: Foco Solar
   description: "Proyecta un haz de luz fijo que atraviesa el camino, infligiendo
-    da\xF1o a los enemigos quelo atraviesen.\r\n\n\tDa\xF1o: 55 | Rango: - | Cadencia:
+    da\xF1o a los enemigos quelo atraviesen.\r\n\n\tDa\xF1o: 30 | Rango: - | Cadencia:
     -"
   shopImage: {fileID: 0}
-  cost: 150
+  cost: 100
   possibleLocations: 0000000001000000
