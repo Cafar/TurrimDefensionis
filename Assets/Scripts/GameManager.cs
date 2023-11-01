@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
         nightTimes = new float[5];
         towerDataList = new List<TowerData>{emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData,
                                             emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData, emptyTowerData};
+        economyManager.ResetEconomy();
     }
 
 
@@ -88,15 +89,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // UpdateClock();
-        // CheckFocus();
-        CheckPause();
-        // if (!isDay && spawner.squadIndex >= sm.wavesPerNight)
-        // {
-        //     if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        //         EndNight();
-        // }
-        
+        CheckPause();        
     }
 
     private void CheckPause()
@@ -115,6 +108,11 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
     }
 
     // Desactiva y resetea las palabras de activaci�n de torres (Done)
@@ -173,7 +171,8 @@ public class GameManager : MonoBehaviour
     {
         nightTimes[nightLevel] = Time.time - nightStartTime;
         onGameOver?.Invoke();
-        audioSource.PlayOneShot(gameOverClip);
+        // audioSource.PlayOneShot(gameOverClip);
+
     }
 
     public void ReturnToMenu()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 public class NightManager : MonoBehaviour
@@ -8,13 +9,15 @@ public class NightManager : MonoBehaviour
 
     public GameObject psalmFocus;
     public TextMeshProUGUI clock;
-    public GameObject enemies;
+    public GameObject gameOverScreen;
 
     private TowersManager tm;
     private TypingSalmoController tsc;
     private SpawnManager sm;
     private Spawner spawner;
     private EconomyManager em;
+
+    public static event Action onGameOver;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class NightManager : MonoBehaviour
         sm = gameObject.GetComponent<SpawnManager>();
         spawner = GameObject.Find("Spawners").GetComponentInChildren<Spawner>();
         em = GameObject.Find("GameManager").GetComponent<EconomyManager>();
+        onGameOver += GameOver;
 
         tm.StartAllTowers();
         PsalmSetFocus(false);
@@ -32,7 +36,9 @@ public class NightManager : MonoBehaviour
     {
         UpdateClock();
         CheckFocus();
-        if (spawner.squadIndex >= sm.wavesPerNight && enemies.transform.childCount == 0)
+        GameObject[] gameObjects;
+        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        if (spawner.squadIndex >= sm.wavesPerNight && gameObjects.Length == 0)
         {
             GameManager.Instance.EndNight();
         }
@@ -77,4 +83,11 @@ public class NightManager : MonoBehaviour
     {
         GameManager.Instance.EndNight();
     }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
+
 }

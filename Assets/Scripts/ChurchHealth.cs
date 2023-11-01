@@ -24,20 +24,12 @@ public class ChurchHealth : MonoBehaviour
     //private AudioSource switchSound;
 
     private GameManager gameManager;
-
-    // private void OnEnable()
-    // {
-    //     GameManager.onStartDay += GameManager_OnStartDay;
-    // }
-
-    // private void GameManager_OnStartDay()
-    // {
-    //     health = maxHealth;
-    // }
+    private NightManager nightManager;
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        nightManager = GameObject.Find("NightManager").GetComponent<NightManager>();
         churchHealthbar.maxValue = maxHealth;
         churchHealthbar.value = maxHealth;
     }
@@ -45,7 +37,6 @@ public class ChurchHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         churchDamage.Play();
-        Debug.Log("The church took " + damage + " damage");
         if (churchHealthbar.value - damage < 0)
             churchHealthbar.value = 0;
         else
@@ -53,8 +44,8 @@ public class ChurchHealth : MonoBehaviour
         // Show damage effect
         if (churchHealthbar.value == 0)
         {
-            Debug.Log("The church was destroyed. Game Over");
             gameManager.GameOver();
+            nightManager.GameOver();
         }
     }
 }
