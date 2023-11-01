@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed3c896336258ed45b26c1d7feaf9a11, type: 3}
-  m_Name: CatapultaBendita
+  m_Name: MorteroBendito
   m_EditorClassIdentifier: 
   towerType: 1
   resistance: 9
@@ -25,7 +25,7 @@ MonoBehaviour:
   attackAOE: 6
   attackSound: {fileID: 8300000, guid: 0a30c44ded9dc73458be9b2b0fd1afbd, type: 3}
   destroySound: {fileID: 8300000, guid: 39bc5a6f20810b94ca6cd80af75b5ca5, type: 3}
-  animator: {fileID: 0}
+  animator: {fileID: 9100000, guid: 5f1f3bf61ab200e4f98cec7d691bdc5a, type: 2}
   towerName: Catapulta Bendita
   description: "Lanza una gran bomba de agua bendita que inflige mucho da\xF1o en
     \xE1rea.\n\r\n\n\tDa\xF1o: 150 | Rango: largo | Cadencia: 3"

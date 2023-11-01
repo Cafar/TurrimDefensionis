@@ -42,7 +42,6 @@ public class Tower : MonoBehaviour
     private List<Enemy> enemiesDamagedByTrap = new List<Enemy>();
     private Enemy currentTarget = null;
     private float lastAttackTime = 0f;
-    private SpriteRenderer sp;
     private int towerResistance;
     private TowersManager tm;
 
@@ -52,19 +51,13 @@ public class Tower : MonoBehaviour
         data = newData;
         towerResistance = data.resistance;
         cooldownSlider.maxValue = data.autonomyTime;
-        // animator.runtimeAnimatorController = data.animator;
-        if (data.mapImage != null)
-        {
-            sp.sprite = data.mapImage;
-            sp.transform.localScale = Vector3.one * data.imageScaling;
-        }
+        animator.runtimeAnimatorController = data.animator;
         towerHealthbar.value = data.resistance;
     }
 
     private void Start()
     {
         tm = GameObject.Find("NightManager").GetComponent<TowersManager>();
-        sp = gameObject.GetComponentInChildren<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
         // if (audioSource == null)
         //     gameObject.AddComponent<AudioSource>();
@@ -122,6 +115,7 @@ public class Tower : MonoBehaviour
         }
         cooldownSlider.value = 0f;
         isActive = false;
+        animator.SetBool("isActive", false);
         if (!tm.towerSelected)
             tpc.ResumeTower();
     }
@@ -129,6 +123,7 @@ public class Tower : MonoBehaviour
     public void ActivateTower()
     {
         isActive = true;
+        animator.SetBool("isActive", isActive);
         StartCoroutine(StartTowerCooldown());
     }
 
@@ -193,6 +188,7 @@ public class Tower : MonoBehaviour
     private void Shoot()
     {
         lastAttackTime = Time.time;
+        animator.SetTrigger("shoot");
         // if (data.attackSound)
         //     audioSource.PlayOneShot(data.attackSound);
         if (data.towerType == TowerType.AOE || data.attackAOE > 0)
@@ -201,11 +197,12 @@ public class Tower : MonoBehaviour
             currentTarget.TakeDamage(data.attackDamage);
 
 
-        Vector3 toMove = sp.transform.position + sp.transform.right * 1.02f;
-        Vector3 originalPos = sp.transform.position;
-        Sequence seq = DOTween.Sequence();
-        seq.Append(sp.transform.DOMoveX(toMove.x, 0.1f).SetEase(Ease.InBack));
-        seq.Append(sp.transform.DOMoveX(originalPos.x, 0.1f));
+        // Vector3 toMove = sp.transform.position + sp.transform.right * 1.02f;
+        // Vector3 originalPos = sp.transform.position;
+        // Sequence seq = DOTween.Sequence();
+        // seq.Append(sp.transform.DOMoveX(toMove.x, 0.1f).SetEase(Ease.InBack));
+        // seq.Append(sp.transform.DOMoveX(originalPos.x, 0.1f));
+
     }
 
     private void DamageArea(int damage)
@@ -285,6 +282,7 @@ public class Tower : MonoBehaviour
         tpc.SetTowerPaused();
         isActive = false;
         isDestroyed = true;
+        animator.SetTrigger("destroy");
         tm.ResumeAllTowers();
         if (destroyedImage != null)
         {
