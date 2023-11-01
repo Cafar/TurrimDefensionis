@@ -33,12 +33,12 @@ public class ChurchHealth : MonoBehaviour
         GameManager.onEndNight += Start;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         nightManager = GameObject.Find("NightManager").GetComponent<NightManager>();
+        churchHealthbar.maxValue = maxHealth;
         if (gameManager.nightLevel != 0)
             churchHealthbar.value = gameManager.savedChurchHealth;
         else
             churchHealthbar.value = maxHealth;
 
-        churchHealthbar.maxValue = maxHealth;
     }
 
     public void TakeDamage(int damage)
