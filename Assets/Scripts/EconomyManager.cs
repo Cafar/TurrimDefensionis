@@ -30,6 +30,11 @@ public class EconomyManager : MonoBehaviour
         gm = gmObj.GetComponent<GameManager>();
     }
 
+    public void ResetEconomy()
+    {
+        currentCoin = initialCoin;
+    }
+
     public void SpendCoin(TowerData data)
     {
         currentCoin -= data.cost;
