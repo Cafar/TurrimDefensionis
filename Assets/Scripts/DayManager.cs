@@ -12,6 +12,9 @@ public class DayManager : MonoBehaviour
     public TextMeshProUGUI coinText;
     public DayTower[] dayTowers;
 
+    public GameObject dayTutorial;
+    public GameObject nightTutorial;
+
     [Space(10)]
 
     [Header("Testing")]
@@ -19,12 +22,18 @@ public class DayManager : MonoBehaviour
 
     private EconomyManager economyManager;
     private DayTower clickedTower;
+    private bool tutorialRead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         selectedTowerData = emptyTowerData;
         economyManager = GameObject.Find("GameManager").GetComponent<EconomyManager>();
+        if (GameManager.Instance.nightLevel == 0)
+        {
+            dayTutorial.SetActive(true);
+            tutorialRead = false;
+        }
     }
 
     void Update()
@@ -79,7 +88,15 @@ public class DayManager : MonoBehaviour
 
     public void EndDay()
     {
-        GameManager.Instance.EndDay();
+        if (GameManager.Instance.nightLevel == 0 && !tutorialRead)
+        {
+            nightTutorial.SetActive(true);
+            tutorialRead = true;
+        }
+        else
+        {
+            GameManager.Instance.EndDay();
+        }
     }
 
 
