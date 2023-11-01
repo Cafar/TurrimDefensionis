@@ -192,7 +192,6 @@ GameObject:
   - component: {fileID: 5774271748853056029}
   - component: {fileID: 718796140486344368}
   - component: {fileID: 3840290660652391745}
-  - component: {fileID: 5975534623396040938}
   m_Layer: 0
   m_Name: NightTower
   m_TagString: Tower
@@ -251,7 +250,7 @@ MonoBehaviour:
   destroyedImage: {fileID: 21300000, guid: 8f8d646e8947cf641bd97f2579661834, type: 3}
   destroyedImageScale: 1
   tpc: {fileID: 3952035486837502618}
-  animator: {fileID: 5975534623396040938}
+  animator: {fileID: 5520725618513386678}
   backgroundFocus: {fileID: 7009031554625989512}
   uiCanvas: {fileID: 1584065785079888087}
   isActive: 0
@@ -354,27 +353,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &5975534623396040938
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718796140486344333}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1584065783806539913
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7529857414929227187}
   - component: {fileID: 3117115408566898769}
+  - component: {fileID: 5520725618513386678}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -924,6 +903,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5520725618513386678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728035677181875251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2829174439232999844
 GameObject:
   m_ObjectHideFlags: 0
