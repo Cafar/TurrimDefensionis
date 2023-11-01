@@ -7,6 +7,8 @@ public class ChurchHealth : MonoBehaviour
 {
     public int maxHealth = 5000;
 
+    public int endNightHeal = 200;
+
     public Slider churchHealthbar;
 
     [Header("SOUNDS")]
@@ -28,10 +30,15 @@ public class ChurchHealth : MonoBehaviour
 
     private void Start()
     {
+        GameManager.onEndNight += Start;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         nightManager = GameObject.Find("NightManager").GetComponent<NightManager>();
+        if (gameManager.nightLevel != 0)
+            churchHealthbar.value = gameManager.savedChurchHealth;
+        else
+            churchHealthbar.value = maxHealth;
+
         churchHealthbar.maxValue = maxHealth;
-        churchHealthbar.value = maxHealth;
     }
 
     public void TakeDamage(int damage)
@@ -47,5 +54,13 @@ public class ChurchHealth : MonoBehaviour
             gameManager.GameOver();
             nightManager.GameOver();
         }
+    }
+
+    private void SaveChurchHealth()
+    {
+        int healthToSave = (int)churchHealthbar.value + endNightHeal;
+        if (healthToSave > maxHealth)
+            healthToSave = maxHealth;
+        gameManager.savedChurchHealth = healthToSave;
     }
 }
