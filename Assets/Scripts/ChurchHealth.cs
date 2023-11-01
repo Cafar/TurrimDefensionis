@@ -58,6 +58,7 @@ public class ChurchHealth : MonoBehaviour
 
     private void SaveChurchHealth()
     {
+        gameManager.churchDamage = maxHealth - (int)churchHealthbar.value;
         int healthToSave = (int)churchHealthbar.value + endNightHeal;
         if (healthToSave > maxHealth)
             healthToSave = maxHealth;

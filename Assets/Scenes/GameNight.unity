@@ -1343,9 +1343,9 @@ MonoBehaviour:
   initialCoin: 600
   maxCoin: 5000
   minReward: 250
-  maxReward: 900
-  minNightTime: 60
-  rewardMultiplier: 1.5
+  maxReward: 1200
+  timeMultiplier: 1
+  churchDamageMultiplier: 1
   currentCoin: 0
 --- !u!114 &310613574
 MonoBehaviour:
@@ -1362,6 +1362,8 @@ MonoBehaviour:
   nightLevel: 0
   nightTimes: []
   emptyTowerData: {fileID: 11400000, guid: fbd6cb6135fba2b43919dc0033a122d1, type: 2}
+  churchDamage: 0
+  savedChurchHealth: 0
   audioSource: {fileID: 310613579}
   endNightClip: {fileID: 8300000, guid: 0dc7ae0728dbdba41aabf9a223cd6983, type: 3}
   baseDayClip: {fileID: 8300000, guid: 261765a13f70caa4b8184fb59ce14fa9, type: 3}
@@ -3897,6 +3899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5000
+  endNightHeal: 200
   churchHealthbar: {fileID: 1302193176}
   churchDamage: {fileID: 956379885}
 --- !u!65 &956379884

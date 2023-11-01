@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public float[] nightTimes;
     public TowerData emptyTowerData;
 
+    public int churchDamage;
     public int savedChurchHealth;
 
     [Header("SOUNDS")]
@@ -162,11 +163,11 @@ public class GameManager : MonoBehaviour
     {
         isDay = true;
         nightTimes[nightLevel] = Time.time - nightStartTime;
-        economyManager.GetEndOfNightReward();
         nightLevel++;
         onEndNight?.Invoke();
-        SceneManager.LoadScene("GameDay");
+        economyManager.GetEndOfNightReward();
         // audioSource.PlayOneShot(endNightClip);
+        SceneManager.LoadScene("GameDay");
     }
 
     // Mostrar pantalla de game over con el bot�n de volver al inicio o reiniciar

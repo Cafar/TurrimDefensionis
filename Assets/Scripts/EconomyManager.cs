@@ -10,8 +10,9 @@ public class EconomyManager : MonoBehaviour
     public int maxCoin = 1000;
     public int minReward = 200;
     public int maxReward = 1200;
-    public float minNightTime = 60f;
-    public float rewardMultiplier = 1.5f;
+
+    public float timeMultiplier = 1f;
+    public float churchDamageMultiplier = 1f;
 
     [Space(10)]
 
@@ -51,16 +52,14 @@ public class EconomyManager : MonoBehaviour
     public void GetEndOfNightReward()
     {
         sm = GameObject.Find("NightManager").GetComponent<SpawnManager>();
-        float nightTime = gm.nightTimes[gm.nightLevel];
-        float maxNightTime = sm.waveSpawnRate * sm.wavesPerNight + sm.maxEnemyTimeToChurch;
         if (sm.hasFinishedSpawning)
             GainCoin(minReward);
         else
         {
-            int rewardRange = maxReward - minReward;
-            float nightTimeRange = maxNightTime - minNightTime;
-            float coinCalc = (rewardRange / nightTimeRange) * nightTime;
-            GainCoin(Mathf.RoundToInt(coinCalc * rewardMultiplier));
+            float timePenalization = gm.nightTimes[gm.nightLevel] * timeMultiplier;
+            float healthPenalization = gm.churchDamage * churchDamageMultiplier;
+            float coinCalc = maxReward - (timePenalization + healthPenalization);
+            GainCoin(Mathf.RoundToInt(coinCalc));
         }
     }
 
