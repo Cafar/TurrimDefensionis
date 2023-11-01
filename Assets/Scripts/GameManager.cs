@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public float[] nightTimes;
     public TowerData emptyTowerData;
 
+    public int savedChurchHealth;
+
     [Header("SOUNDS")]
     [SerializeField]
     private AudioSource audioSource;
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     // public static event Action onStartDay;
     // public static event Action onStartNight;
-    // public static event Action onEndNight;
+    public static event Action onEndNight;
     public static event Action onGameOver;
 
 
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
         nightTimes[nightLevel] = Time.time - nightStartTime;
         economyManager.GetEndOfNightReward();
         nightLevel++;
+        onEndNight?.Invoke();
         SceneManager.LoadScene("GameDay");
         // audioSource.PlayOneShot(endNightClip);
     }

@@ -17,8 +17,6 @@ public class NightManager : MonoBehaviour
     private Spawner spawner;
     private EconomyManager em;
 
-    public static event Action onGameOver;
-
     void Start()
     {
         tm = gameObject.GetComponent<TowersManager>();
@@ -26,7 +24,7 @@ public class NightManager : MonoBehaviour
         sm = gameObject.GetComponent<SpawnManager>();
         spawner = GameObject.Find("Spawners").GetComponentInChildren<Spawner>();
         em = GameObject.Find("GameManager").GetComponent<EconomyManager>();
-        onGameOver += GameOver;
+        GameManager.onGameOver += GameOver;
 
         tm.StartAllTowers();
         PsalmSetFocus(false);
