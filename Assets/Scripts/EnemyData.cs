@@ -14,6 +14,7 @@ public class EnemyData : ScriptableObject
     [Space(10)]
 
     [Header("Visuals")]
+    public RuntimeAnimatorController animator;
     public Sprite mapImage;
     public float imageScaling = 1f;
     public GameObject attackEffect;

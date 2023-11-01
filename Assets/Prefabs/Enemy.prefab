@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2597369617931284357}
   - component: {fileID: 4512310349052692515}
+  - component: {fileID: 3269524825669361986}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -81,9 +82,30 @@ SpriteRenderer:
   m_Size: {x: 5.7540135, y: 20.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3269524825669361986
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600954850635899891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5313545029164837458
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6cdffd2f3845506438c4744085c9447f, type: 2}
+  animator: {fileID: 3269524825669361986}
+  enemyCollider: {fileID: 1982772923737004005}
   health: 100
 --- !u!54 &1086799021304349689
 Rigidbody:
