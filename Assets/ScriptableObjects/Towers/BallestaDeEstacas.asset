@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BallestaDeEstacas
   m_EditorClassIdentifier: 
   towerType: 0
-  resistance: 5
+  resistance: 4
   autonomyTime: 16
   mapImage: {fileID: 21300000, guid: 27db5d3d85af919428b177d04ed9c978, type: 3}
   imageScaling: 0.35
