@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,21 +6,14 @@ public class Enemy : MonoBehaviour
 {
 
     public EnemyData data;
+    public Animator animator;
+    public Collider enemyCollider;
+    public bool isDead = false;
 
     [SerializeField] private int health;
     private Rigidbody rb;
     private SpriteRenderer sp;
 
-
-    // private void OnEnable()
-    // {
-    //     GameManager.onStartDay += GameManager_OnStartDay;
-    // }
-
-    // private void GameManager_OnStartDay()
-    // {
-    //     Die();
-    // }
 
     void Start()
     {
@@ -30,12 +22,10 @@ public class Enemy : MonoBehaviour
 
         health = data.maxHealth;
 
-        if (data.mapImage != null)
-        {
-            sp = gameObject.GetComponentInChildren<SpriteRenderer>();
-            sp.sprite = data.mapImage;
-            sp.transform.localScale = Vector3.one * data.imageScaling;
-        }
+        sp = gameObject.GetComponentInChildren<SpriteRenderer>();
+        sp.transform.localScale = Vector3.one * data.imageScaling;
+
+        animator.runtimeAnimatorController = data.animator;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,20 +41,18 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log(gameObject.name + " took " + damage + " damage");
-        if (health <= 0)
+        animator.SetTrigger("takeDamage");
+        if (health <= 0 && !isDead)
             Die();
 
-        Sequence seq = DOTween.Sequence();
-        seq.Append(sp.DOColor(Color.red, .1f));
-        seq.Append(sp.DOColor(Color.white, 1f));
     }
 
     private void Die()
     {
-        Debug.Log("Enemy destroyed");
-        Destroy(gameObject);
-        // death effect
+        isDead = true;
+        animator.SetTrigger("die");
+        enemyCollider.enabled = false;
+        transform.gameObject.tag = "Untagged";
     }
 
 }

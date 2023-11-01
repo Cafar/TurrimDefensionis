@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -138,7 +137,7 @@ public class Tower : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             Enemy enemy = collider.GetComponent<Enemy>();
-            if (enemy != null)
+            if (enemy != null && !enemy.isDead)
             {
                 enemiesInattackRange.Add(enemy);
             }
@@ -194,14 +193,11 @@ public class Tower : MonoBehaviour
         if (data.towerType == TowerType.AOE || data.attackAOE > 0)
             DamageArea(data.attackDamage);
         else
+        {
             currentTarget.TakeDamage(data.attackDamage);
-
-
-        // Vector3 toMove = sp.transform.position + sp.transform.right * 1.02f;
-        // Vector3 originalPos = sp.transform.position;
-        // Sequence seq = DOTween.Sequence();
-        // seq.Append(sp.transform.DOMoveX(toMove.x, 0.1f).SetEase(Ease.InBack));
-        // seq.Append(sp.transform.DOMoveX(originalPos.x, 0.1f));
+            if (currentTarget.isDead)
+                currentTarget = null;
+        }
 
     }
 

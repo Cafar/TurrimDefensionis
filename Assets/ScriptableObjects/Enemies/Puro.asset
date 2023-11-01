@@ -16,6 +16,7 @@ MonoBehaviour:
   moveSpeed: 3
   attackDamage: 100
   loot: 0
+  animator: {fileID: 9100000, guid: e48202602f7f5d94a96de243c08ad06f, type: 2}
   mapImage: {fileID: 21300000, guid: ba2b277514d672a4698e37967c92f663, type: 3}
   imageScaling: 0.15
   attackEffect: {fileID: 0}
