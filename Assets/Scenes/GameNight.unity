@@ -9780,6 +9780,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3563478352769776411, guid: 29ebdaab7ca5a7143a8a7271dabc9f78, type: 3}
+      propertyPath: showGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563478353292081081, guid: 29ebdaab7ca5a7143a8a7271dabc9f78, type: 3}
+      propertyPath: showGizmos
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3563478353538757633, guid: 29ebdaab7ca5a7143a8a7271dabc9f78, type: 3}
       propertyPath: showGizmos
       value: 0
