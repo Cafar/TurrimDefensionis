@@ -2058,8 +2058,8 @@ MonoBehaviour:
   initialCoin: 600
   maxCoin: 5000
   minReward: 250
-  maxReward: 900
-  minNightTime: 60
+  maxReward: 1000
+  minNightTime: 40
   rewardMultiplier: 1.5
   currentCoin: 0
 --- !u!4 &318928676 stripped

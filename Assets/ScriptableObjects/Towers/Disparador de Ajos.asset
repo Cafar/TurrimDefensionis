@@ -28,7 +28,7 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: 430fc424ca20f434aa85c5370cf79585, type: 2}
   towerName: Disparador de Ajos
   description: "Dispara ajos con gran cadencia contra el enemigo m\xE1s cercano hasta
-    matarlo.\r\n\r\n\n\tDa\xF1o: 18 | Rango: corto | Cadencia: 0.3"
+    matarlo.\r\n\r\n\n\tDa\xF1o: 15 | Rango: corto | Cadencia: 0.3"
   shopImage: {fileID: 0}
   cost: 150
   possibleLocations: 0200000003000000040000000500000006000000070000000800000009000000

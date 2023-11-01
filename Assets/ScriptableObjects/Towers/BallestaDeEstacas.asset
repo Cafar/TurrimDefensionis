@@ -20,7 +20,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 1
   attackRange: 12
-  attackDamage: 35
+  attackDamage: 42
   attackRate: 1
   attackAOE: 0
   attackSound: {fileID: 8300000, guid: 6115375698a48994588b45602e0d4071, type: 3}
@@ -28,7 +28,7 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: e78af21b452a8417bbaeb64fcb3ea819, type: 2}
   towerName: Ballesta de Estacas
   description: "Lanza estacas purificadas al enemigo m\xE1s cercano hasta matarlo.\r\n\n\n\tDa\xF1o:
-    45 | Rango: medio | Cadencia: 1"
+    42 | Rango: medio | Cadencia: 1"
   shopImage: {fileID: 0}
   cost: 100
   possibleLocations: 0200000003000000040000000500000006000000070000000800000009000000

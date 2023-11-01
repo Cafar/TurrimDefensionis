@@ -20,7 +20,7 @@ MonoBehaviour:
   attackEffect: {fileID: 0}
   targettingStrategy: 1
   attackRange: 14
-  attackDamage: 70
+  attackDamage: 75
   attackRate: 1.5
   attackAOE: 0
   attackSound: {fileID: 8300000, guid: 0205aa0d165eabf44adc94d2125869a4, type: 3}
@@ -28,7 +28,7 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: 911a91ecbce80794ebc3f28ce1321ea3, type: 2}
   towerName: "Ca\xF1\xF3n de Plata"
   description: "Dispara un potente proyectil de plata al vampiro m\xE1s cercano.\n\r\n\n\tDa\xF1o:
-    90 | Rango: medio | Cadencia: 1.3"
+    75 | Rango: medio | Cadencia: 1.3"
   shopImage: {fileID: 0}
   cost: 250
   possibleLocations: 040000000500000006000000070000000800000009000000
